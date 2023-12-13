@@ -19,6 +19,6 @@ public class Nonclick : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Instantiate(ball,Camera.main.ScreenToWorldPoint(Input.mousePosition)+new Vector3(0,0,11),Quaternion.identity);
+        Instantiate(ball,Camera.main.ScreenToWorldPoint(Input.mousePosition)+new Vector3(0,0,-transform.position.z+ball.transform.position.z),Quaternion.identity);
     }
 }
