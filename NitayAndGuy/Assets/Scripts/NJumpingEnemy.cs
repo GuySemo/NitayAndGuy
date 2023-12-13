@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NJumpingEnemy : MonoBehaviour
 {
-    [SerializeField] float speed= 5;
+    [SerializeField] float speed = 5;
     [SerializeField] float jump = 5;
     bool starter = true;
     float lasttime = 0;
@@ -54,7 +54,7 @@ public class NJumpingEnemy : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
 
-            GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * (other.transform.position.x-transform.position.x) / Mathf.Abs(other.transform.position.x-transform.position.x), 0, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * (other.transform.position.x - transform.position.x) / Mathf.Abs(other.transform.position.x - transform.position.x), 0, 0);
 
         }
     }
