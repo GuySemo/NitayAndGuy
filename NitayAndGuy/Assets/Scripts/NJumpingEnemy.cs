@@ -46,10 +46,14 @@ public class NJumpingEnemy : MonoBehaviour
         }
         if (other.gameObject.tag == "Wall")
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * other.transform.position.x / Mathf.Abs(other.transform.position.x), 0, 0);
+            speed = -speed;
+            GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
+            GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
+            //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * other.transform.position.x / Mathf.Abs(other.transform.position.x), 0, 0);
         }
         if (other.gameObject.tag == "Enemy")
         {
+
             GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * (other.transform.position.x-transform.position.x) / Mathf.Abs(other.transform.position.x-transform.position.x), 0, 0);
 
         }
