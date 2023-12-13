@@ -5,7 +5,9 @@ using UnityEngine;
 public class Nball : MonoBehaviour
 {
     [SerializeField] float sizeSpeed=100;
-    bool isTouching = false;
+    public bool isTouching = false;
+    GameObject temp;
+    [SerializeField] GameObject boomEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,23 +29,36 @@ public class Nball : MonoBehaviour
         }
 
         //Hit Enemy
-        if (gameObject.transform.root.localScale.x < 1 && isTouching)
+        if (gameObject.transform.root.localScale.x <0.5f && isTouching)
         {
             Debug.Log("Hit");
+            Instantiate(boomEffect, temp.transform.position, Quaternion.Euler(90,0,0));
+            Destroy(temp);
             Destroy(gameObject);
         }
+    }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        Debug.Log("TOUCH");
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
         Debug.Log("Collided");
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        isTouching = true;
+        if (other.tag == "Enemy")
+        {
+            isTouching = true;
+            temp = other.gameObject;
+        }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        isTouching = false;
+        if (other.tag == "Enemy")
+        {
+            isTouching = false;
+        }
     }
 
 }

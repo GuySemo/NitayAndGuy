@@ -38,6 +38,14 @@ public class NJumpingEnemy : MonoBehaviour
             lasttime = Time.time + 2.5f;
 
         }
+        if (GetComponent<Rigidbody2D>().velocity.x > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        if (GetComponent<Rigidbody2D>().velocity.x < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -49,7 +57,6 @@ public class NJumpingEnemy : MonoBehaviour
         {
             speed = -speed;
             GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
-            GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
             //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * other.transform.position.x / Mathf.Abs(other.transform.position.x), 0, 0);
         }
         if (other.gameObject.tag == "Enemy")
@@ -58,7 +65,6 @@ public class NJumpingEnemy : MonoBehaviour
             //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * (other.transform.position.x - transform.position.x) / Mathf.Abs(other.transform.position.x - transform.position.x), 0, 0);
             speed = -speed;
             GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
-            GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
         }
     }
 }
