@@ -32,6 +32,7 @@ public class NJumpingEnemy : MonoBehaviour
                 {
                     ChangeDirection = -1;
                 }
+                GetComponent<Rigidbody2D>().velocity = new Vector3(ChangeDirection * speed, 0, 0);
                 GetComponent<Rigidbody2D>().velocity += new Vector2(0, jump);
             }
             lasttime = Time.time + 2.5f;
@@ -54,8 +55,10 @@ public class NJumpingEnemy : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
 
-            GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * (other.transform.position.x - transform.position.x) / Mathf.Abs(other.transform.position.x - transform.position.x), 0, 0);
-
+            //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed * (other.transform.position.x - transform.position.x) / Mathf.Abs(other.transform.position.x - transform.position.x), 0, 0);
+            speed = -speed;
+            GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
+            GetComponent<SpriteRenderer>().flipX = !GetComponent<SpriteRenderer>().flipX;
         }
     }
 }
