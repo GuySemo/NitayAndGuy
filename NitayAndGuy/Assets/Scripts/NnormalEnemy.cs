@@ -22,21 +22,23 @@ public class NnormalEnemy : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
             starter = false;
         }
-        if (Time.time>lasttime)
-        {
-            if (Random.Range(1,4)==3)
-            {
-                speed = Random.Range(5, 30) / 2.5f;
-                ChangeDirection = Random.Range(0,2);
-                if (ChangeDirection==0)
-                {
-                    ChangeDirection = -1;
-                }
-                GetComponent<Rigidbody2D>().velocity = new Vector3(ChangeDirection*speed,0,0);
-            }
-            lasttime = Time.time + 0.5f;
+        //Change Direction
+
+        //if (Time.time>lasttime)
+        //{
+        //    if (Random.Range(1,4)==3)
+        //    {
+        //        speed = Random.Range(5, 30) / 2.5f;
+        //        ChangeDirection = Random.Range(0,2);
+        //        if (ChangeDirection==0)
+        //        {
+        //            ChangeDirection = -1;
+        //        }
+        //        GetComponent<Rigidbody2D>().velocity = new Vector3(ChangeDirection*speed,0,0);
+        //    }
+        //    lasttime = Time.time + 0.5f;
             
-        }
+        //}
         if (GetComponent<Rigidbody2D>().velocity.x >0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
