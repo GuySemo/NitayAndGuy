@@ -36,13 +36,13 @@ public class Nball : MonoBehaviour
         }
 
         //Hit Enemy
-        if (gameObject.transform.root.localScale.x < hitCloseness &&
-            gameObject.transform.root.localScale.x >( hitCloseness - hitCloseness /2 )&& isTouching)
-        {
-            Instantiate(boomEffect, objectHit.transform.position, Quaternion.Euler(90,0,0));
-            Destroy(objectHit);
-            Destroy(gameObject);
-        }
+        //if (gameObject.transform.root.localScale.x < hitCloseness &&
+        //    gameObject.transform.root.localScale.x >( hitCloseness - hitCloseness /2 )&& isTouching)
+        //{
+        //    Instantiate(boomEffect, objectHit.transform.position, Quaternion.Euler(90,0,0));
+        //    Destroy(objectHit);
+        //    Destroy(gameObject);
+        //}
     }
     private void OnCollisionStay2D(Collision2D other)
     {
@@ -54,11 +54,21 @@ public class Nball : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("TOUCH");
-        if (other.tag == "Enemy")
+        //Debug.Log("TOUCH");
+        //if (other.tag == "Enemy")
+        //{
+        //    isTouching = true;
+        //    objectHit = other.gameObject;
+        //}
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (gameObject.transform.root.localScale.x < hitCloseness &&
+            gameObject.transform.root.localScale.x > (hitCloseness - hitCloseness / 2) && other.tag == "Enemy")
         {
-            isTouching = true;
-            objectHit = other.gameObject;
+            Instantiate(boomEffect,  other.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
