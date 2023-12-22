@@ -8,18 +8,25 @@ public class Nball : MonoBehaviour
     public bool isTouching = false;
     GameObject objectHit;
     [SerializeField] GameObject boomEffect;
+    [SerializeField] GameObject boom2Effect;
 
     //hit closeness
     [SerializeField] float hitCloseness = 0.5f;
-    // Start is called before the first frame update
+
+    //RandomSpin
+    float spinDir;
+
     void Start()
     {
+        spinDir = Random.Range(-720, 720);
         Destroy(gameObject, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Spinning
+        transform.Rotate(0, 0, spinDir * Time.deltaTime);
 
         //Destroy When Too Small
         if (gameObject.transform.root.localScale.x<0.10)
@@ -67,6 +74,7 @@ public class Nball : MonoBehaviour
             gameObject.transform.root.localScale.x > (hitCloseness - hitCloseness / 2) && other.tag == "Enemy")
         {
             Instantiate(boomEffect,  other.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            Instantiate(boom2Effect, other.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
