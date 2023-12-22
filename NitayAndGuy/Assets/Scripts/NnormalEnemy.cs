@@ -12,16 +12,17 @@ public class NnormalEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (starter)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
-            starter = false;
-        }
+        //if (starter)
+        //{
+        //    //GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
+        //    starter = false;
+        //}
         //Change Direction
 
         //if (Time.time>lasttime)
@@ -55,7 +56,7 @@ public class NnormalEnemy : MonoBehaviour
         {
 
         }
-        if (other.gameObject.tag == "Wall" || other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Wall")
         {
             speed = -speed;
             GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);

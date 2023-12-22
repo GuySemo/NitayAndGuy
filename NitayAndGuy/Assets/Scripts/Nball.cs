@@ -29,17 +29,16 @@ public class Nball : MonoBehaviour
         transform.Rotate(0, 0, spinDir * Time.deltaTime);
 
         //Destroy When Too Small
-        if (gameObject.transform.root.localScale.x<0.10)
+        if (gameObject.transform.root.localScale.x< hitCloseness / 2 && GetComponent<SpriteRenderer>().sortingOrder != -1)
         {
             GetComponent<SpriteRenderer>().sortingOrder = -1;
         }
-        else
+        if (gameObject.transform.root.localScale.x>=  hitCloseness / 2)
         {
             //Smallning
             gameObject.transform.root.localScale =
                 new Vector3(gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed
                 , gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed, 1);
-
         }
 
         //Hit Enemy
