@@ -53,11 +53,11 @@ public class Nball : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D other)
     {
-        Debug.Log("TOUCH");
+
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collided");
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
