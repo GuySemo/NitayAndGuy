@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4febb55580381ab4ea7675cded2a9017
-      internalID: 1188206708
+      spriteID: c1c8a0593bc447143b02fda94af14f3e
+      internalID: -1469701308
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35414a244d9fa5445a02f7299f9bcbec
-      internalID: -1438914749
+      spriteID: cd9fefa67f880dd4e9f64169d9d019cc
+      internalID: -1673705968
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2735e2d7d03820f4b8e5cffa09c44f56
-      internalID: -1382024640
+      spriteID: d329e23e9cf315d4e92ce5d20a510d45
+      internalID: 1379780758
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ChickenSheet1_2: -1382024640
-      ChickenSheet1_1: -1438914749
-      ChickenSheet1_0: 1188206708
+      ChickenSheet1_2: 1379780758
+      ChickenSheet1_1: -1673705968
+      ChickenSheet1_0: -1469701308
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
