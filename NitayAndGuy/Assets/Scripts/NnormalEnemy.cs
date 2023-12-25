@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class NnormalEnemy : MonoBehaviour
 {
-    [SerializeField] float speed = 5;
-    bool starter = true;
-    float lasttime=0;
-    int ChangeDirection;
+    [SerializeField] GameObject boomEffect;
+    [SerializeField] GameObject boom2Effect;
+
+    [SerializeField] public float speed = 5;
+
+    public bool isMother = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,9 +60,24 @@ public class NnormalEnemy : MonoBehaviour
         }
         if (other.gameObject.tag == "Wall")
         {
-            speed = -speed;
+            speed = -1 * speed;
             GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
             //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed*other.transform.position.x/Mathf.Abs(other.transform.position.x),0,0);
+        }
+    }
+    public void ChickenDie()
+    {
+        if (isMother)
+        {
+            Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            GetComponent<ChickenMother>().ChickenDie();
+        }
+        else
+        {
+            Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            Destroy(gameObject);
         }
     }
 

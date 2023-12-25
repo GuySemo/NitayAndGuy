@@ -36,10 +36,11 @@ public class Nball : MonoBehaviour
         if (gameObject.transform.root.localScale.x>=  hitCloseness / 2)
         {
             //Smallning
-            gameObject.transform.root.localScale =
-                new Vector3(gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed
-                , gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed, 1);
         }
+        gameObject.transform.root.localScale =
+    new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed) /** Time.deltaTime*/
+    , (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed) /** Time.deltaTime*/
+    , 1);
 
         //Hit Enemy
         //if (gameObject.transform.root.localScale.x < hitCloseness &&
@@ -72,9 +73,7 @@ public class Nball : MonoBehaviour
         if (gameObject.transform.root.localScale.x < hitCloseness &&
             gameObject.transform.root.localScale.x > (hitCloseness - hitCloseness / 2) && other.tag == "Enemy")
         {
-            Instantiate(boomEffect,  other.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-            Instantiate(boom2Effect, other.gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-            Destroy(other.gameObject);
+            other.GetComponent<NnormalEnemy>().ChickenDie();
             Destroy(gameObject);
         }
     }
