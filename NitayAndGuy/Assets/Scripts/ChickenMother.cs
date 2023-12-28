@@ -43,11 +43,13 @@ public class ChickenMother : MonoBehaviour
                 if (rnd == 1)
                 {
                     lilChicks[i].GetComponent<Rigidbody2D>().velocity = new Vector2(speed * -2, 0);
+                    lilChicks[i].GetComponent<NnormalEnemy>().speed = speed * -2;
+
                 }
                 else
                 {
                     lilChicks[i].GetComponent<Rigidbody2D>().velocity = new Vector2((speed * 2), 0);
-
+                    lilChicks[i].GetComponent<NnormalEnemy>().speed = speed * 2;
                 }
             }
         }

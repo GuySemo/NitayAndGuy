@@ -37,10 +37,12 @@ public class Nball : MonoBehaviour
         {
             //Smallning
         }
-        gameObject.transform.root.localScale =
-    new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed) /** Time.deltaTime*/
-    , (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed) /** Time.deltaTime*/
-    , 1);
+        gameObject.transform.localScale =
+    //new Vector3((gameObject.transform.localScale.x * /*(sizeSpeed - 1) / sizeSpeed*/ Time.deltaTime * 30)
+    //, (gameObject.transform.localScale.y * /*(sizeSpeed - 1) / sizeSpeed*/ Time.deltaTime * 30)
+    //, 1);
+        gameObject.transform.localScale =new Vector3( gameObject.transform.localScale.x * sizeSpeed * Time.deltaTime, gameObject.transform.localScale.y * sizeSpeed * Time.deltaTime, 0);
+
 
         //Hit Enemy
         //if (gameObject.transform.root.localScale.x < hitCloseness &&
