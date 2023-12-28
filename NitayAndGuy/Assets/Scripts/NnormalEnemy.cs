@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class NnormalEnemy : MonoBehaviour
 {
+    public float life = 3;
     [SerializeField] GameObject boomEffect;
     [SerializeField] GameObject boom2Effect;
 
@@ -16,6 +17,7 @@ public class NnormalEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hitCloseness = gameObject.transform.localScale.x / 5;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
     }
 
@@ -70,14 +72,23 @@ public class NnormalEnemy : MonoBehaviour
                 other.gameObject.transform.localScale.x > (hitCloseness - hitCloseness / 2))
             {
                 Destroy(other.gameObject);
-                ChickenDie();
+                HitChicken();
                 
             }
         }
     }
     public void HitChicken()
     {
-        ChickenDie();
+        life = life - 1;
+        if (life == 0)
+        {
+            ChickenDie();
+        }
+        else
+        {
+            Debug.Log(1 - (1 / life));
+            GetComponent<SpriteRenderer>().color = new Color(1, 1 - (1 / life), 1- ( 1 / life),1);
+        }
     }
     public void ChickenDie()
     {
