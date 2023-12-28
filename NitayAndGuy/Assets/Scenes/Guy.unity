@@ -274,6 +274,7 @@ MonoBehaviour:
   boom2Effect: {fileID: 7866458706319650412, guid: 742173f9fd77a4341909523b60072794, type: 3}
   speed: 5
   isMother: 0
+  hitCloseness: 0.2
 --- !u!1 &190195034
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,23 +777,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5907
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5907
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5907
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.75
+      value: -1.94
       objectReference: {fileID: 0}
     - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1059,6 +1060,10 @@ PrefabInstance:
     - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1672983242046752542, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
       propertyPath: m_LocalPosition.x

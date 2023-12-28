@@ -11,6 +11,8 @@ public class NnormalEnemy : MonoBehaviour
     [SerializeField] public float speed = 5;
 
     public bool isMother = false;
+
+    public float hitCloseness = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,17 +55,29 @@ public class NnormalEnemy : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-
-        if (other.gameObject.tag == "Ball")
-        {
-
-        }
         if (other.gameObject.tag == "Wall")
         {
             speed = -1 * speed;
             GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
             //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed*other.transform.position.x/Mathf.Abs(other.transform.position.x),0,0);
         }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "Ball")
+        {
+            if (other.gameObject.transform.localScale.x < hitCloseness &&
+                other.gameObject.transform.localScale.x > (hitCloseness - hitCloseness / 2))
+            {
+                Destroy(other.gameObject);
+                ChickenDie();
+                
+            }
+        }
+    }
+    public void HitChicken()
+    {
+        ChickenDie();
     }
     public void ChickenDie()
     {
