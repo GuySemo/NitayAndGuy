@@ -94,14 +94,18 @@ public class NnormalEnemy : MonoBehaviour
     {
         if (isMother)
         {
-            Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-            Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            boom1.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
+            GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
             GetComponent<ChickenMother>().ChickenDie();
         }
         else
         {
-            Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-            Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            boom1.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
+            GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
             Destroy(gameObject);
         }
     }

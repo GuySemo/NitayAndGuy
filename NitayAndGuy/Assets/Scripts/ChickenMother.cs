@@ -39,8 +39,8 @@ public class ChickenMother : MonoBehaviour
          {
             if (lilChicks[i] != null)
             {
-                int rnd = Mathf.RoundToInt(Random.Range(1, 2));
-                if (rnd == 1)
+                int rnd = Mathf.RoundToInt(Random.Range(0, 2));
+                if (rnd == 0)
                 {
                     lilChicks[i].GetComponent<Rigidbody2D>().velocity = new Vector2(speed * -2, 0);
                     lilChicks[i].GetComponent<NnormalEnemy>().speed = speed * -2;
