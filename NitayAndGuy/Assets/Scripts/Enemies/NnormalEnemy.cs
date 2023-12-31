@@ -92,6 +92,7 @@ public class NnormalEnemy : MonoBehaviour
     }
     public void ChickenDie()
     {
+        FindObjectOfType<ScoreCounter>().AddScore(Random.Range(17,34));
         if (isMother)
         {
             GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;

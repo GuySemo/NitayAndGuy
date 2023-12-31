@@ -15,14 +15,15 @@ public class ChickenMother : MonoBehaviour
         {
             if (lilChicks[i] != null)
             {
+                lilChicks[i].GetComponent<NnormalEnemy>().speed = speed;
                 lilChicks[i].GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);
                 if (speed > 0)
                 {
-                    lilChicks[i].transform.position = transform.position + new Vector3(-2.2f * i, -2.75f, 0);
+                    lilChicks[i].transform.position = transform.position + new Vector3(-2.5f * i, 0, 0);
                 }
                 else
                 {
-                    lilChicks[i].transform.position = transform.position + new Vector3(2.2f * i, -2.75f, 0);
+                    lilChicks[i].transform.position = transform.position + new Vector3(2.5f * i, 0, 0);
                 }
             }
         }
@@ -40,6 +41,7 @@ public class ChickenMother : MonoBehaviour
             if (lilChicks[i] != null)
             {
                 int rnd = Mathf.RoundToInt(Random.Range(0, 2));
+                lilChicks[i].transform.parent = null;
                 if (rnd == 0)
                 {
                     lilChicks[i].GetComponent<Rigidbody2D>().velocity = new Vector2(speed * -2, 0);

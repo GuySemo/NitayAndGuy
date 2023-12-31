@@ -8,6 +8,7 @@ public class spawno : MonoBehaviour
     Coroutine spawner;
     [SerializeField] float delay;
     [SerializeField] GameObject[] chickens;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,9 @@ public class spawno : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(chickens[Random.Range(0,chickens.Length)],transform.position,Quaternion.identity);
+            GameObject instance = Instantiate(chickens[Random.Range(0,chickens.Length)],transform.position,Quaternion.identity)
+                as GameObject;
+            //instance.GetComponent<NnormalEnemy>().speed = 5;
             yield return new WaitForSeconds(delay);
         }
 
