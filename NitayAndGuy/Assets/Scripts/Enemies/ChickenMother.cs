@@ -15,15 +15,19 @@ public class ChickenMother : MonoBehaviour
         {
             if (lilChicks[i] != null)
             {
+                //Set chicks stats to mothers
+                lilChicks[i].GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
+                lilChicks[i].layer = gameObject.layer;
                 lilChicks[i].GetComponent<NnormalEnemy>().speed = speed;
                 lilChicks[i].GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);
+
                 if (speed > 0)
                 {
-                    lilChicks[i].transform.position = transform.position + new Vector3(-2.5f * i, 0, 0);
+                    lilChicks[i].transform.position = transform.position + new Vector3(-2f * (i+1), 0, 0);
                 }
                 else
                 {
-                    lilChicks[i].transform.position = transform.position + new Vector3(2.5f * i, 0, 0);
+                    lilChicks[i].transform.position = transform.position + new Vector3(2 * (i+1), 0, 0);
                 }
             }
         }

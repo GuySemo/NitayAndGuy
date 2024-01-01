@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.VFX;
 
 public class spawno : MonoBehaviour
 {
     Coroutine spawner;
+    [SerializeField] int  mySortingLayer = 3;
+    [SerializeField] float sizeMultiplier = 1;
     [SerializeField] float delay;
     [SerializeField] GameObject[] chickens;
 
@@ -18,9 +21,13 @@ public class spawno : MonoBehaviour
     {
         while (true)
         {
+            //Create New Chicken
             GameObject instance = Instantiate(chickens[Random.Range(0,chickens.Length)],transform.position,Quaternion.identity)
                 as GameObject;
-            //instance.GetComponent<NnormalEnemy>().speed = 5;
+            instance.transform.localScale = instance.transform.localScale * sizeMultiplier;
+            instance.GetComponent<SpriteRenderer>().sortingOrder = mySortingLayer;
+            instance.layer = gameObject.layer;
+            //
             yield return new WaitForSeconds(delay);
         }
 
