@@ -14,9 +14,12 @@ public class NnormalEnemy : MonoBehaviour
     public bool isMother = false;
 
     public float hitCloseness = 0.2f;
+
+    public static bool started = false; 
     // Start is called before the first frame update
     void Start()
     {
+        started = false;
         hitCloseness = gameObject.transform.localScale.x / 5;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
     }
@@ -55,6 +58,7 @@ public class NnormalEnemy : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = false;
         }
     }
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Wall")
@@ -77,6 +81,7 @@ public class NnormalEnemy : MonoBehaviour
             }
         }
     }
+
     public void HitChicken()
     {
         life = life - 1;
@@ -92,16 +97,21 @@ public class NnormalEnemy : MonoBehaviour
     }
     public void ChickenDie()
     {
+        FindObjectOfType<ScoreCounter>().AddScore(Random.Range(17,34));
         if (isMother)
         {
-            Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-            Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            boom1.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
+            GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
             GetComponent<ChickenMother>().ChickenDie();
         }
         else
         {
-            Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
-            Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0));
+            GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            boom1.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
+            GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+            boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
             Destroy(gameObject);
         }
     }

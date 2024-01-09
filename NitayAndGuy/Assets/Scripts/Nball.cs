@@ -15,10 +15,16 @@ public class Nball : MonoBehaviour
 
     //RandomSpin
     float spinDir;
- 
+
+    static bool firstEgg = true;
 
     void Start()
     {
+        if (firstEgg)
+        {
+            firstEgg = false;
+            FindObjectOfType<SleepingChick>().Awaken();
+        }
         spinDir = Random.Range(-720, 720);
         Destroy(gameObject, 5);
     }
@@ -36,12 +42,18 @@ public class Nball : MonoBehaviour
         }
         if (gameObject.transform.root.localScale.x>=  hitCloseness / 2)
         {
-            //Smallning
-            transform.localScale =
-                new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
-              , (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
-                , 1);
+            ////Smallning
+            //transform.localScale =
+            //    new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
+            //  , (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
+            //    , 1);
         }
+
+        //Smallning
+        transform.localScale =
+            new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
+          , (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
+            , 1);
 
         //gameObject.transform.localScale =new Vector3( gameObject.transform.localScale.x * sizeSpeed * Time.deltaTime, gameObject.transform.localScale.y * sizeSpeed * Time.deltaTime, 0);
         //Hit Enemy

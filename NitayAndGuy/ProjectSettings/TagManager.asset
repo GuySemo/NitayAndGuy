@@ -14,12 +14,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - NormalEnemy
-  - BackEnemy
+  - Normal
+  - Back
+  - Front
+  - NormalGround
+  - BackGround
+  - FrontGround
   - 
   - 
   - 

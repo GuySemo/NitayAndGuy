@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LilChicks : MonoBehaviour
+public class Clickables : MonoBehaviour
 {
+    [SerializeField] int levelToGo;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,9 @@ public class LilChicks : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnMouseDown()
+    {
+        FindObjectOfType<levelLoader>().GoToLevel(levelToGo);
     }
 }

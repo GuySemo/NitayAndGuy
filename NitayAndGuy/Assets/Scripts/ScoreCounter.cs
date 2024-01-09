@@ -7,21 +7,19 @@ using UnityEngine.UI;
 public class ScoreCounter : MonoBehaviour
 {
     public int score;
-    bool flag = true;
+    public int scoreNeeded;
+    [SerializeField] GameObject WinPanel;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1;
+        WinPanel.SetActive(false);
+        GetComponent<TMP_Text>().text = score.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (5<Time.time&& flag)
-        {
-            flag= false;
-            AddScore(4000);
-        }
 
     }
     public void AddScore(int num)
@@ -29,6 +27,14 @@ public class ScoreCounter : MonoBehaviour
         score = score + num;
         GetComponent<TMP_Text>().text = score.ToString();
 
-
+        if (score >= scoreNeeded)
+        {
+            Win();
+        }
+    }
+    public void Win()
+    {
+        WinPanel.SetActive(true);
+        Time.timeScale = 0.1f;
     }
 }
