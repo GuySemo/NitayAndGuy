@@ -15,10 +15,16 @@ public class Nball : MonoBehaviour
 
     //RandomSpin
     float spinDir;
- 
+
+    static bool firstEgg = true;
 
     void Start()
     {
+        if (firstEgg)
+        {
+            firstEgg = false;
+            FindObjectOfType<SleepingChick>().Awaken();
+        }
         spinDir = Random.Range(-720, 720);
         Destroy(gameObject, 5);
     }

@@ -14,9 +14,12 @@ public class NnormalEnemy : MonoBehaviour
     public bool isMother = false;
 
     public float hitCloseness = 0.2f;
+
+    public static bool started = false; 
     // Start is called before the first frame update
     void Start()
     {
+        started = false;
         hitCloseness = gameObject.transform.localScale.x / 5;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
     }
@@ -55,6 +58,7 @@ public class NnormalEnemy : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = false;
         }
     }
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Wall")
@@ -77,6 +81,7 @@ public class NnormalEnemy : MonoBehaviour
             }
         }
     }
+
     public void HitChicken()
     {
         life = life - 1;

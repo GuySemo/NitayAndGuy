@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073ed1a268aa3dd468fe9954cc101d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
+  life: 2
   boomEffect: {fileID: 7866458706319650412, guid: 742173f9fd77a4341909523b60072794, type: 3}
   boom2Effect: {fileID: 7866458706319650412, guid: 9197922743e3919469deaaa6bbc83210, type: 3}
   speed: 5
@@ -192,8 +192,6 @@ MonoBehaviour:
   speed: 5
   lilChicks:
   - {fileID: 7536248283517104289}
-  - {fileID: 8372989675213595211}
-  - {fileID: 7124334307204749496}
 --- !u!1001 &5050327833425260682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,11 +266,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3613166558698410702, guid: 121d3373fd407a448946a61c515bf1fa, type: 3}
   m_PrefabInstance: {fileID: 5050327833425260682}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8372989675213595211 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3613166558698410689, guid: 121d3373fd407a448946a61c515bf1fa, type: 3}
-  m_PrefabInstance: {fileID: 5050327833425260682}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5835033000099400313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -345,11 +338,6 @@ PrefabInstance:
 --- !u!4 &7124334307204749495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3613166558698410702, guid: 121d3373fd407a448946a61c515bf1fa, type: 3}
-  m_PrefabInstance: {fileID: 5835033000099400313}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7124334307204749496 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3613166558698410689, guid: 121d3373fd407a448946a61c515bf1fa, type: 3}
   m_PrefabInstance: {fileID: 5835033000099400313}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6535473157831467616
