@@ -4,30 +4,44 @@ using UnityEngine;
 
 public class MCameraMove : MonoBehaviour
 {
-    private float dist;
-    private Vector3 MouseStart;
-    private Vector3 derp;
+    private Vector3 Origin;
+    private Vector3 Difference;
+    private Vector3 ResetCamera;
 
-    void Start()
+    private bool drag = false;
+
+
+
+    private void Start()
     {
-        dist = transform.position.z;  // Distance camera is above map
+        ResetCamera = Camera.main.transform.position;
     }
 
-    void Update()
+
+    private void LateUpdate()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(0))
         {
-            MouseStart = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
-            MouseStart = Camera.main.ScreenToWorldPoint(MouseStart);
-            MouseStart.z = transform.position.z;
+            Difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition)) - Camera.main.transform.position;
+            if (drag == false)
+            {
+                drag = true;
+                Origin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            }
 
         }
-        else if (Input.GetMouseButton(0))
+        else
         {
-            var MouseMove = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dist);
-            MouseMove = Camera.main.ScreenToWorldPoint(MouseMove);
-            MouseMove.z = transform.position.z;
-            transform.position = transform.position - (MouseMove - MouseStart);
+            drag = false;
         }
+
+        if (drag)
+        {
+            Camera.main.transform.position = Origin - Difference * 0.5f;
+        }
+
+        if (Input.GetMouseButton(1))
+            Camera.main.transform.position = ResetCamera;
+
     }
 }

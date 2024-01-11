@@ -116,4 +116,10 @@ public class NnormalEnemy : MonoBehaviour
         }
     }
 
+    //hi guy this is for future enemies
+    public void EnemyRegen()
+    {
+        life = life + 1;
+    }
+
 }
