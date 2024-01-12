@@ -13,6 +13,8 @@ public class Nball : MonoBehaviour
     //hit closeness
     [SerializeField] float hitCloseness = 0.5f;
 
+    [SerializeField] GameObject crackedEgg;
+
     //RandomSpin
     float spinDir;
 
@@ -24,6 +26,7 @@ public class Nball : MonoBehaviour
         {
             firstEgg = false;
             FindObjectOfType<SleepingChick>().Awaken();
+            FindObjectOfType<Timer>().started = true;
         }
         spinDir = Random.Range(-720, 720);
         Destroy(gameObject, 5);
@@ -39,14 +42,6 @@ public class Nball : MonoBehaviour
         if (gameObject.transform.root.localScale.x< hitCloseness / 2 && GetComponent<SpriteRenderer>().sortingOrder != -1)
         {
             GetComponent<SpriteRenderer>().sortingOrder = -1;
-        }
-        if (gameObject.transform.root.localScale.x>=  hitCloseness / 2)
-        {
-            ////Smallning
-            //transform.localScale =
-            //    new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
-            //  , (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
-            //    , 1);
         }
 
         //Smallning
@@ -75,16 +70,22 @@ public class Nball : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log("TOUCH");
-        //if (other.tag == "Enemy")
-        //{
-        //    isTouching = true;
-        //    objectHit = other.gameObject;
-        //}
+
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-
+        if (other.tag == "BreakEgg")
+        {
+            if (gameObject.transform.root.localScale.x < other.GetComponent<WallsBreakEgg>().eggSize &&
+                gameObject.transform.root.localScale.x > other.GetComponent<WallsBreakEgg>().eggSize /2)
+            {
+                float crackedSize = other.GetComponent<WallsBreakEgg>().crackedSize;
+                GameObject oCracked = Instantiate(crackedEgg, transform.position, Quaternion.identity) as GameObject;
+                oCracked.transform.localScale = new Vector3(crackedSize, crackedSize, crackedSize);
+                oCracked.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = other.GetComponent<WallsBreakEgg>().sortingLayer;
+                Destroy(gameObject);
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {

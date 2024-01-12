@@ -15,10 +15,19 @@ public class NnormalEnemy : MonoBehaviour
 
     public float hitCloseness = 0.2f;
 
-    public static bool started = false; 
+    public static bool started = false;
+
+    [SerializeField] int pointsGive = 6;
+
+    public static int chickens;
+    public static int chickensAlive;
+
     // Start is called before the first frame update
     void Start()
     {
+        chickens++;
+        chickensAlive++;
+
         started = false;
         hitCloseness = gameObject.transform.localScale.x / 5;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
@@ -72,6 +81,7 @@ public class NnormalEnemy : MonoBehaviour
     {
         if (other.tag == "Ball")
         {
+            //If the right size
             if (other.gameObject.transform.localScale.x < hitCloseness &&
                 other.gameObject.transform.localScale.x > (hitCloseness - hitCloseness / 2))
             {
@@ -91,13 +101,16 @@ public class NnormalEnemy : MonoBehaviour
         }
         else
         {
-            Debug.Log(1 - (1 / life));
             GetComponent<SpriteRenderer>().color = new Color(1, 1 - (1 / life), 1- ( 1 / life),1);
         }
     }
     public void ChickenDie()
     {
-        FindObjectOfType<ScoreCounter>().AddScore(Random.Range(17,34));
+        //Give Points (Based On Size)
+        FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) );
+        Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
+
+        //Kill Chicken
         if (isMother)
         {
             GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
@@ -116,7 +129,7 @@ public class NnormalEnemy : MonoBehaviour
         }
     }
 
-    //hi guy this is for future enemies
+    //hi guy this is for future enemies, ok Nitay!!!!
     public void EnemyRegen()
     {
         life = life + 1;

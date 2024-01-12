@@ -173,3 +173,4 @@ MonoBehaviour:
   speed: -10
   isMother: 0
   hitCloseness: 0.2
+  pointsGive: 9
