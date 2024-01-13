@@ -37,7 +37,7 @@ public class MCameraMove : MonoBehaviour
 
         if (drag)
         {
-            Camera.main.transform.position = Origin - Difference * 0.5f;
+            Camera.main.transform.position = Origin - Difference;
         }
 
         if (Input.GetMouseButton(1))
