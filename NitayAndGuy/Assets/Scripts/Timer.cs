@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     [SerializeField] int seconds = 90;
     public bool started = false;
     string secondsText = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class Timer : MonoBehaviour
         if (seconds <= 0 )
         {
             //Stop Game
-            Time.timeScale = 0.01f;
+            FindObjectOfType<ScoreCounter>().ScoreCheck();
         }
 
     }

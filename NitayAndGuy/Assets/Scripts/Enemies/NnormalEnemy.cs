@@ -21,13 +21,16 @@ public class NnormalEnemy : MonoBehaviour
 
     public static int chickens;
     public static int chickensAlive;
-
+    public int chickenLimit = 20;
     // Start is called before the first frame update
     void Start()
     {
         chickens++;
         chickensAlive++;
-
+        if (chickens > chickenLimit )
+        {
+            Destroy(gameObject);
+        }
         started = false;
         hitCloseness = gameObject.transform.localScale.x / 5;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
