@@ -38,13 +38,13 @@ public class Timer : MonoBehaviour
     }
     public void DisplayTime(int seconds)
     {
-        if (seconds - 60*(seconds/60) >9)
+        if (seconds % 60 > 9)
         {
-           secondsText = (seconds / 60) + ":" + (seconds - 60 * (seconds / 60));
+           secondsText = (seconds / 60) + ":" + (seconds%60);
         }
         else
         {
-            secondsText = (seconds / 60) + ":0" + (seconds - 60 * (seconds / 60));
+            secondsText = (seconds / 60) + ":0" + (seconds % 60);
         }
         GetComponent<TMP_Text>().text = secondsText;
     }
