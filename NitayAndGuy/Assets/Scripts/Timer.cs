@@ -14,8 +14,16 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        secondsText = (seconds / 60) + ":" + (seconds - 60 * (seconds / 60));
-        GetComponent<TMP_Text>().text = secondsText;
+        if (seconds % 60 > 9)
+        {
+            secondsText = (seconds / 60) + ":" + (seconds % 60);
+        }
+        else
+        {
+            secondsText = (seconds / 60) + ":0" + (seconds % 60);
+        }
+        GetComponent<TMP_Text>().text = secondsText; GetComponent<TMP_Text>().text = secondsText;
+
         secondsSinceStart = Time.time;
     }
 

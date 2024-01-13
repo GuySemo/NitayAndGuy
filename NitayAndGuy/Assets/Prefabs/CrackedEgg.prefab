@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9138928107885896182}
   - component: {fileID: 9138928107885896180}
   - component: {fileID: 9138928107885896181}
-  - component: {fileID: 9138928107885896187}
+  - component: {fileID: 5636840369789337391}
   m_Layer: 0
   m_Name: crackedegg
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9138928107885896187
+--- !u!114 &5636840369789337391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +115,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9138928107885896183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fb3f2980bd7244cba252a142201bb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 760cd72f0dc8e8a4aa6ff440aeae6fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyTime: 1.8
 --- !u!1 &9138928108328203595
 GameObject:
   m_ObjectHideFlags: 0
