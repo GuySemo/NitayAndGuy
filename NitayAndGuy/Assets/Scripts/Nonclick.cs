@@ -21,4 +21,8 @@ public class Nonclick : MonoBehaviour
     {
         Instantiate(ball,Camera.main.ScreenToWorldPoint(Input.mousePosition)+new Vector3(0,0,-transform.position.z+ball.transform.position.z),Quaternion.identity);
     }
+    public void upgradeSpeed()
+    {
+
+    }
 }
