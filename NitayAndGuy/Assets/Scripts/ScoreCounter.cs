@@ -55,7 +55,7 @@ public class ScoreCounter : MonoBehaviour
     }
     public void Lose()
     {
-        WinPanel.SetActive(true);
+        LosePanel.SetActive(true);
         Time.timeScale = 0.1f;
     }
 }

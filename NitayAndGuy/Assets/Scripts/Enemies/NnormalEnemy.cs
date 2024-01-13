@@ -27,8 +27,11 @@ public class NnormalEnemy : MonoBehaviour
     {
         chickens++;
         chickensAlive++;
-        if (chickens > chickenLimit )
+        Debug.Log(chickens + " " + chickensAlive);
+        if (chickensAlive > chickenLimit )
         {
+            chickensAlive--;
+            Debug.Log("KILLED");
             Destroy(gameObject);
         }
         started = false;
@@ -109,9 +112,10 @@ public class NnormalEnemy : MonoBehaviour
     }
     public void ChickenDie()
     {
+        chickensAlive--;
         //Give Points (Based On Size)
         FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) );
-        Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
+        //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 
         //Kill Chicken
         if (isMother)
