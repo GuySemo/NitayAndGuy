@@ -665,7 +665,11 @@ PrefabInstance:
     - target: {fileID: 6643227044175223137, guid: de31621dd9c2dd24798c6b1e8561fe04, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 6512638893311931993, guid: aea18078a399a614eaa11cc3966547f8, type: 3}
+      objectReference: {fileID: 3236909067249170136, guid: a4b9b76c1e51c404297226f327e4db18, type: 3}
+    - target: {fileID: 6643227044175223137, guid: de31621dd9c2dd24798c6b1e8561fe04, type: 3}
+      propertyPath: canThrow
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6643227044175223139, guid: de31621dd9c2dd24798c6b1e8561fe04, type: 3}
       propertyPath: m_RootOrder
       value: 0
