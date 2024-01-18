@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beam: {fileID: 1119631174}
-  startingPoint: {fileID: 1461130761}
+  startingPoint: {fileID: 3236909067249170136, guid: a4b9b76c1e51c404297226f327e4db18, type: 3}
 --- !u!1 &664376013
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +892,7 @@ MonoBehaviour:
   isMother: 0
   hitCloseness: 0.2
   pointsGive: 6
+  chickenLimit: 20
 --- !u!1 &1719746831
 GameObject:
   m_ObjectHideFlags: 0

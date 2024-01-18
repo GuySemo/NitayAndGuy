@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Nball : MonoBehaviour
 {
-    [SerializeField] float sizeSpeed= 100;
+    public static float sizeSpeed= 40;
     public bool isTouching = false;
     GameObject objectHit;
     [SerializeField] GameObject boomEffect;
@@ -14,14 +14,15 @@ public class Nball : MonoBehaviour
     [SerializeField] float hitCloseness = 0.5f;
 
     [SerializeField] GameObject crackedEgg;
-
+    [SerializeField] public float myDamage = 1;
     //RandomSpin
     float spinDir;
 
-    static bool firstEgg = true;
+    public static bool firstEgg = true;
 
     void Start()
     {
+        Debug.Log(sizeSpeed);
         if (firstEgg)
         {
             firstEgg = false;

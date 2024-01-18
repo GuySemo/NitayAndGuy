@@ -22,16 +22,15 @@ public class NnormalEnemy : MonoBehaviour
     public static int chickens;
     public static int chickensAlive;
     public int chickenLimit = 20;
+
     // Start is called before the first frame update
     void Start()
     {
         chickens++;
         chickensAlive++;
-        Debug.Log(chickens + " " + chickensAlive);
         if (chickensAlive > chickenLimit )
         {
             chickensAlive--;
-            Debug.Log("KILLED");
             Destroy(gameObject);
         }
         started = false;
@@ -89,19 +88,20 @@ public class NnormalEnemy : MonoBehaviour
         {
             //If the right size
             if (other.gameObject.transform.localScale.x < hitCloseness &&
-                other.gameObject.transform.localScale.x > (hitCloseness - hitCloseness / 2))
+                other.gameObject.transform.localScale.x > (hitCloseness / 2))
             {
                 Destroy(other.gameObject);
-                HitChicken();
+                HitChicken(other.GetComponent<Nball>().myDamage);
                 
             }
         }
     }
 
-    public void HitChicken()
+    public void HitChicken(float damage)
     {
-        life = life - 1;
-        if (life == 0)
+        life = life - damage;
+        Debug.Log(life);
+        if (life <= 0)
         {
             ChickenDie();
         }

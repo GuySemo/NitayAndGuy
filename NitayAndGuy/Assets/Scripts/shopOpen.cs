@@ -8,7 +8,7 @@ public class shopOpen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ShopCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class shopOpen : MonoBehaviour
     {
         
     }
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         ShopCanvas.SetActive(true);
     }

@@ -8,6 +8,9 @@ public class levelLoader : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1;
+        Nball.firstEgg = true;
+        NnormalEnemy.chickens = 0;
+        NnormalEnemy.chickensAlive = 0;
     }
     public void GoToLevel(int goToLevel)
     {

@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     public bool started = false;
     string secondsText = null;
 
+    bool stopped = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,10 +39,11 @@ public class Timer : MonoBehaviour
             seconds = seconds - 1;
             DisplayTime(seconds);
         }
-        if (seconds <= 0 )
+        if (seconds <= 0 && !stopped)
         {
             //Stop Game
             FindObjectOfType<ScoreCounter>().ScoreCheck();
+            stopped = true;
         }
 
     }
@@ -49,7 +51,7 @@ public class Timer : MonoBehaviour
     {
         if (seconds % 60 > 9)
         {
-           secondsText = (seconds / 60) + ":" + (seconds%60);
+           secondsText = (seconds / 60) + ":" + (seconds%60)/10 + (seconds%60)%10;
         }
         else
         {

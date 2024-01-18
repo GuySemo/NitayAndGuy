@@ -18,6 +18,10 @@ public class Clickables : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        //FindObjectOfType<levelLoader>().GoToLevel(levelToGo);
+    }
+    private void OnMouseUp()
+    {
         FindObjectOfType<levelLoader>().GoToLevel(levelToGo);
     }
 }
