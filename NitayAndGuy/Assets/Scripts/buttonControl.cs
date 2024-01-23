@@ -21,7 +21,7 @@ public class buttonControl : MonoBehaviour
     {
     }
 
-    public void buyItem(int cost)
+    public void buyItem()
     {
         Debug.Log(cost);
         FindObjectOfType<Coins>().LoseCoins(cost);

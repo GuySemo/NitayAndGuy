@@ -5,19 +5,24 @@ using UnityEngine;
 
 public class NnormalEnemy : MonoBehaviour
 {
+    //Attributes
     public float life = 3;
+    [SerializeField] public float speed = 5;
+    float hitCloseness = 0.2f;
+
+    //Effects
     [SerializeField] GameObject boomEffect;
     [SerializeField] GameObject boom2Effect;
 
-    [SerializeField] public float speed = 5;
-
+    //ChickenTypes
     public bool isMother = false;
+    public bool isBoom = false;
 
-    public float hitCloseness = 0.2f;
+    //Points
+    [SerializeField] int pointsGive = 6;
 
     public static bool started = false;
 
-    [SerializeField] int pointsGive = 6;
 
     public static int chickens;
     public static int chickensAlive;
@@ -117,21 +122,22 @@ public class NnormalEnemy : MonoBehaviour
         FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) );
         //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 
+        //Effects
+        GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+        boom1.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
+        GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
+        boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
         //Kill Chicken
         if (isMother)
         {
-            GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
-            boom1.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
-            GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
-            boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
             GetComponent<ChickenMother>().ChickenDie();
+        }
+        else if (isBoom)
+        {
+
         }
         else
         {
-            GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
-            boom1.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
-            GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
-            boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale;
             Destroy(gameObject);
         }
     }
