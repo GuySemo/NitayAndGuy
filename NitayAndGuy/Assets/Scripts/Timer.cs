@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField] float secondsSinceStart;
 
     [SerializeField] int seconds = 90;
+    private int secondsSave;
     public bool started = false;
     string secondsText = null;
 
@@ -15,6 +16,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        secondsSave = seconds;
         if (seconds % 60 > 9)
         {
             secondsText = (seconds / 60) + ":" + (seconds % 60);
@@ -38,6 +40,15 @@ public class Timer : MonoBehaviour
             secondsSinceStart = Time.time + 1;
             seconds = seconds - 1;
             DisplayTime(seconds);
+
+            if (seconds == secondsSave / 5)
+            {
+                FindObjectOfType<spawno>().reduceDelay(4);
+            }
+            else if (seconds == secondsSave/2)
+            {
+                FindObjectOfType<spawno>().reduceDelay(2);
+            }
         }
         if (seconds <= 0 && !stopped)
         {

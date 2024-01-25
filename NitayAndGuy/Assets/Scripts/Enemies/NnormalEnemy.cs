@@ -100,6 +100,10 @@ public class NnormalEnemy : MonoBehaviour
                 
             }
         }
+        if (other.tag == "Death")
+        {
+            ChickenDie();
+        }
     }
 
     public void HitChicken(float damage)
@@ -134,7 +138,7 @@ public class NnormalEnemy : MonoBehaviour
         }
         else if (isBoom)
         {
-
+            GetComponent<Exploding>().ChickenDie();
         }
         else
         {

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Ball
   - BreakEgg
+  - Death
   layers:
   - Default
   - TransparentFX

@@ -39,4 +39,8 @@ public class spawno : MonoBehaviour
     {
         
     }
+    public void reduceDelay(float precent)
+    {
+        delay = delay / precent;
+    }
 }
