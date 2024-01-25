@@ -7,7 +7,7 @@ using TMPro;
 
 public class buttonControl : MonoBehaviour
 {
-    [SerializeField] int cost= 50;
+    [SerializeField] int cost;
     [SerializeField]  TMP_Text costText;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,5 @@ public class buttonControl : MonoBehaviour
         cost = cost * 2;
         Debug.Log(cost);
         costText.text = "Cost: " + cost;
-
-
     }
 }
