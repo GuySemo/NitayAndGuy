@@ -42,5 +42,10 @@ public class spawno : MonoBehaviour
     public void reduceDelay(float precent)
     {
         delay = delay / precent;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            child.GetComponent<spawno>().delay = child.GetComponent<spawno>().delay / precent;
+        }
     }
 }

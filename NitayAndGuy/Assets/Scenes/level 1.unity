@@ -3339,7 +3339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 0}
   secondsSinceStart: 0
-  seconds: 15
+  seconds: 60
   started: 0
 --- !u!1 &1969851815
 GameObject:

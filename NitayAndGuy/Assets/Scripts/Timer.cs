@@ -43,11 +43,11 @@ public class Timer : MonoBehaviour
 
             if (seconds == secondsSave / 5)
             {
-                FindObjectOfType<spawno>().reduceDelay(4);
+                FindObjectOfType<spawno>().reduceDelay(1.5f);
             }
             else if (seconds == secondsSave/2)
             {
-                FindObjectOfType<spawno>().reduceDelay(2);
+                FindObjectOfType<spawno>().reduceDelay(1.5f);
             }
         }
         if (seconds <= 0 && !stopped)
