@@ -7,13 +7,18 @@ using TMPro;
 
 public class buttonControl : MonoBehaviour
 {
-    [SerializeField] int cost;
-    [SerializeField]  TMP_Text costText;
+    public bool isEgg = false;
+    [SerializeField] static int EggCost =50;
+    [SerializeField]  TMP_Text EggCostText;
+
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<Button>().interactable = Coins.coins >= cost;
-        costText.text = "Cost: " + cost;
+        if (isEgg)
+        {
+            gameObject.GetComponent<Button>().interactable = Coins.coins >= EggCost;
+            EggCostText.text = "Cost: " + EggCost;
+        }
     }
 
     // Update is called once per frame
@@ -23,13 +28,13 @@ public class buttonControl : MonoBehaviour
 
     public void buyItem()
     {
-        Debug.Log(cost);
-        FindObjectOfType<Coins>().LoseCoins(cost);
+        Debug.Log(EggCost);
+        FindObjectOfType<Coins>().LoseCoins(EggCost);
         Nball.sizeSpeed = Nball.sizeSpeed - 5;
         Debug.Log(Nball.sizeSpeed);
-        gameObject.GetComponent<Button>().interactable = Coins.coins >= cost;
-        cost = cost * 2;
-        Debug.Log(cost);
-        costText.text = "Cost: " + cost;
+        gameObject.GetComponent<Button>().interactable = Coins.coins >= EggCost;
+        EggCost *=  2;
+        Debug.Log(EggCost);
+        EggCostText.text = "Cost: " + EggCost;
     }
 }

@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ecc09f21e74634883546cdb88aa77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  costText: {fileID: 1618021329}
+  isEgg: 0
+  EggCostText: {fileID: 0}
 --- !u!114 &149714716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3370,8 +3370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ecc09f21e74634883546cdb88aa77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  costText: {fileID: 1698587798}
+  isEgg: 1
+  EggCostText: {fileID: 1698587798}
 --- !u!1001 &4783048967915128273
 PrefabInstance:
   m_ObjectHideFlags: 0
