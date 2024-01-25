@@ -9,7 +9,7 @@ public class MCameraMove : MonoBehaviour
     private Vector3 ResetCamera;
 
     private bool drag = false;
-
+    [SerializeField] public int distance;
 
 
     private void Start()
@@ -38,7 +38,9 @@ public class MCameraMove : MonoBehaviour
             drag = false;
         }
 
-        if (drag && (Origin-Difference).magnitude<20)
+        if (drag && Mathf.Abs((Origin-Difference).x- (Origin - Difference).y)< 20
+            && (Origin - Difference).x>-10 &&( (Origin - Difference).y>-10)&&
+            ((Origin - Difference).x <distance && ((Origin - Difference).y <distance)))
         {
             Camera.main.transform.position = Origin - Difference;
         }
