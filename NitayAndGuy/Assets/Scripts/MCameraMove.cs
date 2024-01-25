@@ -22,7 +22,10 @@ public class MCameraMove : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            Difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition)) - Camera.main.transform.position;
+            if (true)
+            {
+                Difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition)) - Camera.main.transform.position;
+            }
             if (drag == false)
             {
                 drag = true;
@@ -35,7 +38,7 @@ public class MCameraMove : MonoBehaviour
             drag = false;
         }
 
-        if (drag)
+        if (drag && (Origin-Difference).magnitude<20)
         {
             Camera.main.transform.position = Origin - Difference;
         }
