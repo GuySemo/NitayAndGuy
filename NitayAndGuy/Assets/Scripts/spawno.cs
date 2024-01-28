@@ -12,7 +12,7 @@ public class spawno : MonoBehaviour
     [SerializeField] float speedMultiplier = 1;
     [SerializeField] float delay;
     [SerializeField] GameObject[] chickens;
-
+    [SerializeField] bool towerdefense;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +25,12 @@ public class spawno : MonoBehaviour
             //Create New Chicken
             GameObject instance = Instantiate(chickens[Random.Range(0,chickens.Length)],transform.position,Quaternion.identity)
                 as GameObject;
-            instance.GetComponent<NnormalEnemy>().speed = instance.GetComponent<NnormalEnemy>().speed * speedMultiplier;
-            instance.transform.localScale = instance.transform.localScale * sizeMultiplier;
-            instance.GetComponent<SpriteRenderer>().sortingOrder = mySortingLayer;
+            if (!towerdefense)
+            {
+                instance.GetComponent<NnormalEnemy>().speed = instance.GetComponent<NnormalEnemy>().speed * speedMultiplier;
+                instance.transform.localScale = instance.transform.localScale * sizeMultiplier;
+                instance.GetComponent<SpriteRenderer>().sortingOrder = mySortingLayer;
+            }
             instance.layer = gameObject.layer;
             //
             yield return new WaitForSeconds(delay);
