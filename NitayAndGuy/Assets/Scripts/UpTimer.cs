@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 using TMPro;
-public class Timer : MonoBehaviour
+public class UpTimer : MonoBehaviour
 {
     [SerializeField] TMP_Text text;
     [SerializeField] float secondsSinceStart;
@@ -15,6 +13,7 @@ public class Timer : MonoBehaviour
     string secondsText = null;
 
     bool stopped = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +34,8 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - secondsSinceStart > 1 
-            && seconds>0 
+        if (Time.time - secondsSinceStart > 1
+            && seconds > 0
             && started)
         {
             secondsSinceStart = Time.time + 1;
@@ -47,27 +46,16 @@ public class Timer : MonoBehaviour
             {
                 FindObjectOfType<spawno>().reduceDelay(1.5f);
             }
-            else if (seconds == secondsSave/2)
+            else if (seconds == secondsSave / 2)
             {
                 FindObjectOfType<spawno>().reduceDelay(1.5f);
             }
         }
-
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (seconds <= 0 && !stopped)
         {
-            if (seconds <= 0 && !stopped)
-            {
-                //Stop Game
-                FindObjectOfType<ScoreCounter>().ScoreCheck();
-                stopped = true;
-            }
-        }
-        else if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            if (FindObjectOfType<ScoreCounter>().score >= FindObjectOfType<ScoreCounter>().scoreNeeded)
-            {
-                FindObjectOfType<ScoreCounter>().ScoreCheck();
-            }
+            //Stop Game
+            FindObjectOfType<ScoreCounter>().ScoreCheck();
+            stopped = true;
         }
 
     }
@@ -75,7 +63,7 @@ public class Timer : MonoBehaviour
     {
         if (seconds % 60 > 9)
         {
-           secondsText = (seconds / 60) + ":" + (seconds%60)/10 + (seconds%60)%10;
+            secondsText = (seconds / 60) + ":" + (seconds % 60) / 10 + (seconds % 60) % 10;
         }
         else
         {
