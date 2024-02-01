@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Nball : MonoBehaviour
 {
@@ -19,15 +20,21 @@ public class Nball : MonoBehaviour
     float spinDir;
 
     public static bool firstEgg = true;
-
+    static bool started = false;
+    static double seconds = 0;
     void Start()
     {
+        seconds = 0;
         Debug.Log(sizeSpeed);
         if (firstEgg)
         {
             firstEgg = false;
+            seconds = Time.time;
             FindObjectOfType<SleepingChick>().Awaken();
-            FindObjectOfType<Timer>().started = true;
+            if (SceneManager.GetActiveScene().buildIndex !=0)
+            {
+                FindObjectOfType<Timer>().started = true;
+            }
         }
         spinDir = Random.Range(-720, 720);
         Destroy(gameObject, 5);
@@ -36,6 +43,13 @@ public class Nball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!firstEgg)
+        {
+            if (Time.time - seconds > 2.5f)
+            {
+
+            }
+        }
         //Spinning
         transform.Rotate(0, 0, spinDir * Time.deltaTime);
 
