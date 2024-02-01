@@ -176,6 +176,11 @@ MonoBehaviour:
   isBoom: 1
   pointsGive: 6
   chickenLimit: 20
+  PakasAudio:
+  - {fileID: 8300000, guid: 3082dfafbee5c20469ce1ef79c96abdf, type: 3}
+  - {fileID: 8300000, guid: e182ed8cbbb1a1045b5ba01c274954a1, type: 3}
+  - {fileID: 8300000, guid: 1c4ac278c8343414883d052cf162de4a, type: 3}
+  - {fileID: 8300000, guid: c25486aeb5eee2146b04082bd632426c, type: 3}
 --- !u!114 &1500481761468029300
 MonoBehaviour:
   m_ObjectHideFlags: 0

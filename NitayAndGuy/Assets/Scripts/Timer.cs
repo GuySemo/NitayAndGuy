@@ -53,7 +53,8 @@ public class Timer : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 1 ||
+            SceneManager.GetActiveScene().buildIndex == 2)
         {
             if (seconds <= 0 && !stopped)
             {
@@ -62,7 +63,7 @@ public class Timer : MonoBehaviour
                 stopped = true;
             }
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             if (FindObjectOfType<ScoreCounter>().score >= FindObjectOfType<ScoreCounter>().scoreNeeded)
             {

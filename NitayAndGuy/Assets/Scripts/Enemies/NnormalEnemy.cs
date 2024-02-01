@@ -28,6 +28,7 @@ public class NnormalEnemy : MonoBehaviour
     public static int chickensAlive;
     public int chickenLimit = 20;
 
+    [SerializeField] AudioClip[] PakasAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -121,6 +122,7 @@ public class NnormalEnemy : MonoBehaviour
     }
     public void ChickenDie()
     {
+        AudioSource.PlayClipAtPoint(PakasAudio[Random.Range(0, PakasAudio.Length - 1)], transform.position);
         chickensAlive--;
         //Give Points (Based On Size)
         FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) );
