@@ -22,7 +22,7 @@ public class towerDefense : MonoBehaviour
     {
         if (other.tag=="Enemy")
         {
-            Destroy(other.gameObject.transform.parent);
+            //Destroy(other.gameObject.transform.parent);
             life = life - 1;
         }
         gameObject.transform.GetChild(0).gameObject.transform.localScale =
