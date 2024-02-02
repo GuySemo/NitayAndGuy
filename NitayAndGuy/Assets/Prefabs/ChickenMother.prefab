@@ -172,11 +172,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 2
+  speed: 5
   boomEffect: {fileID: 7866458706319650412, guid: 742173f9fd77a4341909523b60072794, type: 3}
   boom2Effect: {fileID: 7866458706319650412, guid: 9197922743e3919469deaaa6bbc83210, type: 3}
-  speed: 5
   isMother: 1
-  hitCloseness: 0.2
+  isBoom: 0
+  pointsGive: 6
+  chickenLimit: 20
+  PakasAudio:
+  - {fileID: 8300000, guid: 3082dfafbee5c20469ce1ef79c96abdf, type: 3}
+  - {fileID: 8300000, guid: e182ed8cbbb1a1045b5ba01c274954a1, type: 3}
+  - {fileID: 8300000, guid: 1c4ac278c8343414883d052cf162de4a, type: 3}
+  - {fileID: 8300000, guid: c25486aeb5eee2146b04082bd632426c, type: 3}
 --- !u!114 &6754555588990125123
 MonoBehaviour:
   m_ObjectHideFlags: 0

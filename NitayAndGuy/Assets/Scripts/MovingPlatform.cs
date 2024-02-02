@@ -7,7 +7,7 @@ public class MovingPlatform : MonoBehaviour
     public float speed;
     public int startingPoint;
     public Transform[] points;
-
+    [SerializeField] GameObject parent;
     private int i;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,13 @@ public class MovingPlatform : MonoBehaviour
         }
         transform.position = Vector2.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (gameObject.tag=="Tower")
+        {
+            Destroy(parent);
+        }
     }
     //private void OnCollisionEnter2D(Collision2D collision)
     //{

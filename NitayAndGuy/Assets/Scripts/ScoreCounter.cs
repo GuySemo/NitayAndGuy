@@ -8,9 +8,14 @@ public class ScoreCounter : MonoBehaviour
 {
     public int score;
     public int scoreNeeded;
+    [SerializeField]  public int twoStarPoints;
+    [SerializeField]  public int threeStarPoints;
 
     [SerializeField] GameObject WinPanel;
     [SerializeField] GameObject LosePanel;
+
+    [SerializeField] GameObject[] Stars;
+    [SerializeField] TMP_Text CoinsText;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +24,11 @@ public class ScoreCounter : MonoBehaviour
 
         Time.timeScale = 1;
         GetComponent<TMP_Text>().text = score.ToString();
+
+        for (int i = 0; i < Stars.Length; i++)
+        {
+            Stars[i].SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -30,12 +40,10 @@ public class ScoreCounter : MonoBehaviour
     {
         if (score >= scoreNeeded)
         {
-            Debug.Log("V");
             Win();
         }
         else
         {
-            Debug.Log("X");
             Lose();
         }
     }
@@ -48,8 +56,33 @@ public class ScoreCounter : MonoBehaviour
     {
         Debug.Log("Win activated");
         WinPanel.SetActive(true);
-        FindObjectOfType<Coins>().AddCoins(score / 10);
         Time.timeScale = 0.1f;
+        //Level 1
+        if (score > scoreNeeded + threeStarPoints)//Three Stars
+        {
+            FindObjectOfType<Coins>().AddCoins(100);
+            CoinsText.text = "+" + 100 + " Coins";
+            //Stars
+            Stars[2].SetActive(true);
+            Stars[1].SetActive(true);
+            Stars[0].SetActive(true);
+        }
+        else if (score > scoreNeeded + twoStarPoints)//Two Stars
+        {
+            FindObjectOfType<Coins>().AddCoins(75);
+            CoinsText.text = "+" + 75 + " Coins";
+            //Stars
+
+            Stars[1].SetActive(true);
+            Stars[0].SetActive(true);
+        }
+        else if (score >= scoreNeeded)//One Star
+        {
+            FindObjectOfType<Coins>().AddCoins(50);
+            CoinsText.text = "+" + 50 + " Coins";
+            //Stars
+            Stars[0].SetActive(true);
+        }
     }
     public void Lose()
     {
