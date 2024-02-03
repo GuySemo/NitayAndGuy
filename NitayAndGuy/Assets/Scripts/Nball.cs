@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Nball : MonoBehaviour
 {
-    public static float sizeSpeed= 40;
+    public static float sizeSpeed= 4;
     public bool isTouching = false;
     GameObject objectHit;
     [SerializeField] GameObject boomEffect;
@@ -30,7 +30,10 @@ public class Nball : MonoBehaviour
         {
             firstEgg = false;
             seconds = Time.time;
-            FindObjectOfType<SleepingChick>().Awaken();
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                FindObjectOfType<SleepingChick>().Awaken();
+            }
             if (SceneManager.GetActiveScene().buildIndex !=0)
             {
                 FindObjectOfType<Timer>().started = true;
@@ -43,13 +46,6 @@ public class Nball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!firstEgg)
-        {
-            if (Time.time - seconds > 2.5f)
-            {
-
-            }
-        }
         //Spinning
         transform.Rotate(0, 0, spinDir * Time.deltaTime);
 
@@ -60,10 +56,16 @@ public class Nball : MonoBehaviour
         }
 
         //Smallning
-        transform.localScale =
-            new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
-          , (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
-            , 1);
+        if (transform.localScale.x > 0.0001f)
+        {
+            transform.localScale -= new Vector3((sizeSpeed *  transform.localScale.x * Time.deltaTime)
+                , (sizeSpeed* transform.localScale.x * Time.deltaTime), 0);
+
+        }
+      //      transform.localScale =
+      //  new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
+      //, (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
+      //  , 1);
 
         //gameObject.transform.localScale =new Vector3( gameObject.transform.localScale.x * sizeSpeed * Time.deltaTime, gameObject.transform.localScale.y * sizeSpeed * Time.deltaTime, 0);
         //Hit Enemy

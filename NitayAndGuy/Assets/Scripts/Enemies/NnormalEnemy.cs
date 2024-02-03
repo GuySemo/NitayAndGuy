@@ -122,7 +122,7 @@ public class NnormalEnemy : MonoBehaviour
     }
     public void ChickenDie()
     {
-        AudioSource.PlayClipAtPoint(PakasAudio[Random.Range(0, PakasAudio.Length - 1)], transform.position);
+        AudioSource.PlayClipAtPoint(PakasAudio[Random.Range(0, PakasAudio.Length)], transform.position);
         chickensAlive--;
         //Give Points (Based On Size)
         FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) );

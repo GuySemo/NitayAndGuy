@@ -306,6 +306,7 @@ MonoBehaviour:
   isBoom: 0
   pointsGive: 10
   chickenLimit: 20
+  PakasAudio: []
 --- !u!114 &3012840985815811901
 MonoBehaviour:
   m_ObjectHideFlags: 0
