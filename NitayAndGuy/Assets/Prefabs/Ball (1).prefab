@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8581218420696061700}
   - component: {fileID: 8581218420696061699}
-  - component: {fileID: 8581218420696061698}
   - component: {fileID: 8581218420696061701}
   - component: {fileID: 7525444690359197773}
   - component: {fileID: 5081074250952962406}
   - component: {fileID: 818849193645899598}
+  - component: {fileID: -8465493329176506196}
   m_Layer: 0
   m_Name: Ball (1)
   m_TagString: Ball
@@ -89,25 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8581218420696061698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8581218420696061697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fbe4fe41e74c994abf9c88464f400ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sizeSpeedFloat: 30
-  isTouching: 0
-  boomEffect: {fileID: 7866458706319650412, guid: 742173f9fd77a4341909523b60072794, type: 3}
-  boom2Effect: {fileID: 7866458706319650412, guid: 9197922743e3919469deaaa6bbc83210, type: 3}
-  hitCloseness: 0.2
-  crackedEgg: {fileID: 9138928108328203595, guid: f400999cf73080d4096e1937c8b97463, type: 3}
-  myDamage: 0.25
 --- !u!50 &8581218420696061701
 Rigidbody2D:
   serializedVersion: 4
@@ -123,7 +104,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -178,3 +159,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
+--- !u!114 &-8465493329176506196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581218420696061697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e027eff3616c9a4f876defaa90aa27d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTouching: 0
+  boomEffect: {fileID: 7866458706319650412, guid: 9197922743e3919469deaaa6bbc83210, type: 3}
+  boom2Effect: {fileID: 7866458706319650412, guid: 742173f9fd77a4341909523b60072794, type: 3}
+  hitCloseness: 0.5
+  crackedEgg: {fileID: 8581218420696061697}
+  myDamage: 1

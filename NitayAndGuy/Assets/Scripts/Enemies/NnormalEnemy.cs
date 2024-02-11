@@ -97,7 +97,7 @@ public class NnormalEnemy : MonoBehaviour
                 other.gameObject.transform.localScale.x > (hitCloseness / 2))
             {
                 Destroy(other.gameObject);
-                HitChicken(other.GetComponent<Nball>().myDamage);
+                HitChicken(1);
                 
             }
         }
@@ -122,7 +122,7 @@ public class NnormalEnemy : MonoBehaviour
     }
     public void ChickenDie()
     {
-        AudioSource.PlayClipAtPoint(PakasAudio[Random.Range(0, PakasAudio.Length)], transform.position);
+        AudioSource.PlayClipAtPoint(PakasAudio[Random.Range(0, PakasAudio.Length)], new Vector3(0,0,-7));
         chickensAlive--;
         //Give Points (Based On Size)
         FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) );

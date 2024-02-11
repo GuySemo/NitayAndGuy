@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class levelLoader : MonoBehaviour
 {
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -23,5 +24,9 @@ public class levelLoader : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
+    }
+    public  void WinLevel(int num)
+    {
+        MapUpdater.levelsCleared[num - 1] = true;
     }
 }

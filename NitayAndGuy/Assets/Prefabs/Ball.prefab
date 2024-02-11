@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 6eb87689bb860c54baeb6ac6885a760e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 451cc60bb91f57849a5a4335a1c05837, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,12 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fbe4fe41e74c994abf9c88464f400ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeSpeedFloat: 30
   isTouching: 0
   boomEffect: {fileID: 7866458706319650412, guid: 742173f9fd77a4341909523b60072794, type: 3}
   boom2Effect: {fileID: 7866458706319650412, guid: 9197922743e3919469deaaa6bbc83210, type: 3}
   hitCloseness: 0.2
   crackedEgg: {fileID: 9138928108328203595, guid: f400999cf73080d4096e1937c8b97463, type: 3}
+  myDamage: 1
 --- !u!50 &6512638893311931997
 Rigidbody2D:
   serializedVersion: 4

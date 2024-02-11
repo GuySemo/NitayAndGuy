@@ -30,14 +30,14 @@ public class Nball : MonoBehaviour
         {
             firstEgg = false;
             seconds = Time.time;
-            if (SceneManager.GetActiveScene().buildIndex == 1)
+            if (SceneManager.GetActiveScene().buildIndex == 1 
+                || SceneManager.GetActiveScene().buildIndex == 2
+                || SceneManager.GetActiveScene().buildIndex == 3)
             {
                 FindObjectOfType<SleepingChick>().Awaken();
             }
-            if (SceneManager.GetActiveScene().buildIndex !=0)
-            {
-                FindObjectOfType<Timer>().started = true;
-            }
+            FindObjectOfType<Timer>().started = true;
+
         }
         spinDir = Random.Range(-720, 720);
         Destroy(gameObject, 5);
@@ -66,27 +66,6 @@ public class Nball : MonoBehaviour
       //  new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
       //, (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
       //  , 1);
-
-        //gameObject.transform.localScale =new Vector3( gameObject.transform.localScale.x * sizeSpeed * Time.deltaTime, gameObject.transform.localScale.y * sizeSpeed * Time.deltaTime, 0);
-        //Hit Enemy
-        //if (gameObject.transform.root.localScale.x < hitCloseness &&
-        //    gameObject.transform.root.localScale.x >( hitCloseness - hitCloseness /2 )&& isTouching)
-        //{
-        //    Instantiate(boomEffect, objectHit.transform.position, Quaternion.Euler(90,0,0));
-        //    Destroy(objectHit);
-        //    Destroy(gameObject);
-        //}
-    }
-    private void OnCollisionStay2D(Collision2D other)
-    {
-
-    }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
 
     }
     private void OnTriggerStay2D(Collider2D other)

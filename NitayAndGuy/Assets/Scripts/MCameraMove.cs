@@ -38,9 +38,10 @@ public class MCameraMove : MonoBehaviour
             drag = false;
         }
 
-        if (drag && Mathf.Abs((Origin-Difference).x- (Origin - Difference).y)< 20
-            && (Origin - Difference).x>-10 &&( (Origin - Difference).y>-10)&&
-            ((Origin - Difference).x <distance && ((Origin - Difference).y <distance)))
+        //if (drag && Mathf.Abs((Origin - Difference).x - (Origin - Difference).y) < 20
+        //    && (Origin - Difference).x > -10 && ((Origin - Difference).y > -10) &&
+        //    ((Origin - Difference).x < distance && ((Origin - Difference).y < distance)))
+        if(drag)
         {
             Camera.main.transform.position = Origin - Difference;
         }

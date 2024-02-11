@@ -57,7 +57,7 @@ public class ScoreCounter : MonoBehaviour
         Debug.Log("Win activated");
         WinPanel.SetActive(true);
         Time.timeScale = 0.1f;
-        //Level 1
+
         if (score > scoreNeeded + threeStarPoints)//Three Stars
         {
             FindObjectOfType<Coins>().AddCoins(100);

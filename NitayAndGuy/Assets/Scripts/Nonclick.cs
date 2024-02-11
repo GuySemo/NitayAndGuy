@@ -8,7 +8,7 @@ public class Nonclick : MonoBehaviour
     [SerializeField] GameObject ball;
     public bool canThrow = true;
     bool canthrowCD;
-   [SerializeField] float cooldown=0.2f;
+   static public float cooldown=0.2f;
     float lastthrow;
     float timer;
     // Start is called before the first frame update

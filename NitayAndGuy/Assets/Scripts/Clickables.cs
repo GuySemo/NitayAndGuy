@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Clickables : MonoBehaviour
 {
-    [SerializeField] int levelToGo;
+    [SerializeField] GameObject levelPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +16,21 @@ public class Clickables : MonoBehaviour
     {
         
     }
+    private void OnMouseOver()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(.75f, .75f, .75f, 1);
+    }
+    private void OnMouseExit()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1);
+
+    }
     private void OnMouseDown()
     {
-        //FindObjectOfType<levelLoader>().GoToLevel(levelToGo);
     }
     private void OnMouseUp()
     {
-        FindObjectOfType<levelLoader>().GoToLevel(levelToGo);
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        levelPanel.SetActive(true);
     }
 }

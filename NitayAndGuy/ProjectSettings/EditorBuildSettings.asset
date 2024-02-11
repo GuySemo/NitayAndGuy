@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/level 2.unity
     guid: 8541a0d76a226854bb5aab1695504912
+  - enabled: 1
+    path: Assets/Scenes/Nitay.unity
+    guid: e4602a6e0f7bf4a4fb9906e31d51c0e3
+  - enabled: 1
+    path: Assets/Scenes/world2_test.unity
+    guid: bd4dd3172aba90145b49a3b259529b22
   m_configObjects: {}

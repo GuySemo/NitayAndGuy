@@ -43,14 +43,14 @@ public class Timer : MonoBehaviour
             seconds = seconds - 1;
             DisplayTime(seconds);
 
-            if (seconds == secondsSave / 5)
-            {
-                FindObjectOfType<spawno>().reduceDelay(1.5f);
-            }
-            else if (seconds == secondsSave/2)
-            {
-                FindObjectOfType<spawno>().reduceDelay(1.5f);
-            }
+            //if (seconds == secondsSave / 5)
+            //{
+            //    FindObjectOfType<spawno>().reduceDelay(1.5f);
+            //}
+            //else if (seconds == secondsSave/2)
+            //{
+            //    FindObjectOfType<spawno>().reduceDelay(1.5f);
+            //}
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 1 ||

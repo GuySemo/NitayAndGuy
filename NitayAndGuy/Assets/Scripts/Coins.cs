@@ -5,7 +5,7 @@ using TMPro;
 
 public class Coins : MonoBehaviour
 {
-    public static int coins = 0;
+    public static int coins = 1000;
 
     private void Start()
     {
