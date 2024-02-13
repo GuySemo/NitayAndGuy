@@ -7,10 +7,11 @@ public class Gbanana : MonoBehaviour
 {
     public float sizeSpeed= 4;
     public bool isTouching = false;
+    Vector3 speedBan;// speed of banana
     GameObject objectHit;
     [SerializeField] GameObject boomEffect;
     [SerializeField] GameObject boom2Effect;
-
+    
     //hit closeness
     [SerializeField] float hitCloseness = 0.5f;
 
@@ -30,6 +31,7 @@ public class Gbanana : MonoBehaviour
     
     void Start()
     {
+        speedBan = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - FindObjectOfType<BananaOnClick>().savemouse);
         Nonclick.cooldown = 10f;
         seconds = 0;
         Debug.Log(sizeSpeed);
@@ -48,7 +50,7 @@ public class Gbanana : MonoBehaviour
         }
         spinDir = Random.Range(600, 1000);
         Destroy(gameObject, 5);
-        GetComponent<Rigidbody2D>().velocity += new Vector2(sizeSpeed / 4, 0);
+        GetComponent<Rigidbody2D>().velocity += new Vector2(speedBan.x,speedBan.y)/2;
     }
 
     // Update is called once per frame
@@ -84,8 +86,10 @@ public class Gbanana : MonoBehaviour
                     GetComponent<Rigidbody2D>().gravityScale = GetComponent<Rigidbody2D>().gravityScale * (-1);
                     startBig2 = true;
                 }
-                transform.localScale += new Vector3((2* sizeSpeed * Time.deltaTime)
-, (2 * sizeSpeed * Time.deltaTime), 0);
+               transform.localScale += new Vector3((2* sizeSpeed * Time.deltaTime)
+                , (2 * sizeSpeed * Time.deltaTime), 0);
+                GetComponent<Rigidbody2D>().velocity -= new Vector2(speedBan.x, speedBan.y);
+
             }
 
         }
