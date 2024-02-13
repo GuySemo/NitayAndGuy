@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e14d081a623fe1f4db50c702440d71c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 20
+  life: 5
   speed: 2
   boomEffect: {fileID: 7866458706319650412, guid: af593bee0a41590418d1058a5f3843b0, type: 3}
   boom2Effect: {fileID: 7866458706319650412, guid: af593bee0a41590418d1058a5f3843b0, type: 3}
