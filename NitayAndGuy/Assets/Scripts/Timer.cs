@@ -54,7 +54,8 @@ public class Timer : MonoBehaviour
         }
 
         if (SceneManager.GetActiveScene().buildIndex == 1 ||
-            SceneManager.GetActiveScene().buildIndex == 2)
+            SceneManager.GetActiveScene().buildIndex == 2 ||
+            SceneManager.GetActiveScene().buildIndex == 4)
         {
             if (seconds <= 0 && !stopped)
             {
