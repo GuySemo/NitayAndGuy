@@ -103,11 +103,6 @@ public class NormalMonkey : MonoBehaviour
         {
             GameObject wMonkey = Instantiate(WalkingMonkey, transform.position, Quaternion.identity) as GameObject;
             wMonkey.GetComponent<WalkingMonkey>().isPurple = isPurple;
-            if (GetComponent<SpriteRenderer>().flipX == true)
-            {
-                wMonkey.GetComponent<WalkingMonkey>().jump *= -1;
-                wMonkey.GetComponent<WalkingMonkey>().speed *= -1;
-            }
             Destroy(gameObject);
         }
     }

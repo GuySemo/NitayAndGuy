@@ -54,21 +54,21 @@ public class WalkingMonkey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > lasttime)
-        {
-            if (Random.Range(3, 4) == 3)
-            {
-                jump = Random.Range(10, 20) / 2f;
-                ChangeDirection = Random.Range(0, 2);
-                if (ChangeDirection == 0)
-                {
-                    ChangeDirection = -1;
-                }
-                GetComponent<Rigidbody2D>().velocity += new Vector2(0, jump);
-            }
-            lasttime = Time.time + 2.5f;
+        //if (Time.time > lasttime)
+        //{
+        //    if (Random.Range(3, 4) == 3)
+        //    {
+        //        jump = Random.Range(10, 20) / 2f;
+        //        ChangeDirection = Random.Range(0, 2);
+        //        if (ChangeDirection == 0)
+        //        {
+        //            ChangeDirection = -1;
+        //        }
+        //        GetComponent<Rigidbody2D>().velocity += new Vector2(0, jump);
+        //    }
+        //    lasttime = Time.time + 2.5f;
 
-        }
+        //}
 
         if (GetComponent<Rigidbody2D>().velocity.x > 0)
         {
