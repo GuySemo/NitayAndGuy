@@ -6,7 +6,7 @@ using UnityEngine;
 public class NormalMonkey : MonoBehaviour
 {
     //Attributes
-    public float life = 3;
+    public float life = 120;
     [SerializeField] public float speed = 5;
     float hitCloseness = 0.2f;
     Animator anim;
@@ -109,7 +109,7 @@ public class NormalMonkey : MonoBehaviour
             if (other.gameObject.transform.localScale.x < hitCloseness &&
                 other.gameObject.transform.localScale.x > (hitCloseness / 2))
             {
-                HitChicken(1);
+                HitChicken(Gbanana.myDamage);
                 
             }
 
@@ -145,11 +145,11 @@ public class NormalMonkey : MonoBehaviour
         //Give Points (Based On Size)
         if (!isPurple)
         {
-               FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * Mathf.Abs(Gbanana.vel+1)));
+               FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * Mathf.Abs(Gbanana.vel)+1));
         }
         else
         {
-            FindObjectOfType<ScoreCounter>().RemoveScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * Mathf.Abs(Gbanana.vel + 1)));
+            FindObjectOfType<ScoreCounter>().RemoveScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * Mathf.Abs(Gbanana.vel )+1));
         }
         //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 
