@@ -6,7 +6,7 @@ using UnityEngine;
 public class BananaOnClick : MonoBehaviour
 {
     [SerializeField] GameObject ball;
-    public bool canThrow = true;
+    public bool canThrow = false;
     bool canthrowCD;
     public Vector3 savemouse;
     static public float cooldown = 0.2f;

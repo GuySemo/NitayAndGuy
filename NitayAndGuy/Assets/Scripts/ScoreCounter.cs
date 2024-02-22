@@ -52,6 +52,11 @@ public class ScoreCounter : MonoBehaviour
         score = score + num;
         GetComponent<TMP_Text>().text = score.ToString();
     }
+    public void RemoveScore(int num)
+    {
+        score = score - num;
+        GetComponent<TMP_Text>().text = score.ToString();
+    }
     public void Win()
     {
         Debug.Log("Win activated");

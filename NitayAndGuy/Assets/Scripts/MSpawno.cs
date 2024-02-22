@@ -12,8 +12,9 @@ public class MSpawno : MonoBehaviour
     [SerializeField] float speedMultiplier = 1;
     [SerializeField] float delay;
     [SerializeField] bool toFlipX = false;
-    [SerializeField] GameObject[] chickens;
+    [SerializeField] GameObject[] monkeys;
 
+    public bool isWalking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +25,16 @@ public class MSpawno : MonoBehaviour
         while (true)
         {
             //Create New Chicken
-            GameObject instance = Instantiate(chickens[Random.Range(0,chickens.Length)],transform.position,Quaternion.identity)
+            GameObject instance = Instantiate(monkeys[Random.Range(0,monkeys.Length)],transform.position,Quaternion.identity)
                 as GameObject;
+            if (isWalking == false)
+            {
             instance.GetComponent<NormalMonkey>().speed = instance.GetComponent<NormalMonkey>().speed * speedMultiplier;
+            }
+            else
+            {
+                instance.GetComponent<WalkingMonkey>().speed = instance.GetComponent<WalkingMonkey>().speed * speedMultiplier;
+            }
             instance.GetComponent<SpriteRenderer>().flipX = toFlipX;
             instance.transform.localScale = instance.transform.localScale * sizeMultiplier;
             instance.GetComponent<SpriteRenderer>().sortingOrder = mySortingLayer;

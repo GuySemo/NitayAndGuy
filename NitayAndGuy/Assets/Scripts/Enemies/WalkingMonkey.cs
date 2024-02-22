@@ -8,15 +8,19 @@ public class WalkingMonkey : MonoBehaviour
     //Attributes
     public float life = 3;
     [SerializeField] public float speed = 5;
+    [SerializeField] public float jump = 2;
     float hitCloseness = 0.2f;
+    Animator anim;
 
     //Effects
     [SerializeField] GameObject boomEffect;
     [SerializeField] GameObject boom2Effect;
 
     //ChickenTypes
-    public bool isMother = false;
-    public bool isBoom = false;
+    public bool isPurple = false;
+
+    float lasttime = 0;
+    int ChangeDirection;
 
     //Points
     [SerializeField] int pointsGive = 6;
@@ -33,6 +37,8 @@ public class WalkingMonkey : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.SetBool("isPurple", isPurple);
         chickens++;
         chickensAlive++;
         if (chickensAlive > chickenLimit)
@@ -41,35 +47,30 @@ public class WalkingMonkey : MonoBehaviour
             Destroy(gameObject);
         }
         started = false;
-        hitCloseness = gameObject.transform.localScale.x / 5;
-        GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
+        hitCloseness = gameObject.transform.localScale.x / 4;
+        GetComponent<Rigidbody2D>().velocity = new Vector3(speed, jump, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (starter)
-        //{
-        //    //GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
-        //    starter = false;
-        //}
-        //Change Direction
+        if (Time.time > lasttime)
+        {
+            if (Random.Range(3, 4) == 3)
+            {
+                jump = Random.Range(10, 20) / 2f;
+                ChangeDirection = Random.Range(0, 2);
+                if (ChangeDirection == 0)
+                {
+                    ChangeDirection = -1;
+                }
+                GetComponent<Rigidbody2D>().velocity = new Vector3(ChangeDirection * GetComponent<NnormalEnemy>().speed, 0, 0);
+                GetComponent<Rigidbody2D>().velocity += new Vector2(0, jump);
+            }
+            lasttime = Time.time + 2.5f;
 
-        //if (Time.time>lasttime)
-        //{
-        //    if (Random.Range(1,4)==3)
-        //    {
-        //        speed = Random.Range(5, 30) / 2.5f;
-        //        ChangeDirection = Random.Range(0,2);
-        //        if (ChangeDirection==0)
-        //        {
-        //            ChangeDirection = -1;
-        //        }
-        //        GetComponent<Rigidbody2D>().velocity = new Vector3(ChangeDirection*speed,0,0);
-        //    }
-        //    lasttime = Time.time + 0.5f;
+        }
 
-        //}
         if (GetComponent<Rigidbody2D>().velocity.x > 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
@@ -134,18 +135,8 @@ public class WalkingMonkey : MonoBehaviour
         GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
         boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale * sizeMod;
         //Kill Chicken
-        if (isMother)
-        {
-            GetComponent<ChickenMother>().ChickenDie();
-        }
-        else if (isBoom)
-        {
-            GetComponent<Exploding>().ChickenDie();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
+
     }
 
     //hi guy this is for future enemies, ok Nitay!!!!

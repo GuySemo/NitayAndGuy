@@ -9,14 +9,16 @@ public class NormalMonkey : MonoBehaviour
     public float life = 3;
     [SerializeField] public float speed = 5;
     float hitCloseness = 0.2f;
-
+    Animator anim;
     //Effects
     [SerializeField] GameObject boomEffect;
     [SerializeField] GameObject boom2Effect;
 
-    //ChickenTypes
-    public bool isMother = false;
-    public bool isBoom = false;
+    //Monkey
+    [SerializeField] GameObject WalkingMonkey;
+
+    // Monkey Types
+    public bool isPurple = false;
 
     //Points
     [SerializeField] int pointsGive = 6;
@@ -33,6 +35,12 @@ public class NormalMonkey : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+        if (Random.Range(0,11) >9)
+        {
+            isPurple = true;
+        }
+        anim.SetBool("isPurple", isPurple);
         chickens++;
         chickensAlive++;
         if (chickensAlive > chickenLimit )
@@ -41,7 +49,7 @@ public class NormalMonkey : MonoBehaviour
             Destroy(gameObject);
         }
         started = false;
-        hitCloseness = gameObject.transform.localScale.x / 5;
+        hitCloseness = gameObject.transform.localScale.x / 4;
         GetComponent<Rigidbody2D>().velocity = new Vector3(0, speed, 0);
     }
 
@@ -89,6 +97,20 @@ public class NormalMonkey : MonoBehaviour
             //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed*other.transform.position.x/Mathf.Abs(other.transform.position.x),0,0);
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "BreakEgg" && Random.Range(0,11) > 6)
+        {
+            GameObject wMonkey = Instantiate(WalkingMonkey, transform.position, Quaternion.identity) as GameObject;
+            wMonkey.GetComponent<WalkingMonkey>().isPurple = isPurple;
+            if (GetComponent<SpriteRenderer>().flipX == true)
+            {
+                wMonkey.GetComponent<WalkingMonkey>().jump *= -1;
+                wMonkey.GetComponent<WalkingMonkey>().speed *= -1;
+            }
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Ball")
@@ -100,6 +122,7 @@ public class NormalMonkey : MonoBehaviour
                 HitChicken(1);
                 
             }
+
         }
         if (other.tag == "Death")
         {
@@ -130,7 +153,14 @@ public class NormalMonkey : MonoBehaviour
         AudioSource.PlayClipAtPoint(PakasAudio[Random.Range(0, PakasAudio.Length)], new Vector3(0,0,-7));
         chickensAlive--;
         //Give Points (Based On Size)
-        FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) );
+        if (!isPurple)
+        {
+               FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * Mathf.Abs(Gbanana.vel+1)));
+        }
+        else
+        {
+            FindObjectOfType<ScoreCounter>().RemoveScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * Mathf.Abs(Gbanana.vel + 1)));
+        }
         //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 
         //Effects
@@ -138,19 +168,8 @@ public class NormalMonkey : MonoBehaviour
         boom1.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale * sizeMod;
         GameObject boom2 = Instantiate(boom2Effect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;
         boom2.GetComponent<Transform>().localScale = GetComponent<Transform>().localScale * sizeMod;
-        //Kill Chicken
-        if (isMother)
-        {
-            GetComponent<ChickenMother>().ChickenDie();
-        }
-        else if (isBoom)
-        {
-            GetComponent<Exploding>().ChickenDie();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
+
     }
 
     //hi guy this is for future enemies, ok Nitay!!!!

@@ -11,10 +11,12 @@ public class MCameraMove : MonoBehaviour
     private bool drag = false;
     [SerializeField] public int distance;
 
+    static Vector3 currentPos = new Vector3(0,0,-10);
 
     private void Start()
     {
         ResetCamera = Camera.main.transform.position;
+        Camera.main.transform.position = currentPos;
     }
 
 
@@ -44,6 +46,7 @@ public class MCameraMove : MonoBehaviour
         if(drag)
         {
             Camera.main.transform.position = Origin - Difference;
+            currentPos = Camera.main.transform.position;
         }
 
         if (Input.GetMouseButton(1))

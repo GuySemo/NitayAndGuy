@@ -8,7 +8,7 @@ public class Clickables : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelPanel.SetActive(false);
     }
 
     // Update is called once per frame

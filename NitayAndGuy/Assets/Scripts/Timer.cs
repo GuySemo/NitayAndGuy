@@ -35,11 +35,15 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!started)
+        {
+            secondsSinceStart = Time.time;
+        }
         if (Time.time - secondsSinceStart > 1 
             && seconds>0 
             && started)
         {
-            secondsSinceStart = Time.time + 1;
+            secondsSinceStart += Time.deltaTime + 1;
             seconds = seconds - 1;
             DisplayTime(seconds);
 
