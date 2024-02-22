@@ -99,12 +99,7 @@ public class NormalMonkey : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "BreakEgg" && Random.Range(0,11) > 6)
-        {
-            GameObject wMonkey = Instantiate(WalkingMonkey, transform.position, Quaternion.identity) as GameObject;
-            wMonkey.GetComponent<WalkingMonkey>().isPurple = isPurple;
-            Destroy(gameObject);
-        }
+
     }
     private void OnTriggerStay2D(Collider2D other)
     {
