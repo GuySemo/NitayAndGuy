@@ -145,11 +145,11 @@ public class NormalMonkey : MonoBehaviour
         //Give Points (Based On Size)
         if (!isPurple)
         {
-               FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * Mathf.Abs(Gbanana.vel)+1));
+               FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * (Mathf.Abs(Gbanana.vel)+1)));
         }
         else
         {
-            FindObjectOfType<ScoreCounter>().RemoveScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * Mathf.Abs(Gbanana.vel )+1));
+            FindObjectOfType<ScoreCounter>().RemoveScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * (Mathf.Abs(Gbanana.vel )+1)));
         }
         //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 

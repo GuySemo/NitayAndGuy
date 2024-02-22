@@ -16,7 +16,7 @@ public class Gbanana : MonoBehaviour
     [SerializeField] float hitCloseness = 0.5f;
 
     [SerializeField] GameObject crackedEgg;
-    [SerializeField] static public float myDamage = 5;
+    [SerializeField] static public float myDamage = 20;
     //RandomSpin
     float spinDir;
 
@@ -49,7 +49,7 @@ public class Gbanana : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vel = GetComponent<Rigidbody2D>().velocity.x;
+        vel = GetComponent<Rigidbody2D>().velocity.magnitude;
         //Spinning
         transform.Rotate(0, 0, spinDir * Time.deltaTime);
 
