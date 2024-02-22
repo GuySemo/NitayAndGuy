@@ -64,7 +64,6 @@ public class WalkingMonkey : MonoBehaviour
                 {
                     ChangeDirection = -1;
                 }
-                GetComponent<Rigidbody2D>().velocity = new Vector3(ChangeDirection * GetComponent<NnormalEnemy>().speed, 0, 0);
                 GetComponent<Rigidbody2D>().velocity += new Vector2(0, jump);
             }
             lasttime = Time.time + 2.5f;
