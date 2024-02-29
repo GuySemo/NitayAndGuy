@@ -7,6 +7,7 @@ public class NnormalEnemy : MonoBehaviour
 {
     //Attributes
     public float life = 3;
+    float startinglife;
     [SerializeField] public float speed = 5;
     float hitCloseness = 0.2f;
 
@@ -17,6 +18,7 @@ public class NnormalEnemy : MonoBehaviour
     //ChickenTypes
     public bool isMother = false;
     public bool isBoom = false;
+    [SerializeField] bool isBoss=false;
 
     //Points
     [SerializeField] int pointsGive = 6;
@@ -32,6 +34,7 @@ public class NnormalEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startinglife = life;
         chickens++;
         chickensAlive++;
         if (chickensAlive > chickenLimit )
@@ -117,7 +120,7 @@ public class NnormalEnemy : MonoBehaviour
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, 1 - (1 / life), 1- ( 1 / life),1);
+            GetComponent<SpriteRenderer>().color = new Color(1, life/startinglife ,life/startinglife,1);
         }
     }
     public void ChickenDie()
@@ -141,6 +144,11 @@ public class NnormalEnemy : MonoBehaviour
         else if (isBoom)
         {
             GetComponent<Exploding>().ChickenDie();
+        }
+        else if (isBoss)
+        {
+            GetComponent<ChickenBoss>().ChickenDie();
+        
         }
         else
         {
