@@ -64,7 +64,7 @@ public class buttonBanana : MonoBehaviour
         {
             damageUpgrade++;
             FindObjectOfType<Coins>().LoseCoins(BananaCost);
-            Gbanana.myDamage=Gbanana.myDamage*2;
+            //Gbanana.myDamage=Gbanana.myDamage*2;
             BananaCost *= 2;
             gameObject.GetComponent<Button>().interactable = (Coins.coins >= BananaCost);
             BananaCostText.text = "Cost: " + BananaCost;

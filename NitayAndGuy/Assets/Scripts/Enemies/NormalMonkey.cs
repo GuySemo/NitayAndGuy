@@ -109,8 +109,7 @@ public class NormalMonkey : MonoBehaviour
             if (other.gameObject.transform.localScale.x < hitCloseness &&
                 other.gameObject.transform.localScale.x > (hitCloseness / 2))
             {
-                HitChicken(Gbanana.myDamage);
-                
+                HitChicken(1);   
             }
 
         }

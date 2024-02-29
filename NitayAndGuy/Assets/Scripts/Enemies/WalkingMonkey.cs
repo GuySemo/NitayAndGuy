@@ -59,7 +59,7 @@ public class WalkingMonkey : MonoBehaviour
         {
             if (Random.Range(3, 4) == 3)
             {
-                jump = Random.Range(4, 7);
+                jump = Random.Range(5, 9);
                 ChangeDirection = Random.Range(0, 2);
                 if (ChangeDirection == 0)
                 {
@@ -98,7 +98,7 @@ public class WalkingMonkey : MonoBehaviour
             if (other.gameObject.transform.localScale.x < hitCloseness &&
                 other.gameObject.transform.localScale.x > (hitCloseness / 2))
             {
-                HitChicken(Gbanana.myDamage);
+                HitChicken(1);
             }
         }
         if (other.tag == "Death")

@@ -363,11 +363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.01
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.08
+      value: -3.39
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1014,8 +1014,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySortingLayer: 3
   sizeMultiplier: 1
-  speedMultiplier: 0.75
-  delay: 8
+  speedMultiplier: 0.9
+  delay: 7
   toFlipX: 1
   monkeys:
   - {fileID: 780033039588575436, guid: 25aaf2a0e451e1b46b379b6decc4985b, type: 3}
@@ -1789,8 +1789,8 @@ MonoBehaviour:
   mySortingLayer: 3
   sizeMultiplier: 1
   speedMultiplier: 0.7
-  delay: 9
-  toFlipX: 1
+  delay: 0.95
+  toFlipX: 0
   monkeys:
   - {fileID: 780033039588575436, guid: 25aaf2a0e451e1b46b379b6decc4985b, type: 3}
   isWalking: 0
@@ -1892,7 +1892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.49
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1970,11 +1970,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.91
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.91
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2038,8 +2038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mySortingLayer: 3
   sizeMultiplier: 1
-  speedMultiplier: 0.8
-  delay: 7
+  speedMultiplier: 0.9
+  delay: 6
   toFlipX: 0
   monkeys:
   - {fileID: 780033039588575436, guid: 25aaf2a0e451e1b46b379b6decc4985b, type: 3}

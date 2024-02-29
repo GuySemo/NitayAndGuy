@@ -16,7 +16,7 @@ public class Gbanana : MonoBehaviour
     [SerializeField] float hitCloseness = 0.5f;
 
     [SerializeField] GameObject crackedEgg;
-    [SerializeField] static public float myDamage = 5;
+    [SerializeField] public float myDamage = 20;
     //RandomSpin
     float spinDir;
 
