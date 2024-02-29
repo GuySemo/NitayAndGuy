@@ -59,6 +59,7 @@ public class ScoreCounter : MonoBehaviour
     }
     public void Win()
     {
+        levelLoader.canThrow = false;
         Debug.Log("Win activated");
         WinPanel.SetActive(true);
         Time.timeScale = 0.1f;

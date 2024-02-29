@@ -10,8 +10,9 @@ public class MapUpdater : MonoBehaviour
     public static bool level4 = false;
     public static bool level5 = false;
     public static bool level6 = false;
+    public static bool level7 = false;
 
-    public static bool[] levelsCleared = { level1, level2, level3, level4, level5, level6 };
+    public static bool[] levelsCleared = { level1, level2, level3, level4, level5, level6 ,level7 };
     
 
     [SerializeField] GameObject[] flags;

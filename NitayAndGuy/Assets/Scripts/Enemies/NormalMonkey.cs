@@ -128,14 +128,13 @@ public class NormalMonkey : MonoBehaviour
     public void HitChicken(float damage)
     {
         life = life - damage;
-        Debug.Log(life);
         if (life <= 0)
         {
             ChickenDie();
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, 1 - (1 / life), 1- ( 1 / life),1);
+            GetComponent<SpriteRenderer>().color = new Color(1, 1 - (1 / life * 10), 1- ( 1 / life * 10),1);
         }
     }
     public void ChickenDie()
@@ -149,7 +148,7 @@ public class NormalMonkey : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<ScoreCounter>().RemoveScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * (Mathf.Abs(Gbanana.vel )+1)));
+            FindObjectOfType<ScoreCounter>().RemoveScore(20);
         }
         //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 

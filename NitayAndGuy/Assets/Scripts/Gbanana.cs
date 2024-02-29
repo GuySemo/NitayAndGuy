@@ -16,7 +16,7 @@ public class Gbanana : MonoBehaviour
     [SerializeField] float hitCloseness = 0.5f;
 
     [SerializeField] GameObject crackedEgg;
-    [SerializeField] static public float myDamage = 20;
+    [SerializeField] static public float myDamage = 5;
     //RandomSpin
     float spinDir;
 
@@ -34,7 +34,6 @@ public class Gbanana : MonoBehaviour
         speedBan = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - FindObjectOfType<BananaOnClick>().savemouse);
         Nonclick.cooldown = 10f;
         seconds = 0;
-        Debug.Log(sizeSpeed);
         if (firstEgg)
         {
             firstEgg = false;

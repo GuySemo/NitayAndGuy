@@ -49,26 +49,27 @@ public class WalkingMonkey : MonoBehaviour
         started = false;
         hitCloseness = gameObject.transform.localScale.x / 4;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, jump, 0);
+        lasttime = Time.time + 3f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Time.time > lasttime)
-        //{
-        //    if (Random.Range(3, 4) == 3)
-        //    {
-        //        jump = Random.Range(10, 20) / 2f;
-        //        ChangeDirection = Random.Range(0, 2);
-        //        if (ChangeDirection == 0)
-        //        {
-        //            ChangeDirection = -1;
-        //        }
-        //        GetComponent<Rigidbody2D>().velocity += new Vector2(0, jump);
-        //    }
-        //    lasttime = Time.time + 2.5f;
+        if (Time.time > lasttime)
+        {
+            if (Random.Range(3, 4) == 3)
+            {
+                jump = Random.Range(4, 7);
+                ChangeDirection = Random.Range(0, 2);
+                if (ChangeDirection == 0)
+                {
+                    ChangeDirection = -1;
+                }
+                GetComponent<Rigidbody2D>().velocity += new Vector2(0, jump);
+            }
+            lasttime = Time.time + 2.5f;
 
-        //}
+        }
 
         if (GetComponent<Rigidbody2D>().velocity.x > 0)
         {
@@ -97,8 +98,7 @@ public class WalkingMonkey : MonoBehaviour
             if (other.gameObject.transform.localScale.x < hitCloseness &&
                 other.gameObject.transform.localScale.x > (hitCloseness / 2))
             {
-                HitChicken(1);
-
+                HitChicken(Gbanana.myDamage);
             }
         }
         if (other.tag == "Death")
@@ -110,14 +110,13 @@ public class WalkingMonkey : MonoBehaviour
     public void HitChicken(float damage)
     {
         life = life - damage;
-        Debug.Log(life);
         if (life <= 0)
         {
             ChickenDie();
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, 1 - (1 / life), 1 - (1 / life), 1);
+            GetComponent<SpriteRenderer>().color = new Color(1, 1 - (1 / life * 10), 1 - (1 / life * 10), 1);
         }
     }
     public void ChickenDie()
@@ -125,8 +124,14 @@ public class WalkingMonkey : MonoBehaviour
         AudioSource.PlayClipAtPoint(PakasAudio[Random.Range(0, PakasAudio.Length)], new Vector3(0, 0, -7));
         chickensAlive--;
         //Give Points (Based On Size)
-        FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x));
-        //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
+        if (!isPurple)
+        {
+            FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * (Mathf.Abs(Gbanana.vel) + 1)));
+        }
+        else
+        {
+            FindObjectOfType<ScoreCounter>().RemoveScore(20);
+        }        //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 
         //Effects
         GameObject boom1 = Instantiate(boomEffect, gameObject.transform.position, Quaternion.Euler(90, 0, 0)) as GameObject;

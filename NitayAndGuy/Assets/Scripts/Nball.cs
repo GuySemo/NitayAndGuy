@@ -30,9 +30,7 @@ public class Nball : MonoBehaviour
         {
             firstEgg = false;
             seconds = Time.time;
-            if (SceneManager.GetActiveScene().buildIndex == 1 
-                || SceneManager.GetActiveScene().buildIndex == 2
-                || SceneManager.GetActiveScene().buildIndex == 3)
+            if (true)
             {
                 FindObjectOfType<SleepingChick>().Awaken();
             }

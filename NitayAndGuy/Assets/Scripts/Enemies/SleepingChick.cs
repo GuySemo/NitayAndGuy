@@ -26,7 +26,8 @@ public class SleepingChick : MonoBehaviour
             {
                 LevelSpawners.SetActive(true);
                 GameObject Chicken1 = Instantiate(ChickenObject, transform.position, Quaternion.identity) as GameObject;
-
+                Chicken1.layer = gameObject.layer;
+                Chicken1.transform.localScale = gameObject.transform.localScale;
                 Destroy(gameObject);
 
             }

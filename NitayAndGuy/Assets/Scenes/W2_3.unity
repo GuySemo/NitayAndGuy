@@ -792,7 +792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4593561216467954130, guid: 1b9b724bb77f1154888371f916d9fa21, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4593561216467954130, guid: 1b9b724bb77f1154888371f916d9fa21, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -816,15 +816,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4593561217394165867, guid: 1b9b724bb77f1154888371f916d9fa21, type: 3}
       propertyPath: scoreNeeded
-      value: 100
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 4593561217394165867, guid: 1b9b724bb77f1154888371f916d9fa21, type: 3}
       propertyPath: twoStarPoints
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4593561217394165867, guid: 1b9b724bb77f1154888371f916d9fa21, type: 3}
       propertyPath: threeStarPoints
-      value: 250
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 4593561217504187421, guid: 1b9b724bb77f1154888371f916d9fa21, type: 3}
       propertyPath: seconds

@@ -7,7 +7,6 @@ public class Nonclick : MonoBehaviour
 {
     [SerializeField] GameObject ball;
     public bool canThrow = true;
-    bool canthrowCD;
    static public float cooldown=0.2f;
     float lastthrow;
     float timer;
@@ -32,7 +31,7 @@ public class Nonclick : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (canThrow)
+        if (canThrow && levelLoader.canThrow)
         {
             Instantiate(ball, Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, -transform.position.z + ball.transform.position.z), Quaternion.identity);
             lastthrow = Time.time;

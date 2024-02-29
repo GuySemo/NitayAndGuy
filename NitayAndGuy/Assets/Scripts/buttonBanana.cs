@@ -7,15 +7,15 @@ using TMPro;
 
 public class buttonBanana : MonoBehaviour
 {
-    static int speedUpgrade = 0;
-    public bool isEgg = false;
-    [SerializeField] static int EggCost = 40;
-    [SerializeField] TMP_Text EggCostText;
-    [SerializeField] TMP_Text SpeedNumTxt;
+    static int damageUpgrade = 0;
+    public bool isBanana = false;
+     static int BananaCost = 40;
+    [SerializeField] TMP_Text BananaCostText;
+    [SerializeField] TMP_Text DamageNumTxt;
 
     static int DelayUpgrade = 3;
-    [SerializeField] static int EggDelayCost = 25;
-    [SerializeField] TMP_Text EggDelayText;
+    [SerializeField] static int BananaDelayCost = 25;
+    [SerializeField] TMP_Text BananaDelayText;
     [SerializeField] TMP_Text DelayNumTxt;
 
     // Start is called before the first frame update
@@ -27,51 +27,51 @@ public class buttonBanana : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isEgg)
+        if (isBanana)
         {
-            SpeedNumTxt.text = "Egg Speed: " + (speedUpgrade + 1).ToString() + " (+) ";
-            if (speedUpgrade <= 2)
+            DamageNumTxt.text = "Banana Damage: " + (damageUpgrade + 1).ToString() + " (+) ";
+            if (damageUpgrade <= 2)
             {
-                gameObject.GetComponent<Button>().interactable = Coins.coins >= EggCost;
-                EggCostText.text = "Cost: " + EggCost;
+                gameObject.GetComponent<Button>().interactable = Coins.coins >= BananaCost;
+                BananaCostText.text = "Cost: " + BananaCost;
             }
             else
             {
-                EggCostText.text = "Max";
+                BananaCostText.text = "Max";
                 gameObject.GetComponent<Button>().interactable = false;
             }
         }
         else
         {
-            DelayNumTxt.text = "Egg Delay: " + (DelayUpgrade).ToString() + " (-) ";
+            DelayNumTxt.text = "Banana Delay: " + (DelayUpgrade).ToString() + " (-) ";
             if (DelayUpgrade >= 1)
             {
-                gameObject.GetComponent<Button>().interactable = Coins.coins >= EggDelayCost;
-                EggDelayText.text = "Cost: " + EggDelayCost;
+                gameObject.GetComponent<Button>().interactable = Coins.coins >= BananaDelayCost;
+                BananaDelayText.text = "Cost: " + BananaDelayCost;
             }
             else
             {
-                EggDelayText.text = "Max";
+                BananaDelayText.text = "Max";
                 gameObject.GetComponent<Button>().interactable = false;
             }
         }
 
     }
 
-    public void buyItem()
+    public void UpgradeDamage()
     {
-        if (speedUpgrade <= 3)
+        if (damageUpgrade <= 3)
         {
-            speedUpgrade++;
-            FindObjectOfType<Coins>().LoseCoins(EggCost);
+            damageUpgrade++;
+            FindObjectOfType<Coins>().LoseCoins(BananaCost);
             Gbanana.myDamage=Gbanana.myDamage*2;
-            EggCost *= 2;
-            gameObject.GetComponent<Button>().interactable = (Coins.coins >= EggCost);
-            EggCostText.text = "Cost: " + EggCost;
+            BananaCost *= 2;
+            gameObject.GetComponent<Button>().interactable = (Coins.coins >= BananaCost);
+            BananaCostText.text = "Cost: " + BananaCost;
         }
         else
         {
-            EggCostText.text = "Max";
+            BananaCostText.text = "Max";
             gameObject.GetComponent<Button>().interactable = false;
         }
     }
@@ -80,15 +80,15 @@ public class buttonBanana : MonoBehaviour
         if (DelayUpgrade >= 1)
         {
             DelayUpgrade--;
-            FindObjectOfType<Coins>().LoseCoins(EggDelayCost);
-            Nonclick.cooldown = Nonclick.cooldown - 0.05f;
-            EggDelayCost *= 2;
-            gameObject.GetComponent<Button>().interactable = (Coins.coins >= EggDelayCost);
-            EggDelayText.text = "Cost: " + EggDelayCost;
+            FindObjectOfType<Coins>().LoseCoins(BananaDelayCost);
+            BananaOnClick.cooldown = BananaOnClick.cooldown - 0.2f;
+            BananaDelayCost *= 2;
+            gameObject.GetComponent<Button>().interactable = (Coins.coins >= BananaDelayCost);
+            BananaDelayText.text = "Cost: " + BananaDelayCost;
         }
         else
         {
-            EggDelayText.text = "Max";
+            BananaDelayText.text = "Max";
             gameObject.GetComponent<Button>().interactable = false;
         }
 

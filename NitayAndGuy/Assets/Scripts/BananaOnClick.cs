@@ -9,7 +9,7 @@ public class BananaOnClick : MonoBehaviour
     public bool canThrow = false;
     bool canthrowCD;
     public Vector3 savemouse;
-    static public float cooldown = 0.2f;
+    static public float cooldown = 1f;
     float lastthrow;
     float timer;
     // Start is called before the first frame update
