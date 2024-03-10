@@ -10,6 +10,7 @@ public class SleepingChick : MonoBehaviour
     [SerializeField] GameObject ChickenObject;
 
     [SerializeField] GameObject LevelSpawners;
+    [SerializeField] AudioClip Scream;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class SleepingChick : MonoBehaviour
     }
     public void Awaken()
     {
+        AudioSource.PlayClipAtPoint(Scream, Camera.main.transform.position);
         transform.position = transform.position + new Vector3(0, 0.4f, 0);
         anim.SetBool("awake", true);
         awake = true;

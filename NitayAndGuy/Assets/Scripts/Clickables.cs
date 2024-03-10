@@ -5,10 +5,16 @@ using UnityEngine;
 public class Clickables : MonoBehaviour
 {
     [SerializeField] GameObject levelPanel;
+    public bool canClick = true;
     // Start is called before the first frame update
     void Start()
     {
         levelPanel.SetActive(false);
+
+        if (!canClick)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(.5f, .5f, .5f, 1);
+        }
     }
 
     // Update is called once per frame
@@ -18,11 +24,17 @@ public class Clickables : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        GetComponent<SpriteRenderer>().color = new Color(.75f, .75f, .75f, 1);
+        if (canClick)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(.75f, .75f, .75f, 1);
+        }
     }
     private void OnMouseExit()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1);
+        if (canClick)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1);
+        }
 
     }
     private void OnMouseDown()
@@ -30,7 +42,21 @@ public class Clickables : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        levelPanel.SetActive(true);
+        if (canClick)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            levelPanel.SetActive(true);
+        }
+    }
+    public void ReColor()
+    {
+        if (!canClick)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(.5f, .5f, .5f, 1);
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        }
     }
 }

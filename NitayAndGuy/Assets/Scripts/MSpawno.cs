@@ -7,6 +7,11 @@ using UnityEngine.VFX;
 public class MSpawno : MonoBehaviour
 {
     Coroutine spawner;
+    [SerializeField] float StartDelay = 4f;
+    bool spawned = false;
+
+    [SerializeField] float offsetXPos = 0;
+    [SerializeField] float offsetXNeg = 0;
     [SerializeField] int  mySortingLayer = 3;
     [SerializeField] float sizeMultiplier = 1;
     [SerializeField] float speedMultiplier = 1;
@@ -15,10 +20,20 @@ public class MSpawno : MonoBehaviour
     [SerializeField] GameObject[] monkeys;
 
     public bool isWalking = false;
+    public bool isHung = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        spawner = StartCoroutine(Spawn());
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if (!spawned && Time.timeSinceLevelLoad > StartDelay )
+        {
+            spawner = StartCoroutine(Spawn());
+            spawned = true;
+        }
     }
     IEnumerator Spawn()
     {
@@ -33,8 +48,18 @@ public class MSpawno : MonoBehaviour
             }
             else
             {
-                instance.GetComponent<WalkingMonkey>().speed = instance.GetComponent<WalkingMonkey>().speed * speedMultiplier;
+                if (isHung)
+                {
+                    instance.transform.position = instance.transform.position + new Vector3(Random.Range(offsetXNeg, offsetXPos), 0, 0);
+                    instance = (instance.transform.GetChild(0).gameObject);
+                    instance .GetComponent<WalkingMonkey>().speed = instance.GetComponent<WalkingMonkey>().speed * speedMultiplier;
+                }
+                else
+                {
+                    instance.GetComponent<WalkingMonkey>().speed = instance.GetComponent<WalkingMonkey>().speed * speedMultiplier;
+                }
             }
+            instance.transform.position = instance.transform.position + new Vector3( Random.Range(offsetXNeg, offsetXPos),0,0);
             instance.GetComponent<SpriteRenderer>().flipX = toFlipX;
             instance.transform.localScale = instance.transform.localScale * sizeMultiplier;
             instance.GetComponent<SpriteRenderer>().sortingOrder = mySortingLayer;
@@ -43,11 +68,6 @@ public class MSpawno : MonoBehaviour
             yield return new WaitForSeconds(delay);
         }
 
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void reduceDelay(float precent)
     {

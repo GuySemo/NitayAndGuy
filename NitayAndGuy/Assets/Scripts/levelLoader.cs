@@ -20,6 +20,11 @@ public class levelLoader : MonoBehaviour
     {
         SceneManager.LoadScene(goToLevel);
     }
+    public void ResetScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        Nball.firstEgg = true;
+    }
     public void PauseGame()
     {
         Time.timeScale = 0;
@@ -30,8 +35,8 @@ public class levelLoader : MonoBehaviour
         Time.timeScale = 1;
         Camera.main.GetComponent<AudioSource>().pitch = 1f;
     }
-    public  void WinLevel(int num)
+    public  void WinLevel()
     {
-        MapUpdater.levelsCleared[num - 1] = true;
+        MapUpdater.levelsCleared[SceneManager.GetActiveScene().buildIndex-1] = true;
     }
 }

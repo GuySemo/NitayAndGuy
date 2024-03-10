@@ -148,7 +148,6 @@ public class NnormalEnemy : MonoBehaviour
         else if (isBoss)
         {
             GetComponent<ChickenBoss>().ChickenDie();
-        
         }
         else
         {

@@ -14,11 +14,13 @@ public class Booster : MonoBehaviour
         {
 
             isPurple = other.GetComponent<NormalMonkey>().isPurple;
-            Destroy(other.gameObject);
             GameObject wMonkey = Instantiate(WalkingMonkey, transform.position, Quaternion.identity) as GameObject;
+            wMonkey.transform.localScale = other.transform.localScale;
+            wMonkey.GetComponent<WalkingMonkey>().life = other.GetComponent<NormalMonkey>().life;
             wMonkey.GetComponent<WalkingMonkey>().isPurple = isPurple;
             wMonkey.GetComponent<WalkingMonkey>().speed *= pos;
             wMonkey.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump, 0);
+            Destroy(other.gameObject);
         }
     }
 }

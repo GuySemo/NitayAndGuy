@@ -14,7 +14,7 @@ public class buttonControl : MonoBehaviour
     [SerializeField] TMP_Text SpeedNumTxt;
 
     static int DelayUpgrade = 3;
-    [SerializeField] static int EggDelayCost = 25;
+    [SerializeField] static int EggDelayCost = 30;
     [SerializeField] TMP_Text EggDelayText;
     [SerializeField] TMP_Text DelayNumTxt;
 

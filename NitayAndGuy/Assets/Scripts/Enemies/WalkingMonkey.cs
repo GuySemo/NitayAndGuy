@@ -130,7 +130,7 @@ public class WalkingMonkey : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<ScoreCounter>().RemoveScore(20);
+            FindObjectOfType<ScoreCounter>().RemoveScore(FindObjectOfType<ScoreCounter>().score / 5);
         }        //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 
         //Effects

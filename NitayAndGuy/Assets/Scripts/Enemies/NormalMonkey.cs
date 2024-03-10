@@ -36,7 +36,7 @@ public class NormalMonkey : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        if (Random.Range(0,11) >9)
+        if (Random.Range(0,11) >7)
         {
             isPurple = true;
         }
@@ -143,11 +143,11 @@ public class NormalMonkey : MonoBehaviour
         //Give Points (Based On Size)
         if (!isPurple)
         {
-               FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * (Mathf.Abs(Gbanana.vel)+1)));
+               FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) * (Mathf.Abs(Gbanana.vel)+1)));
         }
         else
         {
-            FindObjectOfType<ScoreCounter>().RemoveScore(20);
+            FindObjectOfType<ScoreCounter>().RemoveScore(FindObjectOfType<ScoreCounter>().score / 5);
         }
         //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 

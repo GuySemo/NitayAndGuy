@@ -21,15 +21,27 @@ EditorBuildSettings:
     path: Assets/Scenes/level 4.unity
     guid: 17f473ba0745df04583bac70abc47243
   - enabled: 1
+    path: Assets/Scenes/level 5.unity
+    guid: 60013764699063746937d69742926681
+  - enabled: 1
     path: Assets/Scenes/levelBoss1.unity
     guid: ece71229e8b2b4e4885723e350780821
   - enabled: 1
-    path: Assets/Scenes/world2_test.unity
+    path: Assets/Scenes/W2-1.unity
     guid: bd4dd3172aba90145b49a3b259529b22
+  - enabled: 1
+    path: Assets/Scenes/W2_1.5.unity
+    guid: ead94eac8c352d043bce5d0a3f3d869b
   - enabled: 1
     path: Assets/Scenes/W2-2.unity
     guid: 6193c63d67a09924a86619bbe6debd85
   - enabled: 1
+    path: Assets/Scenes/W2-2.5.unity
+    guid: ff3e70e9a41137f4ba21feae21577f7c
+  - enabled: 1
     path: Assets/Scenes/W2_3.unity
     guid: 9dd3520857834c941b8846d20c9f6141
+  - enabled: 1
+    path: Assets/Scenes/W2_3 Boss.unity
+    guid: c0d1be9a09764d545b4f7cf0e988f135
   m_configObjects: {}

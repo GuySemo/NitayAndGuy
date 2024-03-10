@@ -64,7 +64,7 @@ public class ScoreCounter : MonoBehaviour
         WinPanel.SetActive(true);
         Time.timeScale = 0.1f;
 
-        if (score > scoreNeeded + threeStarPoints)//Three Stars
+        if (score > threeStarPoints)//Three Stars
         {
             FindObjectOfType<Coins>().AddCoins(100);
             CoinsText.text = "+" + 100 + " Coins";
@@ -73,7 +73,7 @@ public class ScoreCounter : MonoBehaviour
             Stars[1].SetActive(true);
             Stars[0].SetActive(true);
         }
-        else if (score > scoreNeeded + twoStarPoints)//Two Stars
+        else if (score > twoStarPoints)//Two Stars
         {
             FindObjectOfType<Coins>().AddCoins(75);
             CoinsText.text = "+" + 75 + " Coins";
