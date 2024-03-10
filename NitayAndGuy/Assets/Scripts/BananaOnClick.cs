@@ -17,7 +17,7 @@ public class BananaOnClick : MonoBehaviour
     {
         timer = Time.time;
     }
-
+    GameObject boomerang;
     // Update is called once per frame
     void Update()
     {
@@ -35,14 +35,19 @@ public class BananaOnClick : MonoBehaviour
     {
         if (canThrow)
         {
-            Instantiate(ball, Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, -transform.position.z + ball.transform.position.z), Quaternion.identity);
             lastthrow = Time.time;
             canThrow = false;
         }
     }
     private void OnMouseDown()
     {
+        boomerang=Instantiate(ball, Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, -transform.position.z + ball.transform.position.z), Quaternion.identity) as GameObject;
         savemouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
+    private void OnMouseDrag()
+    {
+         boomerang.GetComponent<Rigidbody2D>().velocity=(Camera.main.ScreenToWorldPoint(Input.mousePosition) - FindObjectOfType<BananaOnClick>().savemouse);
+
     }
     public void upgradeSpeed()
     {

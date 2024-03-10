@@ -31,7 +31,6 @@ public class Gbanana : MonoBehaviour
     public static float vel;
     void Start()
     {
-        speedBan = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - FindObjectOfType<BananaOnClick>().savemouse);
         Nonclick.cooldown = 10f;
         seconds = 0;
         if (firstEgg)
