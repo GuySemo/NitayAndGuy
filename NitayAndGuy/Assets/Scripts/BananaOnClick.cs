@@ -11,6 +11,7 @@ public class BananaOnClick : MonoBehaviour
     public Vector3 savemouse;
     static public float cooldown = 1f;
     float lastthrow;
+    float controltime=0;
     float timer;
     // Start is called before the first frame update
     void Start()
@@ -46,9 +47,10 @@ public class BananaOnClick : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        if (boomerang!=null)
+        if (boomerang!=null&&(Time.time<=controltime))
         {
             boomerang.GetComponent<Rigidbody2D>().velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - FindObjectOfType<BananaOnClick>().savemouse);
+            controltime = Time.time+1.5f;
         }
 
     }
