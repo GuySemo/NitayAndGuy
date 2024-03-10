@@ -46,7 +46,10 @@ public class BananaOnClick : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-         boomerang.GetComponent<Rigidbody2D>().velocity=(Camera.main.ScreenToWorldPoint(Input.mousePosition) - FindObjectOfType<BananaOnClick>().savemouse);
+        if (boomerang!=null)
+        {
+            boomerang.GetComponent<Rigidbody2D>().velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - FindObjectOfType<BananaOnClick>().savemouse);
+        }
 
     }
     public void upgradeSpeed()
