@@ -44,14 +44,15 @@ public class BananaOnClick : MonoBehaviour
     {
         boomerang=Instantiate(ball, Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, -transform.position.z + ball.transform.position.z), Quaternion.identity) as GameObject;
         savemouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        controltime = Time.time + 0.3f;
     }
     private void OnMouseDrag()
     {
         if (boomerang!=null&&(Time.time<=controltime))
         {
             boomerang.GetComponent<Rigidbody2D>().velocity = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - FindObjectOfType<BananaOnClick>().savemouse);
-            controltime = Time.time+1.5f;
         }
+
 
     }
     public void upgradeSpeed()
