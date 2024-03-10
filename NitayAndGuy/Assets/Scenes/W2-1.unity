@@ -222,7 +222,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.124373436, y: 0.053303003}
+  m_Offset: {x: 0.051448345, y: -0.3485775}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -233,7 +233,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.295694, y: 10.203655}
+  m_Size: {x: 24.063309, y: 17.337002}
   m_EdgeRadius: 0
 --- !u!114 &102550777
 MonoBehaviour:
@@ -913,6 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c769833f1962d47b2b2c3e2bd150ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartDelay: 4
   offsetXPos: 1
   offsetXNeg: 0
   mySortingLayer: 3
@@ -1697,6 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c769833f1962d47b2b2c3e2bd150ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartDelay: 4
   offsetXPos: 1
   offsetXNeg: -1
   mySortingLayer: 3
@@ -1957,6 +1959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c769833f1962d47b2b2c3e2bd150ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartDelay: 4
   offsetXPos: 0
   offsetXNeg: -1
   mySortingLayer: 3
