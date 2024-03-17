@@ -24,14 +24,14 @@ public class MilkGun : MonoBehaviour
     {
         Debug.Log(MousePos);
         MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        lazer = Instantiate(beam, (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0, -transform.position.z + beam.transform.position.z), Quaternion.identity) as GameObject;
+        lazer = Instantiate(beam, (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0,5 -transform.position.z + beam.transform.position.z), Quaternion.identity) as GameObject;
     }
     private void OnMouseDrag()
     {
         MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 dist= Camera.main.ScreenToWorldPoint(Input.mousePosition) - startingPoint.transform.position;
-        lazer.transform.localScale = new Vector3(1, dist.magnitude,1);
-        lazer.transform.position = (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position)/2;
+        lazer.transform.localScale = new Vector3(1, dist.magnitude/2,1);
+        lazer.transform.position = (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position)/2+new Vector3(0,0,5);
         lazer.transform.eulerAngles = new Vector3(0, 0, 90+(180 / Mathf.PI) * Mathf.Atan2((Camera.main.ScreenToWorldPoint(Input.mousePosition).y - startingPoint.transform.position.y) , (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startingPoint.transform.position.x)));
     }
     private void OnMouseUp()

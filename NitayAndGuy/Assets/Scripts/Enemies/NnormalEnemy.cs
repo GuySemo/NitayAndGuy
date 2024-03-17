@@ -104,6 +104,10 @@ public class NnormalEnemy : MonoBehaviour
                 
             }
         }
+        if (other.tag=="Laser")
+        {
+            HitChicken(1);
+        }
         if (other.tag == "Death")
         {
             ChickenDie();

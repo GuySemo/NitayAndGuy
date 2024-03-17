@@ -10,6 +10,7 @@ TagManager:
   - BreakEgg
   - Death
   - Tower
+  - Laser
   layers:
   - Default
   - TransparentFX
