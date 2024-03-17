@@ -208,7 +208,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1469701308, guid: 34edfcb7e6e87814897cd2557029289d, type: 3}
+  m_Sprite: {fileID: -2057337881, guid: 452986ec9ef1c9f4a9096a7dcd00e5fd, type: 3}
   m_Color: {r: 1, g: 0.7962264, b: 0.9925807, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -304,6 +304,7 @@ MonoBehaviour:
   boom2Effect: {fileID: 7866458706319650412, guid: 9197922743e3919469deaaa6bbc83210, type: 3}
   isMother: 0
   isBoom: 0
+  isBoss: 0
   pointsGive: 10
   chickenLimit: 20
   PakasAudio: []

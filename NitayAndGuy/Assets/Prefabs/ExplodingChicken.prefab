@@ -174,6 +174,7 @@ MonoBehaviour:
   boom2Effect: {fileID: 7866458706319650412, guid: 9197922743e3919469deaaa6bbc83210, type: 3}
   isMother: 0
   isBoom: 1
+  isBoss: 0
   pointsGive: 6
   chickenLimit: 20
   PakasAudio:

@@ -177,7 +177,7 @@ MonoBehaviour:
   isBoom: 0
   isBoss: 1
   pointsGive: 1000
-  chickenLimit: 30
+  chickenLimit: 20
   PakasAudio:
   - {fileID: 8300000, guid: 3082dfafbee5c20469ce1ef79c96abdf, type: 3}
   - {fileID: 8300000, guid: e182ed8cbbb1a1045b5ba01c274954a1, type: 3}
