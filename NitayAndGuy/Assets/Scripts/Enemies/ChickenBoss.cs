@@ -18,5 +18,6 @@ public class ChickenBoss : MonoBehaviour
     public void ChickenDie()
     {
         FindObjectOfType<ScoreCounter>().Win();
+        Destroy(gameObject);
     }
 }

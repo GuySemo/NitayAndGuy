@@ -1489,7 +1489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 12
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -2114,15 +2114,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752169971845, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: scoreNeeded
-      value: 250
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752169971845, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: twoStarPoints
-      value: 400
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752169971845, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: threeStarPoints
-      value: 500
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752360891099, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: m_text
@@ -2391,7 +2391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -2615,7 +2615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -2671,12 +2671,16 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3310398405697365512, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310398405697365512, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.16
+      value: -4.67
       objectReference: {fileID: 0}
     - target: {fileID: 3310398405697365512, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.13
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 3310398405697365512, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2709,6 +2713,22 @@ PrefabInstance:
     - target: {fileID: 3310398405697365512, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310398405697365513, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310398405697365513, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310398405697365513, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310398405697365513, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3310398405697365513, guid: 0eec26d675112054b9b5955d2a489603, type: 3}
       propertyPath: m_SortingOrder
@@ -2749,7 +2769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307912, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_RootOrder
@@ -2797,7 +2817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer

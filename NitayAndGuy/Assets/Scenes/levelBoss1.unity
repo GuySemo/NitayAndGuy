@@ -1032,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752360891099, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: m_text
-      value: EGGSTRAVAGANZA
+      value: CLUCKIN' HOUR
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752360891099, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: m_fontSize
