@@ -9,12 +9,12 @@ public class buttonControl : MonoBehaviour
 {
     static int speedUpgrade = 0;
     public bool isEgg = false;
-    [SerializeField] static int EggCost =40;
+    [SerializeField] static int EggCost =35;
     [SerializeField]  TMP_Text EggCostText;
     [SerializeField] TMP_Text SpeedNumTxt;
 
     static int DelayUpgrade = 3;
-    [SerializeField] static int EggDelayCost = 30;
+    [SerializeField] static int EggDelayCost = 25;
     [SerializeField] TMP_Text EggDelayText;
     [SerializeField] TMP_Text DelayNumTxt;
 
