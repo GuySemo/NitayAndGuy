@@ -81,7 +81,7 @@ public class buttonControl : MonoBehaviour
         {
             DelayUpgrade--;
             FindObjectOfType<Coins>().LoseCoins(EggDelayCost);
-            Nonclick.cooldown = Nonclick.cooldown - 0.05f;
+            Nonclick.cooldown = Nonclick.cooldown - 0.075f;
             EggDelayCost *= 2;
             gameObject.GetComponent<Button>().interactable = (Coins.coins >= EggDelayCost);
             EggDelayText.text = "Cost: " + EggDelayCost;

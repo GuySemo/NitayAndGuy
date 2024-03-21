@@ -31,6 +31,9 @@ public class NnormalEnemy : MonoBehaviour
     public int chickenLimit = 20;
 
     [SerializeField] AudioClip[] PakasAudio;
+
+    bool canTurn = true;
+    float turnTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,28 +53,11 @@ public class NnormalEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (starter)
-        //{
-        //    //GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
-        //    starter = false;
-        //}
-        //Change Direction
+        if (!canTurn && Time.time - turnTime > 1)
+        {
+            canTurn = true;
+        }
 
-        //if (Time.time>lasttime)
-        //{
-        //    if (Random.Range(1,4)==3)
-        //    {
-        //        speed = Random.Range(5, 30) / 2.5f;
-        //        ChangeDirection = Random.Range(0,2);
-        //        if (ChangeDirection==0)
-        //        {
-        //            ChangeDirection = -1;
-        //        }
-        //        GetComponent<Rigidbody2D>().velocity = new Vector3(ChangeDirection*speed,0,0);
-        //    }
-        //    lasttime = Time.time + 0.5f;
-            
-        //}
         if (GetComponent<Rigidbody2D>().velocity.x >0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
@@ -84,8 +70,11 @@ public class NnormalEnemy : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Wall" && canTurn)
         {
+            canTurn = false;
+            turnTime = Time.time;
+
             speed = -1 * speed;
             GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
             //GetComponent<Rigidbody2D>().velocity = new Vector3(-speed*other.transform.position.x/Mathf.Abs(other.transform.position.x),0,0);
@@ -103,10 +92,6 @@ public class NnormalEnemy : MonoBehaviour
                 HitChicken(1);
                 
             }
-        }
-        if (other.tag=="Laser")
-        {
-            HitChicken(1);
         }
         if (other.tag == "Death")
         {

@@ -957,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.data[0]
@@ -1751,15 +1751,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752169971845, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: scoreNeeded
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752169971845, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: twoStarPoints
-      value: 250
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752169971845, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: threeStarPoints
-      value: 400
+      value: 325
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752360891099, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: m_text
@@ -2051,7 +2051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -2076,15 +2076,15 @@ PrefabInstance:
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.data[0]
       value: 
-      objectReference: {fileID: 5371283490916664148, guid: a07eb6cc29650cc4fb22b5cb9d281ffe, type: 3}
+      objectReference: {fileID: 1672983242046752529, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.data[1]
       value: 
-      objectReference: {fileID: 1672983242046752529, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
+      objectReference: {fileID: 4996045386246495636, guid: ef075317c21a85045bfe5224e2082a6c, type: 3}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.data[2]
       value: 
-      objectReference: {fileID: 4996045386246495636, guid: ef075317c21a85045bfe5224e2082a6c, type: 3}
+      objectReference: {fileID: 1672983242046752529, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.data[3]
       value: 
@@ -2294,9 +2294,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997110475}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 0.33, z: 0}
-  m_LocalScale: {x: 0.70690215, y: 0.7122071, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5600014, y: 0.32999992, z: 0}
+  m_LocalScale: {x: 0.7069021, y: 0.712207, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2448,7 +2448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -2460,11 +2460,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sizeMultiplier
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: speedMultiplier
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
@@ -2481,7 +2481,7 @@ PrefabInstance:
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.data[2]
       value: 
-      objectReference: {fileID: 4996045386246495636, guid: ef075317c21a85045bfe5224e2082a6c, type: 3}
+      objectReference: {fileID: 1672983242046752529, guid: 74d735a710be0fc489d70b2dc8c980db, type: 3}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.data[3]
       value: 

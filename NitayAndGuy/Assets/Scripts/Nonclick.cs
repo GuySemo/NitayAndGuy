@@ -7,7 +7,7 @@ public class Nonclick : MonoBehaviour
 {
     [SerializeField] GameObject ball;
     public bool canThrow = true;
-   static public float cooldown=0.2f;
+   static public float cooldown= 0.3f;
     float lastthrow;
     float timer;
     // Start is called before the first frame update
@@ -19,9 +19,12 @@ public class Nonclick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((!canThrow)&&(Time.time - timer > 4)&&(Time.time > lastthrow + cooldown))
+        if ((!canThrow)&&(Time.time - timer > 4))
         {
-            canThrow = true;
+            if ((Time.time > lastthrow + cooldown))
+            {
+                canThrow = true;
+            }
         }
         //if (!canthrowCD&&(Time.time>lastthrow+cooldown))
         //{
@@ -35,6 +38,7 @@ public class Nonclick : MonoBehaviour
         {
             Instantiate(ball, Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, -transform.position.z + ball.transform.position.z), Quaternion.identity);
             lastthrow = Time.time;
+            canThrow = false;
         }
     }
     public void upgradeSpeed()

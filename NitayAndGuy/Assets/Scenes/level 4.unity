@@ -844,7 +844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307912, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_RootOrder
@@ -901,6 +901,10 @@ PrefabInstance:
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: mySortingLayer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
+      propertyPath: speedMultiplier
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
@@ -964,7 +968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307912, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_RootOrder
@@ -1028,7 +1032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: speedMultiplier
-      value: 0.9
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
@@ -1431,7 +1435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -1447,7 +1451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: speedMultiplier
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
@@ -2020,6 +2024,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5024363207618854468, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035439108034709546, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9022820751058303369, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2116,7 +2128,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752127061235, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: seconds
-      value: 90
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820752127061246, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -221.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820752127061246, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 173.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820752169971841, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -221.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820752169971841, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 249.82
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752169971845, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: scoreNeeded
@@ -2209,7 +2237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -2225,7 +2253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: speedMultiplier
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
@@ -2338,7 +2366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: speedMultiplier
-      value: 0.9
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
@@ -2918,7 +2946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -2930,11 +2958,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sizeMultiplier
-      value: 0.9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: speedMultiplier
-      value: 0.9
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size

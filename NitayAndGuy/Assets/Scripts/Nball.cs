@@ -25,7 +25,6 @@ public class Nball : MonoBehaviour
     void Start()
     {
         seconds = 0;
-        Debug.Log(sizeSpeed);
         if (firstEgg)
         {
             firstEgg = false;
