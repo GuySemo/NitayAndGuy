@@ -23,8 +23,18 @@ public class MapUpdater : MonoBehaviour
     [SerializeField] GameObject levels;
     int levelCount;
     Transform[] levelButtons;
+
+    //Cutscene shi
+     Camera oCamera;
+    [SerializeField] Transform Fog;
+    static bool w2cutActive = false;
+    float cutsceneTimer;
+    [SerializeField] GameObject world2Cutscene;
+
+
     void Start()
     {
+        W2Cutscene();
         //
         levelCount = levels.transform.childCount;
         levelButtons = new Transform[levelCount];
@@ -50,6 +60,26 @@ public class MapUpdater : MonoBehaviour
         {
             UnlockAll();
         }
+
+        //World 1 to 2 Cutscene
+        if (w2cutActive)
+        {
+            if (Time.time - cutsceneTimer > 6)
+            {
+                oCamera.GetComponent<Camera>().orthographicSize = 7;
+                FindObjectOfType<MCameraMove>().canMove = true;
+                //Activate Boat Animation
+            }
+            if (Time.time - cutsceneTimer > 8)
+            {
+                w2cutActive = false;
+                Destroy(Fog.gameObject);
+
+                //Activate 2nd Menash
+                DialogText.dialogsActive[5] = true;
+                world2Cutscene.SetActive(true);
+            }
+        }
     }
     public void UnlockAll()
     {
@@ -61,6 +91,26 @@ public class MapUpdater : MonoBehaviour
             levelButtons[i + 1].GetComponent<Clickables>().ReColor();
         }
         Coins.coins = 1000000;
-    }
+    } //DEV MODE
 
+    public void W2Cutscene()
+    {
+        w2cutActive = true;
+        cutsceneTimer = Time.time;
+
+        //Camera Can't move
+        FindObjectOfType<MCameraMove>().canMove = false;
+
+        //Change Camera
+        oCamera = Camera.main;
+        oCamera.transform.position = new Vector3(37, 30, -10);
+        oCamera.GetComponent<Camera>().orthographicSize = 15;
+        
+        //activate Fog Fade
+        for (int i = 0; i < Fog.childCount; i++)
+        {
+            Fog.GetChild(i).GetComponent<Animator>().SetBool("fade", true);
+        }
+    }
+ 
 }

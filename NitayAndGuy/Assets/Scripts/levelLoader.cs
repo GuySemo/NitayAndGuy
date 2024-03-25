@@ -39,4 +39,8 @@ public class levelLoader : MonoBehaviour
     {
         MapUpdater.levelsCleared[SceneManager.GetActiveScene().buildIndex-1] = true;
     }
+    public void ActiveDialog(int index)
+    {
+        DialogText.dialogsActive[index] = true;
+    }
 }

@@ -12,7 +12,7 @@ public class MCameraMove : MonoBehaviour
     [SerializeField] public int distance;
 
     static Vector3 currentPos = new Vector3(0,0,-10);
-
+    public bool canMove = true;
     private void Start()
     {
         ResetCamera = Camera.main.transform.position;
@@ -22,7 +22,7 @@ public class MCameraMove : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && canMove)
         {
             if (true)
             {

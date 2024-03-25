@@ -2749,6 +2749,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9022820751216087356, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820751216087356, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820751216087356, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 4783048967385763226, guid: 592ba51fbbd1e924797f25f9b9b1f6ba, type: 3}
+    - target: {fileID: 9022820751216087356, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820751216087356, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ActiveDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820751216087356, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: levelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820751216087356, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022820751216087356, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9022820751535734762, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: m_RootOrder
       value: 7
