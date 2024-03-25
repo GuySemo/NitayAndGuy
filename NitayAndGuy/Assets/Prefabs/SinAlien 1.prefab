@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea50136d9a8a3c4992a083afcba478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
+  life: 20
 --- !u!95 &2754776307476357352
 Animator:
   serializedVersion: 4
@@ -304,7 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2754776307845633266}
   - component: {fileID: 2754776307845633267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

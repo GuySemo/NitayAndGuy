@@ -12,6 +12,9 @@ public class AlienCirc : MonoBehaviour
     void Start()
     {
         startingPos = transform.position;
+        Radius = Random.Range(1, 5);
+        frequency = Random.Range(1f,3f);
+        speed = Random.Range(1,4);
     }
 
     // Update is called once per frame
