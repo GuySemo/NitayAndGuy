@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3835451101207001854}
   - component: {fileID: 3835451101207001855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea50136d9a8a3c4992a083afcba478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
+  life: 20
 --- !u!96 &1937771931024449428
 TrailRenderer:
   serializedVersion: 2

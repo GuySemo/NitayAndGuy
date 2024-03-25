@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3449224296542841198}
   - component: {fileID: 3449224296542841193}
   m_Layer: 6
-  m_Name: SinAlien
+  m_Name: DVDAlien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BallSpeed: 7
   startingspeed: 5
-  startofgame: 0
+  xyRatio: 1
 --- !u!95 &3449224296542841198
 Animator:
   serializedVersion: 4
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea50136d9a8a3c4992a083afcba478b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
+  life: 20
 --- !u!1 &3449224297850011188
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3449224297850011191}
   - component: {fileID: 3449224297850011190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

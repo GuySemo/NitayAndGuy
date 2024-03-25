@@ -11,7 +11,9 @@ public class sinAlien : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = Random.Range(3, 7);
+        frequency = Random.Range(3, 7);
+        amplitood = Random.Range(3, 6);
     }
 
     // Update is called once per frame

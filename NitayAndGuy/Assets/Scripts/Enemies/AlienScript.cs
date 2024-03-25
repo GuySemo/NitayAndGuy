@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AlienScript : MonoBehaviour
 {
-    public int life = 10;
+    public int life = 20;
     float startinglife;
 
     // Start is called before the first frame update
