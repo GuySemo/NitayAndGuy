@@ -34,7 +34,7 @@ public class MapUpdater : MonoBehaviour
 
     void Start()
     {
-        W2Cutscene();
+        //W2Cutscene();
         //
         levelCount = levels.transform.childCount;
         levelButtons = new Transform[levelCount];
