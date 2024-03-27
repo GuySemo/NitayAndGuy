@@ -149,6 +149,7 @@ public class MapUpdater : MonoBehaviour
             levelButtons[i + 1].GetComponent<Clickables>().ReColor();
         }
         Coins.coins = 1000000;
+        //W2Cutscene();
     } //DEV MODE
 
     public void W2Cutscene()
