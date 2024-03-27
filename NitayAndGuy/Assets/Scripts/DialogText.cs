@@ -27,6 +27,7 @@ public class DialogText : MonoBehaviour, IPointerClickHandler // 2
         else
         {
             FindObjectOfType<MCameraMove>().canMove = false;
+            FindObjectOfType<Clickables>().cantClickMode = true;
         }
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
@@ -64,18 +65,16 @@ public class DialogText : MonoBehaviour, IPointerClickHandler // 2
             }
             else
             {
-                //Set this dialog false
-                dialogsActive[dialogIndex] = false;
+                ////Set this dialog false
+                //dialogsActive[dialogIndex] = false;
+                //endTimer = Time.time;
+                //children[index].gameObject.SetActive(false);
+                ////Activate ending animation in menash and text
+                //gameObject.transform.parent.GetChild(1).GetChild(0).GetComponent<Animator>().SetBool("finished", true);
+                //gameObject.transform.parent.GetChild(0).GetComponent<Animator>().SetBool("finished", true);
 
-                endTimer = Time.time;
-
-                children[index].gameObject.SetActive(false);
-
-                //Activate ending animation in menash and text
-                gameObject.transform.parent.GetChild(1).GetChild(0).GetComponent<Animator>().SetBool("finished", true);
-                gameObject.transform.parent.GetChild(0).GetComponent<Animator>().SetBool("finished", true);
-
-                FindObjectOfType<MCameraMove>().canMove = true;
+                //FindObjectOfType<MCameraMove>().canMove = true;
+                SkipDialog();
             }
         }
     }
@@ -93,7 +92,12 @@ public class DialogText : MonoBehaviour, IPointerClickHandler // 2
         gameObject.transform.parent.GetChild(0).GetComponent<Animator>().SetBool("finished", true);
 
         FindObjectOfType<MCameraMove>().canMove = true;
-
+        FindObjectOfType<Clickables>().cantClickMode = false;
+        //Activate world 2 cutscene after 4th dialog
+        if (dialogIndex == 4)
+        {
+            FindObjectOfType<MapUpdater>().W2Cutscene();
+        }
     }
 
     public void OnDrag(PointerEventData eventData)

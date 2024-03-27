@@ -49,8 +49,8 @@ public class MCameraMove : MonoBehaviour
             currentPos = Camera.main.transform.position;
         }
 
-        if (Input.GetMouseButton(1))
-            Camera.main.transform.position = ResetCamera;
+        //if (Input.GetMouseButton(1))
+        //    Camera.main.transform.position = ResetCamera;
 
     }
 }

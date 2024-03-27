@@ -13,8 +13,8 @@ public class MilkGun : MonoBehaviour
     [SerializeField] public static float  timeOfUse;
     float timeOfstartUse;
     bool charge=true;
-    public float chargespeed=1.8f;
-    public static float maxCharge=7;
+    public float chargespeed=  1.8f;
+    public static float maxCharge=5;
     // Start is called before the first frame update
     void Start()
     {
