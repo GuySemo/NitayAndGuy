@@ -56,7 +56,7 @@ public class MapUpdater : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.S))
         {
             UnlockAll();
         }
