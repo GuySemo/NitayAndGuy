@@ -147,7 +147,7 @@ public class ChickenBoss : MonoBehaviour
         canHit = true;
         canSpawnChickens = true;
         GetComponent<SpriteRenderer>().color = new Color(1,1, 1, 1);
-        if (Time.time - hitTimer > 6)
+        if (Time.time - hitTimer > 10)
         {
             hitMode = false;
         }
@@ -172,8 +172,20 @@ public class ChickenBoss : MonoBehaviour
         GameObject oBoom = Instantiate(BoomEffect, transform.position, Quaternion.identity) as GameObject;
         oBoom.GetComponent<Transform>().localScale = oBoom.GetComponent<Transform>().localScale * 3f;
 
+        float timeTook = FindObjectOfType<Timer>().seconds;
         //Win
-        FindObjectOfType<ScoreCounter>().score = FindObjectOfType<ScoreCounter>().threeStarPoints + 1;
+        if (timeTook > 30)
+        {
+            FindObjectOfType<ScoreCounter>().score = FindObjectOfType<ScoreCounter>().threeStarPoints + 1;
+        }
+        else if (timeTook > 15)
+        {
+            FindObjectOfType<ScoreCounter>().score = FindObjectOfType<ScoreCounter>().twoStarPoints + 1;
+        }
+        else if (timeTook >= 0)
+        {
+            FindObjectOfType<ScoreCounter>().score = FindObjectOfType<ScoreCounter>().scoreNeeded + 1;
+        }
         FindObjectOfType<ScoreCounter>().Win();
     }
 }

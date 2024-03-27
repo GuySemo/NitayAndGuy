@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] TMP_Text text;
     [SerializeField] float secondsSinceStart;
 
-    [SerializeField] int seconds = 90;
+    [SerializeField] public int seconds = 90;
     private int secondsSave;
     public bool started = false;
     string secondsText = null;
