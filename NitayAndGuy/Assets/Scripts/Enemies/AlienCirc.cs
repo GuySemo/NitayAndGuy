@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AlienExp : MonoBehaviour
+public class AlienCirc : MonoBehaviour
 {
-    [SerializeField] float speed=5;
+    [SerializeField] float speed = 5;
     [SerializeField] float Radius = 50f;
     [SerializeField] float frequency = 0.1f;
     [SerializeField] Vector3 startingPos;
@@ -12,13 +12,16 @@ public class AlienExp : MonoBehaviour
     void Start()
     {
         startingPos = transform.position;
+        Radius = Random.Range(2, 5);
+        frequency = Random.Range(1.5f, 3f);
+        speed = Random.Range(3, 5);
     }
 
     // Update is called once per frame
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector3((-Radius*Mathf.Sin(frequency*Time.time))*frequency-transform.position.x,(Radius*Mathf.Cos(frequency*Time.time))*frequency-transform.position.y,0);
+        GetComponent<Rigidbody2D>().velocity = new Vector3((-Radius * Mathf.Sin(frequency * Time.time)) * frequency - speed, (Radius * Mathf.Cos(frequency * Time.time)) * frequency, 0);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

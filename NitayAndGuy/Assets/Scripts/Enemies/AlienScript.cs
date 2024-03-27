@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AlienScript : MonoBehaviour
 {
-    public int life = 20;
+    public float life = 20;
     float startinglife;
 
     // Start is called before the first frame update
@@ -22,14 +22,18 @@ public class AlienScript : MonoBehaviour
     {
         if (other.tag == "Laser")
         {
-            HitAlien(1);
+            HitAlien(0.6f+Mathf.Pow(MilkGun.timeOfUse,2)/18);
+        }
+        if (other.tag=="LowEnergyLazer")
+        {
+            HitAlien(0.4f);
         }
         if (other.tag == "Death")
         {
             AlienDie();
         }
     }
-    public void HitAlien(int damage)
+    public void HitAlien(float damage)
     {
         life = life - damage;
 

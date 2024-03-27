@@ -11,6 +11,7 @@ TagManager:
   - Death
   - Tower
   - Laser
+  - LowEnergyLazer
   layers:
   - Default
   - TransparentFX
