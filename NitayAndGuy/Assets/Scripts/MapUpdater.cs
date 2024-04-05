@@ -29,15 +29,23 @@ public class MapUpdater : MonoBehaviour
     //Cutscene shi
      Camera oCamera;
     [SerializeField] Transform Fog;
+    static bool destoryFog = false;
     static bool w2cutActive = false;
     float cutsceneTimer;
     [SerializeField] GameObject world2Cutscene;
-
+    //Kodan
     int kodan=0;
+    //FreePlay
+    public static bool freePlay = false;
     void Start()
     {
-        //W2Cutscene();
+        if (destoryFog)
+        {
+            Destroy(Fog.gameObject);
+        }
         //
+        oCamera = Camera.main;
+
         levelCount = levels.transform.childCount;
         levelButtons = new Transform[levelCount];
 
@@ -53,6 +61,10 @@ public class MapUpdater : MonoBehaviour
             levelButtons[i].transform.GetChild(0).gameObject.SetActive(levelsCleared[i]);
             //Button Clickable
             levelButtons[i + 1].GetComponent<Clickables>().canClick = levelsCleared[i];
+            if (freePlay)
+            {
+                levelButtons[i + 1].GetComponent<Clickables>().canClick = true;
+            }
             levelButtons[i + 1].GetComponent<Clickables>().ReColor();
         }
     }
@@ -132,7 +144,7 @@ public class MapUpdater : MonoBehaviour
             {
                 w2cutActive = false;
                 Destroy(Fog.gameObject);
-
+                destoryFog = true;
                 //Activate 2nd Menash
                 DialogText.dialogsActive[5] = true;
                 world2Cutscene.SetActive(true);
@@ -149,7 +161,6 @@ public class MapUpdater : MonoBehaviour
             levelButtons[i + 1].GetComponent<Clickables>().ReColor();
         }
         Coins.coins = 1000000;
-        //W2Cutscene();
     } //DEV MODE
 
     public void W2Cutscene()

@@ -29,9 +29,11 @@ public class Gbanana : MonoBehaviour
     float bananaTimer = 99999999;
 
     public static float vel;
+
+    public static int bananasAlive = 0;
     void Start()
     {
-        Nonclick.cooldown = 10f;
+        bananasAlive++;
         seconds = 0;
         if (firstEgg)
         {
@@ -40,7 +42,7 @@ public class Gbanana : MonoBehaviour
         }
         FindObjectOfType<Timer>().started = true;
         spinDir = Random.Range(600, 1000);
-        Destroy(gameObject, 5);
+        //Destroy(gameObject, 5);
         GetComponent<Rigidbody2D>().velocity += new Vector2(speedBan.x,speedBan.y)/2;
     }
 
@@ -88,11 +90,12 @@ public class Gbanana : MonoBehaviour
         if (startBig && transform.localScale.x > 5f)
         {
             Destroy(gameObject);
+            bananasAlive--;
         }
-      //      transform.localScale =
-      //  new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
-      //, (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
-      //  , 1);
+        //      transform.localScale =
+        //  new Vector3((gameObject.transform.localScale.x * (sizeSpeed - 1) / sizeSpeed)
+        //, (gameObject.transform.localScale.y * (sizeSpeed - 1) / sizeSpeed)
+        //  , 1);
 
     }
     private void OnTriggerStay2D(Collider2D other)

@@ -13,9 +13,13 @@ public class BananaOnClick : MonoBehaviour
     float lastthrow;
     float controltime=0;
     float timer;
+
+    public static int bananasAllowed = 1;
     // Start is called before the first frame update
     void Start()
     {
+        Gbanana.bananasAlive = 0;
+        cooldown = 0;
         timer = Time.time;
     }
     GameObject boomerang;
@@ -42,9 +46,12 @@ public class BananaOnClick : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        boomerang=Instantiate(ball, Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, -transform.position.z + ball.transform.position.z), Quaternion.identity) as GameObject;
-        savemouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        controltime = Time.time + 0.3f;
+        if (Gbanana.bananasAlive < bananasAllowed)
+        {
+            boomerang = Instantiate(ball, Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, -transform.position.z + ball.transform.position.z), Quaternion.identity) as GameObject;
+            savemouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            controltime = Time.time + 0.3f;
+        }
     }
     private void OnMouseDrag()
     {

@@ -40,13 +40,26 @@ public class MCameraMove : MonoBehaviour
             drag = false;
         }
 
-        //if (drag && Mathf.Abs((Origin - Difference).x - (Origin - Difference).y) < 20
-        //    && (Origin - Difference).x > -10 && ((Origin - Difference).y > -10) &&
-        //    ((Origin - Difference).x < distance && ((Origin - Difference).y < distance)))
-        if(drag)
+         if (drag)
         {
-            Camera.main.transform.position = Origin - Difference;
+            Camera.main.transform.position = Origin - Difference + new Vector3(0,0,-10)  ;
             currentPos = Camera.main.transform.position;
+        }
+        if ( transform.position.x < -23)
+        {
+            transform.position = new Vector3(-23, transform.position.y, transform.position.z);
+        }
+        if (transform.position.x > 120)
+        {
+            transform.position = new Vector3(120, transform.position.y, transform.position.z);
+        }
+        if (transform.position.y < -18)
+        {
+            transform.position = new Vector3(transform.position.x, -18 , transform.position.z);
+        }
+        if (transform.position.y > 130)
+        {
+            transform.position = new Vector3(transform.position.x, 130, transform.position.z);
         }
 
         //if (Input.GetMouseButton(1))

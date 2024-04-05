@@ -34,6 +34,10 @@ public class WalkingMonkey : MonoBehaviour
 
     public float sizeMod = 1;
     [SerializeField] AudioClip[] PakasAudio;
+
+    public static int maxPoints = 23;
+    [SerializeField] GameObject RedEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,11 +130,17 @@ public class WalkingMonkey : MonoBehaviour
         //Give Points (Based On Size)
         if (!isPurple)
         {
-            FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt(((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x) * (Mathf.Abs(Gbanana.vel) + 1)));
+            int pointsAdd = Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) * (Mathf.Abs(Gbanana.vel) + 1));
+            if (pointsAdd > maxPoints)
+            {
+                pointsAdd = maxPoints;
+            }
+            FindObjectOfType<ScoreCounter>().AddScore(pointsAdd);
         }
         else
         {
-            FindObjectOfType<ScoreCounter>().RemoveScore(FindObjectOfType<ScoreCounter>().score / 5);
+            FindObjectOfType<ScoreCounter>().RemoveScore(FindObjectOfType<ScoreCounter>().score / 4);
+            Instantiate(RedEffect, new Vector3(0,0,0), Quaternion.identity);
         }        //Debug.Log(Mathf.RoundToInt((Random.Range(6, 8)) / transform.localScale.x));
 
         //Effects

@@ -182,6 +182,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e182ed8cbbb1a1045b5ba01c274954a1, type: 3}
   - {fileID: 8300000, guid: 1c4ac278c8343414883d052cf162de4a, type: 3}
   - {fileID: 8300000, guid: c25486aeb5eee2146b04082bd632426c, type: 3}
+  HitAudio:
+  - {fileID: 8300000, guid: cb70b115be529ef43b587f7b3cec578e, type: 3}
+  - {fileID: 8300000, guid: d8067d4b338c4854ebd01e117ceaf03e, type: 3}
+  - {fileID: 8300000, guid: 88d7a1c3f895c3a4a923182d78733b3f, type: 3}
+  - {fileID: 8300000, guid: d2535081ed7132149944b0e880aca0a8, type: 3}
+  - {fileID: 8300000, guid: 02aa22deb109ff04f9ae3a19708c2d59, type: 3}
+  - {fileID: 8300000, guid: 4684fe0f986648f40b8ac1ed2cbe4657, type: 3}
+  - {fileID: 8300000, guid: f240627b91c6ecf48a9cf99e27300849, type: 3}
+  - {fileID: 8300000, guid: 5366949e3571f734e82d42c668ad35e9, type: 3}
+  - {fileID: 8300000, guid: e9e5ffa4783062c4da0577f2b0360bca, type: 3}
 --- !u!114 &1500481761468029300
 MonoBehaviour:
   m_ObjectHideFlags: 0

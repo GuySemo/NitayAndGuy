@@ -34,6 +34,13 @@ public class NnormalEnemy : MonoBehaviour
 
     bool canTurn = true;
     float turnTime = 0;
+
+    //Get Hit
+    float hitTimer = 0;
+    bool hit = false;
+    Vector3 originalScale;
+    [SerializeField] AudioClip[] HitAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +55,7 @@ public class NnormalEnemy : MonoBehaviour
         started = false;
         hitCloseness = gameObject.transform.localScale.x / 5;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, 0, 0);
+        originalScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -65,6 +73,15 @@ public class NnormalEnemy : MonoBehaviour
         if (GetComponent<Rigidbody2D>().velocity.x < 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
+        }
+
+        if (hit)
+        {
+            if (Time.time - hitTimer > 0.02f)
+            {
+                transform.localScale = originalScale;
+                hit = false;
+            }
         }
     }
     
@@ -102,7 +119,6 @@ public class NnormalEnemy : MonoBehaviour
     public void HitChicken(float damage)
     {
         life = life - damage;
-        Debug.Log(life);
         if (life <= 0)
         {
             ChickenDie();
@@ -110,6 +126,11 @@ public class NnormalEnemy : MonoBehaviour
         else
         {
             GetComponent<SpriteRenderer>().color = new Color(1, life/startinglife ,life/startinglife,1);
+            hit = true;
+            hitTimer = Time.time;
+            transform.localScale = transform.localScale * 0.95f;
+            AudioSource.PlayClipAtPoint(HitAudio[Random.Range(0, HitAudio.Length)], new Vector3(0, 0, -7));
+
         }
     }
     public void ChickenDie()

@@ -7,16 +7,16 @@ using TMPro;
 
 public class buttonBanana : MonoBehaviour
 {
-    static int damageUpgrade = 0;
+    static int amountUpgrade = 0;
     public bool isBanana = false;
-     static int BananaCost = 40;
+     static int BananaCost = 200;
     [SerializeField] TMP_Text BananaCostText;
-    [SerializeField] TMP_Text DamageNumTxt;
+    [SerializeField] TMP_Text AmountNumTxt;
 
-    static int DelayUpgrade = 3;
-    [SerializeField] static int BananaDelayCost = 25;
-    [SerializeField] TMP_Text BananaDelayText;
-    [SerializeField] TMP_Text DelayNumTxt;
+    static int PointUpgrade = 0;
+    [SerializeField] static int BananaPointCost = 60;
+    [SerializeField] TMP_Text BananaPointText;
+    [SerializeField] TMP_Text PointNumTxt;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +29,8 @@ public class buttonBanana : MonoBehaviour
     {
         if (isBanana)
         {
-            DamageNumTxt.text = "Banana Damage: " + (damageUpgrade + 1).ToString() + " (+) ";
-            if (damageUpgrade <= 2)
+            AmountNumTxt.text = "Bananas: " + (amountUpgrade + 1).ToString() + " (+) ";
+            if (amountUpgrade <= 1)
             {
                 gameObject.GetComponent<Button>().interactable = Coins.coins >= BananaCost;
                 BananaCostText.text = "Cost: " + BananaCost;
@@ -43,15 +43,15 @@ public class buttonBanana : MonoBehaviour
         }
         else
         {
-            DelayNumTxt.text = "Banana Delay: " + (DelayUpgrade).ToString() + " (-) ";
-            if (DelayUpgrade >= 1)
+            PointNumTxt.text = "Banana Points: " + (PointUpgrade + 1).ToString() + " (+) ";
+            if (PointUpgrade <= 2)
             {
-                gameObject.GetComponent<Button>().interactable = Coins.coins >= BananaDelayCost;
-                BananaDelayText.text = "Cost: " + BananaDelayCost;
+                gameObject.GetComponent<Button>().interactable = Coins.coins >= BananaPointCost;
+                BananaPointText.text = "Cost: " + BananaPointCost;
             }
             else
             {
-                BananaDelayText.text = "Max";
+                BananaPointText.text = "Max";
                 gameObject.GetComponent<Button>().interactable = false;
             }
         }
@@ -60,11 +60,11 @@ public class buttonBanana : MonoBehaviour
 
     public void UpgradeDamage()
     {
-        if (damageUpgrade <= 3)
+        if (amountUpgrade <= 1)
         {
-            damageUpgrade++;
+            amountUpgrade++;
             FindObjectOfType<Coins>().LoseCoins(BananaCost);
-            //Gbanana.myDamage=Gbanana.myDamage*2;
+            BananaOnClick.bananasAllowed++;
             BananaCost *= 2;
             gameObject.GetComponent<Button>().interactable = (Coins.coins >= BananaCost);
             BananaCostText.text = "Cost: " + BananaCost;
@@ -77,18 +77,19 @@ public class buttonBanana : MonoBehaviour
     }
     public void buyDelay()
     {
-        if (DelayUpgrade >= 1)
+        if (PointUpgrade <= 4)
         {
-            DelayUpgrade--;
-            FindObjectOfType<Coins>().LoseCoins(BananaDelayCost);
-            BananaOnClick.cooldown = BananaOnClick.cooldown - 0.2f;
-            BananaDelayCost *= 2;
-            gameObject.GetComponent<Button>().interactable = (Coins.coins >= BananaDelayCost);
-            BananaDelayText.text = "Cost: " + BananaDelayCost;
+            PointUpgrade++;
+            FindObjectOfType<Coins>().LoseCoins(BananaPointCost);
+            NormalMonkey.maxPoints = NormalMonkey.maxPoints + 7;
+            WalkingMonkey.maxPoints = WalkingMonkey.maxPoints + 7;
+            BananaPointCost *= 2;
+            gameObject.GetComponent<Button>().interactable = (Coins.coins >= BananaPointCost);
+            BananaPointText.text = "Cost: " + BananaPointCost;
         }
         else
         {
-            BananaDelayText.text = "Max";
+            BananaPointText.text = "Max";
             gameObject.GetComponent<Button>().interactable = false;
         }
 

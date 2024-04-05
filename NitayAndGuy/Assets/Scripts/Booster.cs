@@ -10,7 +10,7 @@ public class Booster : MonoBehaviour
     bool isPurple = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && Random.Range(0, 11) > 6)
+        if (other.tag == "Player" && Random.Range(0, 11) > 6 && other.GetComponent<NormalMonkey>().life ==1)
         {
 
             isPurple = other.GetComponent<NormalMonkey>().isPurple;

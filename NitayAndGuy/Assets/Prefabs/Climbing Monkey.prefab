@@ -161,6 +161,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ea7f696c091dc90419b62c321ccb9511, type: 3}
   - {fileID: 8300000, guid: c043672457d36864bbeead4e8bfbd1a3, type: 3}
   - {fileID: 8300000, guid: bbb3f5a96b00f744e8806f1f119558f3, type: 3}
+  RedEffect: {fileID: 212657350306212843, guid: c9e63423ba8f9ae489bf81065ec13060, type: 3}
+  purpleOdds: 25
 --- !u!95 &6593414071702800201
 Animator:
   serializedVersion: 4

@@ -18,7 +18,11 @@ public class levelLoader : MonoBehaviour
     }
     public void GoToLevel(int goToLevel)
     {
-        SceneManager.LoadScene(goToLevel);
+        SceneManager.LoadScene(goToLevel + 1);
+    }
+    public void ActivateFreePlay()
+    {
+        MapUpdater.freePlay = true;
     }
     public void ResetScene()
     {
@@ -37,7 +41,7 @@ public class levelLoader : MonoBehaviour
     }
     public  void WinLevel()
     {
-        MapUpdater.levelsCleared[SceneManager.GetActiveScene().buildIndex-1] = true;
+        MapUpdater.levelsCleared[SceneManager.GetActiveScene().buildIndex-2] = true;
     }
     public void ActiveDialog(int index)
     {

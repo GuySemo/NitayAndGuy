@@ -61,7 +61,7 @@ public class Timer : MonoBehaviour
         {
             if (seconds <= 0 && !stopped)
             {
-                if (SceneManager.GetActiveScene().buildIndex != 6)
+                if (SceneManager.GetActiveScene().buildIndex != 7)
                 {
                     //Stop Game
                     FindObjectOfType<ScoreCounter>().ScoreCheck();
