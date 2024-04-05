@@ -73,13 +73,6 @@ public class Timer : MonoBehaviour
                 }
             }
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            if (FindObjectOfType<ScoreCounter>().score >= FindObjectOfType<ScoreCounter>().scoreNeeded)
-            {
-                FindObjectOfType<ScoreCounter>().ScoreCheck();
-            }
-        }
 
     }
     public void DisplayTime(int seconds)

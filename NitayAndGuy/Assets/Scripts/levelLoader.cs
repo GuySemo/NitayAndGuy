@@ -41,7 +41,9 @@ public class levelLoader : MonoBehaviour
     }
     public  void WinLevel()
     {
+        Camera.main.GetComponent<AudioSource>().pitch = 1f;
         MapUpdater.levelsCleared[SceneManager.GetActiveScene().buildIndex-2] = true;
+
     }
     public void ActiveDialog(int index)
     {

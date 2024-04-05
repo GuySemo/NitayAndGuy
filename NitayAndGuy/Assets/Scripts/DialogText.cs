@@ -21,7 +21,6 @@ public class DialogText : MonoBehaviour, IPointerClickHandler // 2
     {
         if (!dialogsActive[dialogIndex])
         {
-            Debug.Log(dialogIndex);
             gameObject.transform.parent.gameObject.SetActive(false);
         }
         else

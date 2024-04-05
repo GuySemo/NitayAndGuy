@@ -59,6 +59,7 @@ public class ScoreCounter : MonoBehaviour
     }
     public void Win()
     {
+        Camera.main.GetComponent<AudioSource>().pitch = 1.1f;
         levelLoader.canThrow = false;
         WinPanel.SetActive(true);
         Time.timeScale = 0.1f;
