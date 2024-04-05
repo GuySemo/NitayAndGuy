@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 20
+  pointsGive: 5
 --- !u!95 &2754776307476357352
 Animator:
   serializedVersion: 4

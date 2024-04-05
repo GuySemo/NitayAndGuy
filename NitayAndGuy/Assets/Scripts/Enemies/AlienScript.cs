@@ -6,6 +6,7 @@ public class AlienScript : MonoBehaviour
 {
     public float life = 20;
     float startinglife;
+    [SerializeField] int pointsGive = 6;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class AlienScript : MonoBehaviour
     }
     public void AlienDie()
     {
+        FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x));
         Destroy(gameObject);
     }
 }

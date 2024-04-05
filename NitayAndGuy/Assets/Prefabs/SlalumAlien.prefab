@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 20
+  pointsGive: 4
 --- !u!96 &1937771931024449428
 TrailRenderer:
   serializedVersion: 2

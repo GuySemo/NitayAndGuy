@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 20
+  pointsGive: 7
 --- !u!1 &3449224297850011188
 GameObject:
   m_ObjectHideFlags: 0
