@@ -42,24 +42,24 @@ public class MCameraMove : MonoBehaviour
 
          if (drag)
         {
-            Camera.main.transform.position = Origin - Difference + new Vector3(0,0,-10)  ;
+            Camera.main.transform.position = Origin - Difference  ;
             currentPos = Camera.main.transform.position;
         }
         if ( transform.position.x < -23)
         {
-            transform.position = new Vector3(-23, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-23, transform.position.y, -10);
         }
         if (transform.position.x > 120)
         {
-            transform.position = new Vector3(120, transform.position.y, transform.position.z);
+            transform.position = new Vector3(120, transform.position.y, -10);
         }
         if (transform.position.y < -18)
         {
-            transform.position = new Vector3(transform.position.x, -18 , transform.position.z);
+            transform.position = new Vector3(transform.position.x, -18 , -10);
         }
         if (transform.position.y > 130)
         {
-            transform.position = new Vector3(transform.position.x, 130, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 130, -10);
         }
 
         //if (Input.GetMouseButton(1))

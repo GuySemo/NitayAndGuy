@@ -8,6 +8,7 @@ public class BossBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ChickenBoss.spawned = false;
         gameObject.GetComponent<Slider>().maxValue = 100;
         gameObject.GetComponent<Slider>().value = 100;
 
