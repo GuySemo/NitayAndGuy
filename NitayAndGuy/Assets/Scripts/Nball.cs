@@ -7,7 +7,6 @@ public class Nball : MonoBehaviour
 {
     public static float sizeSpeed= 4;
     public bool isTouching = false;
-    GameObject objectHit;
     [SerializeField] GameObject boomEffect;
     [SerializeField] GameObject boom2Effect;
 
@@ -20,7 +19,6 @@ public class Nball : MonoBehaviour
     float spinDir;
 
     public static bool firstEgg = true;
-    static bool started = false;
     static double seconds = 0;
     void Start()
     {

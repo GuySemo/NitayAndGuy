@@ -8,20 +8,14 @@ public class Gbanana : MonoBehaviour
     public float sizeSpeed= 4;
     public bool isTouching = false;
     Vector3 speedBan;// speed of banana
-    GameObject objectHit;
     [SerializeField] GameObject boomEffect;
     [SerializeField] GameObject boom2Effect;
-    
-    //hit closeness
-    [SerializeField] float hitCloseness = 0.5f;
-
     [SerializeField] GameObject crackedEgg;
     [SerializeField] public float myDamage = 20;
     //RandomSpin
     float spinDir;
 
     public static bool firstEgg = true;
-    static bool started = false;
     static double seconds = 0;
 
     bool startBig = false;

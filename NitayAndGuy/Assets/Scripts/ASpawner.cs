@@ -12,7 +12,6 @@ public class ASpawner : MonoBehaviour
     [SerializeField] float offsetXNeg = 0;
     [SerializeField] int mySortingLayer = 3;
     [SerializeField] float sizeMultiplier = 1;
-    [SerializeField] float speedMultiplier = 1;
     [SerializeField] float delay;
     [SerializeField] bool toFlipX = false;
     [SerializeField] GameObject[] aliens;

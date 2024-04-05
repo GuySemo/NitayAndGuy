@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DVDalien : MonoBehaviour
 {
-    [SerializeField] int BallSpeed = 7;
     [SerializeField] float startingspeed=5;
     [SerializeField] float xyRatio=1;
     private Rigidbody2D rb;

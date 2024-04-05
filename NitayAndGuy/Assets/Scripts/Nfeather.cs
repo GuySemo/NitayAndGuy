@@ -20,7 +20,6 @@ public class Nfeather : MonoBehaviour
     float spinDir;
 
     public static bool firstEgg = true;
-    static bool started = false;
     static double seconds = 0;
     void Start()
     {
