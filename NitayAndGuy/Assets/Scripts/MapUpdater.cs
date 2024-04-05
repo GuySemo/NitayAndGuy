@@ -138,16 +138,18 @@ public class MapUpdater : MonoBehaviour
             {
                 oCamera.GetComponent<Camera>().orthographicSize = 7;
                 FindObjectOfType<MCameraMove>().canMove = true;
-                //Activate Boat Animation
             }
             if (Time.time - cutsceneTimer > 8)
             {
+                Debug.Log("Hi there");
                 w2cutActive = false;
                 Destroy(Fog.gameObject);
                 destoryFog = true;
                 //Activate 2nd Menash
                 DialogText.dialogsActive[5] = true;
                 world2Cutscene.SetActive(true);
+                oCamera.transform.localPosition = new Vector3(oCamera.transform.localPosition.x,
+     oCamera.transform.localPosition.y, -10);
             }
         }
     }
