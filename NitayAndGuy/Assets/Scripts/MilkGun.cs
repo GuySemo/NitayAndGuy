@@ -35,7 +35,6 @@ public class MilkGun : MonoBehaviour
     private void OnMouseDown()
     {
         charge = false;
-        Debug.Log(MousePos);
         MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         lazer = Instantiate(beam, (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0,5 -transform.position.z + beam.transform.position.z), Quaternion.identity) as GameObject;
     }
