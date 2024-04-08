@@ -49,4 +49,8 @@ public class levelLoader : MonoBehaviour
     {
         DialogText.dialogsActive[index] = true;
     }
+    public void PlaySound(AudioClip ac)
+    {
+        AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position);
+    }
 }

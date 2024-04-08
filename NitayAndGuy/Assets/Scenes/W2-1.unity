@@ -963,7 +963,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.11
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1140,6 +1140,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6040485798506681421, guid: 4989cc76481098141a52682b96f65fd3, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6040485798506681423, guid: 4989cc76481098141a52682b96f65fd3, type: 3}
       propertyPath: m_Name
       value: Booster
@@ -1199,6 +1203,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6040485798506681420, guid: 4989cc76481098141a52682b96f65fd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6040485798506681421, guid: 4989cc76481098141a52682b96f65fd3, type: 3}
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6040485798506681423, guid: 4989cc76481098141a52682b96f65fd3, type: 3}

@@ -732,7 +732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -744,11 +744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sizeMultiplier
-      value: 0.6
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: speedMultiplier
-      value: 0.7
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
@@ -949,11 +949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sizeMultiplier
-      value: 0.6
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: speedMultiplier
-      value: 0.7
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: chickens.Array.size
@@ -1755,7 +1755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752127061235, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: seconds
-      value: 75
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 9022820752169971845, guid: 166e3b608c88b2449bba2d4c04385f2c, type: 3}
       propertyPath: scoreNeeded
@@ -2059,7 +2059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer
@@ -2456,7 +2456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: delay
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307918, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: sortingLayer

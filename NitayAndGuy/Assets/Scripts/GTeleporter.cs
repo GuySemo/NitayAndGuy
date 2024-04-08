@@ -22,7 +22,7 @@ public class GTeleporter : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "BreakEgg")
         {
             if (Random.Range(0,2) == 0)
             {
