@@ -536,6 +536,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: w3-Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4804309552062559203, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4804309552275776609, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4804309552504187915, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: Stars.Array.data[0]
       value: 
