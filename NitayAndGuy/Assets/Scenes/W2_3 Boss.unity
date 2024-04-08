@@ -2922,7 +2922,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 248445042677559201, guid: 52927d49a39e4bc43ace448359aa8b52, type: 3}
       propertyPath: life
-      value: 1400
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 248445042677559201, guid: 52927d49a39e4bc43ace448359aa8b52, type: 3}
       propertyPath: bananaClose
