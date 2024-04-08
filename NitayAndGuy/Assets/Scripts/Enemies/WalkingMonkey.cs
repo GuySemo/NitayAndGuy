@@ -33,11 +33,12 @@ public class WalkingMonkey : MonoBehaviour
     public int chickenLimit = 20;
 
     public float sizeMod = 1;
-    [SerializeField] AudioClip[] PakasAudio;
+    [SerializeField] public AudioClip[] PakasAudio;
 
     public static int maxPoints = 23;
     [SerializeField] GameObject RedEffect;
 
+    public float bananaClose = 4;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +52,7 @@ public class WalkingMonkey : MonoBehaviour
             Destroy(gameObject);
         }
         started = false;
-        hitCloseness = gameObject.transform.localScale.x / 4;
+        hitCloseness = gameObject.transform.localScale.x / bananaClose;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, jump, 0);
         lasttime = Time.time + 3f;
     }
@@ -73,6 +74,10 @@ public class WalkingMonkey : MonoBehaviour
             }
             lasttime = Time.time + 2.5f;
 
+        }
+        if (GetComponent<Rigidbody2D>().velocity.x == 0)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector3(speed, jump, 0);
         }
 
         if (GetComponent<Rigidbody2D>().velocity.x > 0)

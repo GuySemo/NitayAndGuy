@@ -81,8 +81,12 @@ public class NormalMonkey : MonoBehaviour
         //        GetComponent<Rigidbody2D>().velocity = new Vector3(ChangeDirection*speed,0,0);
         //    }
         //    lasttime = Time.time + 0.5f;
-            
+
         //}
+        if (GetComponent<Rigidbody2D>().velocity.y == 0)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector3(0, speed, 0);
+        }
         if (GetComponent<Rigidbody2D>().velocity.x >0)
         {
             GetComponent<SpriteRenderer>().flipX = true;
