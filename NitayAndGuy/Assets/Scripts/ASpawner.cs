@@ -31,7 +31,7 @@ public class ASpawner : MonoBehaviour
     }
     IEnumerator Spawn()
     {
-        while (true)
+        while (AlienScript.limit>AlienScript.AliensInScene)
         {
             //Create New Chicken
             GameObject instance = Instantiate(aliens[Random.Range(0, aliens.Length)], transform.position, Quaternion.identity)
