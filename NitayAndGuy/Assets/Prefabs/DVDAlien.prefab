@@ -128,7 +128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.84, y: 4.32}
+    oldSize: {x: 2.7428572, y: 3.0857143}
     newSize: {x: 3.84, y: 4.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14191483dfd1b30498c0bc647a24dec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallSpeed: 7
   startingspeed: 5
   xyRatio: 1
 --- !u!95 &3449224296542841198
@@ -186,6 +185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 20
   pointsGive: 7
+  AlienAudio:
+  - {fileID: 8300000, guid: a7c03a9e5ac6f3748a16674583641dda, type: 3}
+  - {fileID: 8300000, guid: 9b3a4539b62152245909c41cb6682035, type: 3}
 --- !u!1 &3449224297850011188
 GameObject:
   m_ObjectHideFlags: 0
