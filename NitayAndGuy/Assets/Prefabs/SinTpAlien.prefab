@@ -236,6 +236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 20
   pointsGive: 6
+  AlienAudio:
+  - {fileID: 8300000, guid: f326f90bcbe7e9c4faf7842c173e1fe2, type: 3}
+  - {fileID: 8300000, guid: 56eeaae41b2a53846b8a939693fef57e, type: 3}
 --- !u!114 &5145869439601194919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +305,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.422857, y: 2.622857}
+    oldSize: {x: 0.424, y: 0.459}
     newSize: {x: 4.24, y: 4.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

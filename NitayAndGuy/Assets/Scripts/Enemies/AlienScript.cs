@@ -7,7 +7,8 @@ public class AlienScript : MonoBehaviour
     public float life = 20;
     float startinglife;
     [SerializeField] int pointsGive = 6;
-
+    [SerializeField] AudioClip[] AlienAudio;
+    [SerializeField] bool isBoss = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +50,13 @@ public class AlienScript : MonoBehaviour
     }
     public void AlienDie()
     {
+
+        AudioSource.PlayClipAtPoint(AlienAudio[Random.Range(0, AlienAudio.Length)], new Vector3(0, 0, -7));
         FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x));
+        if (isBoss)
+        {
+            FindObjectOfType<ScoreCounter>().Win();
+        }
         Destroy(gameObject);
     }
 }

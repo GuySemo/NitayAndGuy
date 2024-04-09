@@ -144,7 +144,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.656, y: 3.072}
+    oldSize: {x: 2.6114285, y: 2.1942856}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -167,6 +167,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 20
   pointsGive: 5
+  AlienAudio:
+  - {fileID: 8300000, guid: a1657dedb752b3540a5a9a321ab78f6b, type: 3}
+  - {fileID: 8300000, guid: abe8a232a98d65f46a17341943af0a7b, type: 3}
 --- !u!95 &2754776307476357352
 Animator:
   serializedVersion: 4
