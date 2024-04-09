@@ -771,15 +771,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3382423712365711278, guid: 01f0003c874ac7644bf7508c068153f1, type: 3}
       propertyPath: scoreNeeded
-      value: 900
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 3382423712365711278, guid: 01f0003c874ac7644bf7508c068153f1, type: 3}
       propertyPath: twoStarPoints
-      value: 1100
+      value: 850
       objectReference: {fileID: 0}
     - target: {fileID: 3382423712365711278, guid: 01f0003c874ac7644bf7508c068153f1, type: 3}
       propertyPath: threeStarPoints
-      value: 1300
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 3382423712543923696, guid: 01f0003c874ac7644bf7508c068153f1, type: 3}
       propertyPath: m_text

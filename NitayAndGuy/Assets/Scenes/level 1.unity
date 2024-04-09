@@ -295,8 +295,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64729355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.1, y: -2.3631, z: 0}
-  m_LocalScale: {x: 5.758154, y: 25.00009, z: 1}
+  m_LocalPosition: {x: -18.1511, y: -2.3631, z: 0}
+  m_LocalScale: {x: 3.6558518, y: 25.00009, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -521,8 +521,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267254344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.97, y: -1.9356, z: 0}
-  m_LocalScale: {x: 4.486179, y: 23.703798, z: 1}
+  m_LocalPosition: {x: 17.0342, y: -1.9356, z: 0}
+  m_LocalScale: {x: 2.3579357, y: 23.703798, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1004,7 +1004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.68
+      value: -24.52
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2140,7 +2140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.67
+      value: -24.05
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2659,7 +2659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.06
+      value: 11.98
       objectReference: {fileID: 0}
     - target: {fileID: 8489823775215307913, guid: cd879ce7ad125bd4b96f1fe1317bedd4, type: 3}
       propertyPath: m_LocalPosition.y

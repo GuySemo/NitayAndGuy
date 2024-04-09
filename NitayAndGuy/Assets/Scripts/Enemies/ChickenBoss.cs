@@ -31,6 +31,14 @@ public class ChickenBoss : MonoBehaviour
 
     bool canTurn = true;
     float turnTime = 0;
+
+    [SerializeField] AudioClip[] PakasAudio;
+    //Get Hit
+    float hitAnimTimer = 0;
+    bool hit = false;
+    Vector3 originalScale;
+    [SerializeField] AudioClip[] HitAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +47,7 @@ public class ChickenBoss : MonoBehaviour
         hitCloseness = gameObject.transform.localScale.x / 10f;
         timer = Time.time;
         hitTimer = Time.time;
-
+        originalScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -69,6 +77,14 @@ public class ChickenBoss : MonoBehaviour
         else
         {
             HardMode();
+        }
+        if (hit)
+        {
+            if (Time.time - hitAnimTimer > 0.02f)
+            {
+                transform.localScale = originalScale;
+                hit = false;
+            }
         }
     }
 
@@ -163,10 +179,15 @@ public class ChickenBoss : MonoBehaviour
         else
         {
             transform.parent.localScale = transform.parent.localScale * 0.99f;
+            hit = true;
+            hitAnimTimer = Time.time;
+            transform.localScale = transform.localScale * 0.95f;
+            AudioSource.PlayClipAtPoint(HitAudio[Random.Range(0, HitAudio.Length)], new Vector3(0, 0, -7));
         }
     }
     public void ChickenDie()
     {
+        AudioSource.PlayClipAtPoint(PakasAudio[Random.Range(0, PakasAudio.Length)], new Vector3(0, 0, -7));
         spawned = false;
         Destroy(gameObject);
         GameObject oBoom = Instantiate(BoomEffect, transform.position, Quaternion.identity) as GameObject;
