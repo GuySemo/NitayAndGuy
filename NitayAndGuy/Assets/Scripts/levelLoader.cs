@@ -49,6 +49,10 @@ public class levelLoader : MonoBehaviour
     {
         DialogText.dialogsActive[index] = true;
     }
+    public void OpenW2Shop()
+    {
+        W2Shop.unlocked = true;
+    }
     public void PlaySound(AudioClip ac)
     {
         AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position);
