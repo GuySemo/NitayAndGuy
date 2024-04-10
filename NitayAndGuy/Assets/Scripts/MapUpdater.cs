@@ -42,6 +42,12 @@ public class MapUpdater : MonoBehaviour
     float cutsceneTimer;
     [SerializeField] GameObject world2Cutscene;
 
+    //Cutscene W3  shi
+    [SerializeField] Transform FogW3;
+    static bool destoryFogW3 = false;
+    static bool w3cutActive = false;
+    float cutsceneW3Timer;
+    [SerializeField] GameObject world3Cutscene;
     //Kodan
     int kodan=0;
     //FreePlay
@@ -52,6 +58,10 @@ public class MapUpdater : MonoBehaviour
         if (destoryFogW2)
         {
             Destroy(FogW2.gameObject);
+        }
+        if (destoryFogW3)
+        {
+            Destroy(FogW3.gameObject);
         }
         //
         oCamera = Camera.main;
