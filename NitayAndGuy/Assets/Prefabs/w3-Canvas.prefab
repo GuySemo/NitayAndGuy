@@ -2884,7 +2884,7 @@ MonoBehaviour:
   text: {fileID: 0}
   secondsSinceStart: 0
   seconds: 60
-  started: 0
+  started: 1
 --- !u!1 &4804309552504187904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,7 +2921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -237, y: 129.7}
+  m_AnchoredPosition: {x: -237, y: 257}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4804309552504187916
@@ -3040,8 +3040,8 @@ MonoBehaviour:
   WinPanel: {fileID: 4804309552275776609}
   LosePanel: {fileID: 4804309552062559203}
   Stars:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2958151456107370657}
+  - {fileID: 94626033189359857}
   - {fileID: 4804309552335593577}
   CoinsText: {fileID: 4804309552242181265}
 --- !u!1 &4804309552637796423

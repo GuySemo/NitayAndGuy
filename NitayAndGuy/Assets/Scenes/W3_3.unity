@@ -809,6 +809,62 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 94626033189359857, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
   m_PrefabInstance: {fileID: 7808290020686408926}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &806994972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 806994973}
+  - component: {fileID: 806994974}
+  m_Layer: 6
+  m_Name: Spawno1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &806994973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806994972}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 22.07, y: 2.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1180097292}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &806994974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806994972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916659ac2bb5c6a4a94716bf6321bd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartDelay: 10
+  offsetXPos: 0
+  offsetXNeg: 0
+  mySortingLayer: 3
+  sizeMultiplier: 1
+  delay: 7
+  toFlipX: 0
+  aliens:
+  - {fileID: 2754776307476357366, guid: 6ca858c3177bbad4fbe60a2d582c943e, type: 3}
+  - {fileID: 3449224296542841200, guid: 26fda86f7a071ad4b98bd1d3c0f87d0b, type: 3}
+  - {fileID: 5928826998381269154, guid: e0f7c67d85a7e8e4daeecb07d142b6ca, type: 3}
+  - {fileID: 5145869439601194914, guid: b7bb99cef6ed74a41a7a5267686a10df, type: 3}
 --- !u!1 &904270965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,9 +1067,67 @@ Transform:
   m_Children:
   - {fileID: 3948913338436834546}
   - {fileID: 371864610}
+  - {fileID: 806994973}
+  - {fileID: 1597086742}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1597086741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1597086742}
+  - component: {fileID: 1597086743}
+  m_Layer: 6
+  m_Name: Spawno1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1597086742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597086741}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.13, y: -3.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1180097292}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1597086743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597086741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916659ac2bb5c6a4a94716bf6321bd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartDelay: 10
+  offsetXPos: 0
+  offsetXNeg: 0
+  mySortingLayer: 3
+  sizeMultiplier: 1
+  delay: 8
+  toFlipX: 0
+  aliens:
+  - {fileID: 2754776307476357366, guid: 6ca858c3177bbad4fbe60a2d582c943e, type: 3}
+  - {fileID: 3449224296542841200, guid: 26fda86f7a071ad4b98bd1d3c0f87d0b, type: 3}
+  - {fileID: 5928826998381269154, guid: e0f7c67d85a7e8e4daeecb07d142b6ca, type: 3}
+  - {fileID: 5145869439601194914, guid: b7bb99cef6ed74a41a7a5267686a10df, type: 3}
 --- !u!1 &1749250638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,15 +1840,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 554e040acffe69645959983a955ffeb6, type: 3}
     - target: {fileID: 3889128698616274755, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3889128698616274755, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3889128698616274755, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4804309550798037861, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: m_IsActive
@@ -1828,9 +1942,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: w3-Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4804309551425894458, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
+      propertyPath: m_text
+      value: 'Level 3-3
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 4804309552496668797, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: seconds
-      value: 55
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4804309552496668797, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: started
@@ -1838,15 +1958,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804309552504187915, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: scoreNeeded
-      value: 80
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4804309552504187915, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: twoStarPoints
-      value: 120
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4804309552504187915, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: threeStarPoints
-      value: 175
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4804309552504187915, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: Stars.Array.data[0]
@@ -1856,6 +1976,10 @@ PrefabInstance:
       propertyPath: Stars.Array.data[1]
       value: 
       objectReference: {fileID: 722828006}
+    - target: {fileID: 4804309552728407637, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
+      propertyPath: m_text
+      value: DOOMSDAY
+      objectReference: {fileID: 0}
     - target: {fileID: 6916713780703865544, guid: 0da613d25cc5d7c46972486a61729cc2, type: 3}
       propertyPath: m_Color.b
       value: 0.009685516

@@ -97,6 +97,10 @@ public class DialogText : MonoBehaviour, IPointerClickHandler // 2
         {
             FindObjectOfType<MapUpdater>().W2Cutscene();
         }
+        if (dialogIndex == 9)
+        {
+            FindObjectOfType<MapUpdater>().W3Cutscene();
+        }
     }
 
     public void OnDrag(PointerEventData eventData)

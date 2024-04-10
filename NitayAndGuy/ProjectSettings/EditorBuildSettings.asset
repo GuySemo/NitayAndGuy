@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/W3_Boss.unity
     guid: 95ae46ab62c0de6419e6eb7850648979
+  - enabled: 1
+    path: Assets/Scenes/Z_Credits.unity
+    guid: 5875b7a570ba7a04a9042d7758a29447
   m_configObjects: {}

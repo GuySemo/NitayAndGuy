@@ -37,17 +37,16 @@ public class MapUpdater : MonoBehaviour
     //Cutscene shi
      Camera oCamera;
     [SerializeField] Transform FogW2;
-    static bool destoryFogW2 = false;
+    public static bool destoryFogW2 = false;
     static bool w2cutActive = false;
     float cutsceneTimer;
     [SerializeField] GameObject world2Cutscene;
 
     //Cutscene W3  shi
     [SerializeField] Transform FogW3;
-    static bool destoryFogW3 = false;
+    public static bool destoryFogW3 = false;
     static bool w3cutActive = false;
     float cutsceneW3Timer;
-    [SerializeField] GameObject world3Cutscene;
     //Kodan
     int kodan=0;
     //FreePlay
@@ -87,7 +86,8 @@ public class MapUpdater : MonoBehaviour
             }
             if (freePlay)
             {
-                levelButtons[i + 1].GetComponent<Clickables>().canClick = true;
+                levelButtons[i].GetComponent<Clickables>().canClick = true;
+                levelButtons[i].GetComponent<Clickables>().ReColor();
             }
         }
         //FreePlay
@@ -177,6 +177,19 @@ public class MapUpdater : MonoBehaviour
      oCamera.transform.localPosition.y, -10);
             }
         }
+        //World 2 to 3 cutscene
+        if (w3cutActive)
+        {
+            if (Time.time - cutsceneW3Timer > 6)
+            {
+                oCamera.GetComponent<Camera>().orthographicSize = 7;
+                FindObjectOfType<MCameraMove>().canMove = true;
+                Clickables.cantClickMode = false;
+                w3cutActive = false;
+                Destroy(FogW3.gameObject);
+                destoryFogW3 = true;
+            }
+        }
     }
     public void UnlockAll()
     {
@@ -212,21 +225,21 @@ public class MapUpdater : MonoBehaviour
 
     public void W3Cutscene()
     {
-        w2cutActive = true;
-        cutsceneTimer = Time.time;
+        w3cutActive = true;
+        cutsceneW3Timer = Time.time;
 
         //Camera Can't move
         FindObjectOfType<MCameraMove>().canMove = false;
 
         //Change Camera
         oCamera = Camera.main;
-        oCamera.transform.position = new Vector3(37, 30, -10);
+        oCamera.transform.position = new Vector3(80, 85, -10);
         oCamera.GetComponent<Camera>().orthographicSize = 15;
 
         //activate Fog Fade
-        for (int i = 0; i < FogW2.childCount; i++)
+        for (int i = 0; i < FogW3.childCount; i++)
         {
-            FogW2.GetChild(i).GetComponent<Animator>().SetBool("fade", true);
+            FogW3.GetChild(i).GetComponent<Animator>().SetBool("fade", true);
         }
     }
 

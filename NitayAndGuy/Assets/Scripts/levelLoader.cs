@@ -24,6 +24,10 @@ public class levelLoader : MonoBehaviour
     public void ActivateFreePlay()
     {
         MapUpdater.freePlay = true;
+        MapUpdater.destoryFogW2 = true;
+        MapUpdater.destoryFogW3 = true;
+        Coins.coins = 9999;
+        W2Shop.unlocked = true;
     }
     public void ResetScene()
     {
