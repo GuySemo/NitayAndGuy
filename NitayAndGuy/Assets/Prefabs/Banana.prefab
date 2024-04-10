@@ -142,7 +142,6 @@ MonoBehaviour:
   isTouching: 0
   boomEffect: {fileID: 7866458706319650412, guid: 9197922743e3919469deaaa6bbc83210, type: 3}
   boom2Effect: {fileID: 7866458706319650412, guid: 742173f9fd77a4341909523b60072794, type: 3}
-  hitCloseness: 0.2
   crackedEgg: {fileID: 0}
   myDamage: 1
 --- !u!96 &2442190693345570923
