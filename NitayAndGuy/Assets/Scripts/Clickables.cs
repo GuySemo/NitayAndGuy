@@ -6,7 +6,7 @@ public class Clickables : MonoBehaviour
 {
     [SerializeField] GameObject levelPanel;
     public bool canClick = true;
-    public bool cantClickMode = false;
+    public static bool cantClickMode = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,7 @@ public class Clickables : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if (canClick)
+        if (canClick && !cantClickMode)
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             levelPanel.SetActive(true);

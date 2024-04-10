@@ -36,20 +36,22 @@ public class MapUpdater : MonoBehaviour
 
     //Cutscene shi
      Camera oCamera;
-    [SerializeField] Transform Fog;
-    static bool destoryFog = false;
+    [SerializeField] Transform FogW2;
+    static bool destoryFogW2 = false;
     static bool w2cutActive = false;
     float cutsceneTimer;
     [SerializeField] GameObject world2Cutscene;
+
     //Kodan
     int kodan=0;
     //FreePlay
     public static bool freePlay = false;
+
     void Start()
     {
-        if (destoryFog)
+        if (destoryFogW2)
         {
-            Destroy(Fog.gameObject);
+            Destroy(FogW2.gameObject);
         }
         //
         oCamera = Camera.main;
@@ -78,6 +80,8 @@ public class MapUpdater : MonoBehaviour
                 levelButtons[i + 1].GetComponent<Clickables>().canClick = true;
             }
         }
+        //FreePlay
+        
     }
     private void Update()
     {
@@ -152,10 +156,10 @@ public class MapUpdater : MonoBehaviour
             }
             if (Time.time - cutsceneTimer > 8)
             {
-                Debug.Log("Hi there");
+                Clickables.cantClickMode = false;
                 w2cutActive = false;
-                Destroy(Fog.gameObject);
-                destoryFog = true;
+                Destroy(FogW2.gameObject);
+                destoryFogW2 = true;
                 //Activate 2nd Menash
                 DialogText.dialogsActive[5] = true;
                 world2Cutscene.SetActive(true);
@@ -180,7 +184,7 @@ public class MapUpdater : MonoBehaviour
     {
         w2cutActive = true;
         cutsceneTimer = Time.time;
-
+        Clickables.cantClickMode = true;
         //Camera Can't move
         FindObjectOfType<MCameraMove>().canMove = false;
 
@@ -190,10 +194,31 @@ public class MapUpdater : MonoBehaviour
         oCamera.GetComponent<Camera>().orthographicSize = 15;
         
         //activate Fog Fade
-        for (int i = 0; i < Fog.childCount; i++)
+        for (int i = 0; i < FogW2.childCount; i++)
         {
-            Fog.GetChild(i).GetComponent<Animator>().SetBool("fade", true);
+            FogW2.GetChild(i).GetComponent<Animator>().SetBool("fade", true);
         }
     }
- 
+
+    public void W3Cutscene()
+    {
+        w2cutActive = true;
+        cutsceneTimer = Time.time;
+
+        //Camera Can't move
+        FindObjectOfType<MCameraMove>().canMove = false;
+
+        //Change Camera
+        oCamera = Camera.main;
+        oCamera.transform.position = new Vector3(37, 30, -10);
+        oCamera.GetComponent<Camera>().orthographicSize = 15;
+
+        //activate Fog Fade
+        for (int i = 0; i < FogW2.childCount; i++)
+        {
+            FogW2.GetChild(i).GetComponent<Animator>().SetBool("fade", true);
+        }
+    }
+
+
 }

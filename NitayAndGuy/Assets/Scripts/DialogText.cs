@@ -26,7 +26,7 @@ public class DialogText : MonoBehaviour, IPointerClickHandler // 2
         else
         {
             FindObjectOfType<MCameraMove>().canMove = false;
-            FindObjectOfType<Clickables>().cantClickMode = true;
+            Clickables.cantClickMode = true;
         }
         for (int i = 0; i < gameObject.transform.childCount; i++)
         {
@@ -91,7 +91,7 @@ public class DialogText : MonoBehaviour, IPointerClickHandler // 2
         gameObject.transform.parent.GetChild(0).GetComponent<Animator>().SetBool("finished", true);
 
         FindObjectOfType<MCameraMove>().canMove = true;
-        FindObjectOfType<Clickables>().cantClickMode = false;
+        Clickables.cantClickMode = false;
         //Activate world 2 cutscene after 4th dialog
         if (dialogIndex == 4)
         {

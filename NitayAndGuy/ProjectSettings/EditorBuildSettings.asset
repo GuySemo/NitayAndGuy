@@ -47,4 +47,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/W2_3 Boss.unity
     guid: c0d1be9a09764d545b4f7cf0e988f135
+  - enabled: 1
+    path: Assets/Scenes/W3_1.unity
+    guid: f77ad06dc9716c04c8dc4eae65c10b6d
+  - enabled: 1
+    path: Assets/Scenes/W3_2.unity
+    guid: f0f40ca0764f2154a8e953c0a711676b
+  - enabled: 1
+    path: Assets/Scenes/W3_3.unity
+    guid: fbf0a8811bcb7384e85778d13ac45ea6
+  - enabled: 1
+    path: Assets/Scenes/W3_Boss.unity
+    guid: 95ae46ab62c0de6419e6eb7850648979
   m_configObjects: {}

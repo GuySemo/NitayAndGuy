@@ -14,7 +14,8 @@ public class levelLoader : MonoBehaviour
         Nball.firstEgg = true;
         NnormalEnemy.chickens = 0;
         NnormalEnemy.chickensAlive = 0;
-
+        WalkingMonkey.chickensAlive = 0;
+        NormalMonkey.chickensAlive = 0;
     }
     public void GoToLevel(int goToLevel)
     {
