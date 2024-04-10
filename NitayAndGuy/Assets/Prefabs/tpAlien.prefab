@@ -264,7 +264,8 @@ MonoBehaviour:
   life: 20
   pointsGive: 9
   AlienAudio:
-  - {fileID: 8300000, guid: 38b5159375a5bff40ab42b2b8f0a8f70, type: 3}
+  - {fileID: 8300000, guid: 02423b8026fe7984c808f54525c6b26d, type: 3}
+  isBoss: 0
 --- !u!95 &5928826998381269180
 Animator:
   serializedVersion: 4
