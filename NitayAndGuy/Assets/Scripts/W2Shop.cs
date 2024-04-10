@@ -9,6 +9,10 @@ public class W2Shop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (MapUpdater.freePlay)
+        {
+            GetComponent<W2Shop>().enabled = false;
+        }
         GetComponent<Clickables>().canClick = false;
         if (unlocked)
         {
@@ -25,6 +29,7 @@ public class W2Shop : MonoBehaviour
     {
         unlocked = true;
         GetComponent<Clickables>().canClick = true;
+        GetComponent<Clickables>().ReColor();
         bananas.SetActive(false);
     }
 }

@@ -37,6 +37,7 @@ public class NormalMonkey : MonoBehaviour
 
     [SerializeField] GameObject RedEffect;
     [SerializeField] int purpleOdds = 15;
+    public bool canJump = true;
     // Start is called before the first frame update
     void Start()
     {

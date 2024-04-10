@@ -18,8 +18,15 @@ public class MBossBar : MonoBehaviour
     {
         if (temp > 1)
         {
-            GetComponent<Slider>().value = (int)(King.GetComponent<WalkingMonkey>().life);
-            temp = (int)(King.GetComponent<WalkingMonkey>().life);
+            if (King != null)
+            {
+                GetComponent<Slider>().value = (int)(King.GetComponent<WalkingMonkey>().life);
+                temp = (int)(King.GetComponent<WalkingMonkey>().life);
+            }
+            else
+            {
+                FindObjectOfType<ScoreCounter>().Win();
+            }
         }
         else
         {

@@ -190,7 +190,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1915851285, guid: d6765e071d314ce4db9578c15b42cb9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -239,6 +239,7 @@ MonoBehaviour:
   AlienAudio:
   - {fileID: 8300000, guid: f326f90bcbe7e9c4faf7842c173e1fe2, type: 3}
   - {fileID: 8300000, guid: 56eeaae41b2a53846b8a939693fef57e, type: 3}
+  isBoss: 0
 --- !u!114 &5145869439601194919
 MonoBehaviour:
   m_ObjectHideFlags: 0

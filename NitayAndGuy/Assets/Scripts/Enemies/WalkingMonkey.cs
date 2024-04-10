@@ -39,6 +39,7 @@ public class WalkingMonkey : MonoBehaviour
     [SerializeField] GameObject RedEffect;
 
     public float bananaClose = 4;
+    public bool isHung = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,15 +47,23 @@ public class WalkingMonkey : MonoBehaviour
         anim.SetBool("isPurple", isPurple);
         chickens++;
         chickensAlive++;
+        Debug.Log(chickensAlive);
         if (chickensAlive > chickenLimit)
         {
             chickensAlive--;
+            Debug.Log("KILLED ONE");
             Destroy(gameObject);
         }
         started = false;
         hitCloseness = gameObject.transform.localScale.x / bananaClose;
         GetComponent<Rigidbody2D>().velocity = new Vector3(speed, jump, 0);
         lasttime = Time.time + 3f;
+
+        if (isHung)
+        {
+            chickensAlive--;
+            Destroy(gameObject, 4);
+        }
     }
 
     // Update is called once per frame
@@ -113,6 +122,11 @@ public class WalkingMonkey : MonoBehaviour
         if (other.tag == "Death")
         {
             ChickenDie();
+        }
+        if (other.tag == "Finish")
+        {
+            Destroy(gameObject);
+            chickensAlive--;
         }
     }
 
