@@ -21,7 +21,7 @@ public class MilkGun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        timeOfUse = maxCharge;
     }
 
     // Update is called once per frame
