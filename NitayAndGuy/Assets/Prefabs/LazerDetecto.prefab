@@ -407,4 +407,5 @@ MonoBehaviour:
   beam: {fileID: 1808413876002336972}
   lowEnergyBeam: {fileID: 1808413875640223126}
   startingPoint: {fileID: 3030920641248190816}
+  LaserEffect: {fileID: 4537968681681998237, guid: c95c37fcd8b2cee47a0df355936c74b2, type: 3}
   chargespeed: 0.7

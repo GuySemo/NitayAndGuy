@@ -7,6 +7,7 @@ public class Clickables : MonoBehaviour
     [SerializeField] GameObject levelPanel;
     public bool canClick = true;
     public static bool cantClickMode = false;
+    [SerializeField] AudioClip sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,10 @@ public class Clickables : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             levelPanel.SetActive(true);
+            if (sound != null)
+            {
+                AudioSource.PlayClipAtPoint(sound, Camera.main.transform.position - new Vector3(0, 0, 3));
+            }
         }
     }
     public void ReColor()

@@ -11,7 +11,7 @@ public class DVDalien : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startingspeed = Random.Range(3, 7);
+        startingspeed = Random.Range(5, 10);
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector3(startingspeed * (-1), xyRatio*startingspeed * (-1), 0);
     }

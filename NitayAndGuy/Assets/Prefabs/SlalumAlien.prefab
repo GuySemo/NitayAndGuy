@@ -284,8 +284,19 @@ MonoBehaviour:
   life: 20
   pointsGive: 4
   AlienAudio:
-  - {fileID: 8300000, guid: 9ca6ec92e5334d14c93907be79fb4e86, type: 3}
-  - {fileID: 8300000, guid: 41ac011a00cdb304aa348148cc65f32e, type: 3}
+  - {fileID: 8300000, guid: e096d9c911f38f44c92978c4a56324c7, type: 3}
+  - {fileID: 8300000, guid: df33a54eef36da54396adf944836ae6d, type: 3}
+  - {fileID: 8300000, guid: 26cb2f6c4b6c9304cba8d7145fade26d, type: 3}
+  - {fileID: 8300000, guid: a35d6c27abeec9f429e4f4306a474d4a, type: 3}
+  - {fileID: 8300000, guid: 09662d2bef104114390ca070590ede9e, type: 3}
+  - {fileID: 8300000, guid: ab774dfac01c1564eb852b699a0f78f0, type: 3}
+  - {fileID: 8300000, guid: 66361acdcea650649931368d7c1276e1, type: 3}
+  - {fileID: 8300000, guid: fe76f0c668da1b349831fa53dbe3dca5, type: 3}
+  - {fileID: 8300000, guid: a196557312425924da36a7189102c229, type: 3}
+  - {fileID: 8300000, guid: 5351c2205c493d14a90c3710e39b5514, type: 3}
+  isBoss: 0
+  DeathEffect: {fileID: 3458261797107869473, guid: a62361aee1b5fdb42a3cb09b71d88eef, type: 3}
+  DeathSound: {fileID: 8300000, guid: 698cd6fb02a098d468b895fdbb9628eb, type: 3}
 --- !u!96 &1937771931024449428
 TrailRenderer:
   serializedVersion: 2

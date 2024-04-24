@@ -11,6 +11,8 @@ public class AlienScript : MonoBehaviour
     [SerializeField] bool isBoss = false;
     [SerializeField] public static int limit=15;
     public static int AliensInScene = 0;
+    [SerializeField] GameObject DeathEffect;
+    [SerializeField] AudioClip DeathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +55,8 @@ public class AlienScript : MonoBehaviour
     }
     public void AlienDie()
     {
+        AudioSource.PlayClipAtPoint(DeathSound, new Vector3(0, 0, -7));
+        Instantiate(DeathEffect, transform.position, Quaternion.identity);
         AliensInScene--;
         AudioSource.PlayClipAtPoint(AlienAudio[Random.Range(0, AlienAudio.Length)], new Vector3(0, 0, -7));
         FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x));

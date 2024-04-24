@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0d88867c2c19a4693963b1ad219216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  frequency: 3
-  amplitood: 10
+  speed: 6
+  frequency: 4
+  amplitood: 5
 --- !u!61 &2754776307476357355
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -168,9 +168,19 @@ MonoBehaviour:
   life: 20
   pointsGive: 5
   AlienAudio:
-  - {fileID: 8300000, guid: cd96dd1a07cd30a4ba000afb7ba6db90, type: 3}
-  - {fileID: 8300000, guid: c050c767cbe93fd49b444ad9a0800ad7, type: 3}
+  - {fileID: 8300000, guid: e096d9c911f38f44c92978c4a56324c7, type: 3}
+  - {fileID: 8300000, guid: df33a54eef36da54396adf944836ae6d, type: 3}
+  - {fileID: 8300000, guid: 26cb2f6c4b6c9304cba8d7145fade26d, type: 3}
+  - {fileID: 8300000, guid: a35d6c27abeec9f429e4f4306a474d4a, type: 3}
+  - {fileID: 8300000, guid: 09662d2bef104114390ca070590ede9e, type: 3}
+  - {fileID: 8300000, guid: ab774dfac01c1564eb852b699a0f78f0, type: 3}
+  - {fileID: 8300000, guid: 66361acdcea650649931368d7c1276e1, type: 3}
+  - {fileID: 8300000, guid: fe76f0c668da1b349831fa53dbe3dca5, type: 3}
+  - {fileID: 8300000, guid: a196557312425924da36a7189102c229, type: 3}
+  - {fileID: 8300000, guid: 5351c2205c493d14a90c3710e39b5514, type: 3}
   isBoss: 0
+  DeathEffect: {fileID: 3458261797107869473, guid: a62361aee1b5fdb42a3cb09b71d88eef, type: 3}
+  DeathSound: {fileID: 8300000, guid: 698cd6fb02a098d468b895fdbb9628eb, type: 3}
 --- !u!95 &2754776307476357352
 Animator:
   serializedVersion: 4

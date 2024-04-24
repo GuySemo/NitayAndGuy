@@ -9,6 +9,9 @@ public class MilkGun : MonoBehaviour
     [SerializeField] GameObject beam;
     [SerializeField] GameObject lowEnergyBeam;
     [SerializeField] GameObject startingPoint;
+    [SerializeField] GameObject LaserEffect;
+    GameObject laserEffect;
+    float effectTimer;
     GameObject lazer;
     GameObject lowEnergyLazer;
     Vector3 MousePos;
@@ -18,9 +21,11 @@ public class MilkGun : MonoBehaviour
     public float chargespeed=  1.8f;
     public static float maxCharge=5;
     bool lowMode;
+    AudioSource audioS;
     // Start is called before the first frame update
     void Start()
     {
+        audioS = GetComponent<AudioSource>();
         timeOfUse = maxCharge;
     }
 
@@ -34,12 +39,21 @@ public class MilkGun : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        audioS.mute = false;
+        //laserEffect = Instantiate(LaserEffect, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity) as GameObject;
         charge = false;
         MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         lazer = Instantiate(beam, (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0,5 -transform.position.z + beam.transform.position.z), Quaternion.identity) as GameObject;
     }
     private void OnMouseDrag()
     {
+        //laserEffect.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Time.time - effectTimer > 0.05f)
+        {
+            Instantiate(LaserEffect, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+            effectTimer = Time.time;
+        }
+
         if (timeOfUse>0&& !lowMode)
         {
             MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -74,6 +88,8 @@ public class MilkGun : MonoBehaviour
     }
     private void OnMouseUp()
     {
+        audioS.mute = true ;
+        //Destroy(laserEffect);
         charge = true;  
         if (lazer!=null)
         {

@@ -60,6 +60,6 @@ public class levelLoader : MonoBehaviour
     }
     public void PlaySound(AudioClip ac)
     {
-        AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position - new Vector3(0,0,7));
     }
 }
