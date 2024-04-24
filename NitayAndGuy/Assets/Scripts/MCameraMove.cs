@@ -40,7 +40,7 @@ public class MCameraMove : MonoBehaviour
             drag = false;
         }
 
-         if (drag)
+        if (drag)
         {
             Camera.main.transform.position = Origin - Difference  ;
             currentPos = Camera.main.transform.position;
@@ -61,7 +61,10 @@ public class MCameraMove : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, 130, -10);
         }
-
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            gameObject.GetComponent<Camera>().orthographicSize +=-3*Input.GetAxis("Mouse ScrollWheel");
+        }   
         //if (Input.GetMouseButton(1))
         //    Camera.main.transform.position = ResetCamera;
 
