@@ -63,7 +63,10 @@ public class MCameraMove : MonoBehaviour
         }
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
-            gameObject.GetComponent<Camera>().orthographicSize +=-3*Input.GetAxis("Mouse ScrollWheel");
+            if (!((1>gameObject.GetComponent<Camera>().orthographicSize && Input.GetAxis("Mouse ScrollWheel")>0) || (gameObject.GetComponent<Camera>().orthographicSize > 15 && Input.GetAxis("Mouse ScrollWheel") <0)))
+            {
+                gameObject.GetComponent<Camera>().orthographicSize += -1.5f * Input.GetAxis("Mouse ScrollWheel");
+            }
         }   
         //if (Input.GetMouseButton(1))
         //    Camera.main.transform.position = ResetCamera;
