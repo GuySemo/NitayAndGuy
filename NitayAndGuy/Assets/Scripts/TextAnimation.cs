@@ -16,9 +16,10 @@ public class TextAnimation : MonoBehaviour
     bool finished = false;
 
     [SerializeField] AudioClip typing;
-    // Start is called before the first frame update
+        // Start is called before the first frame update
     void Start()
     {
+        typing = FindObjectOfType<DialogText>().typing;
         originalInput = GetComponent<TMP_Text>().text;
         GetComponent<TMP_Text>().text = "".ToString();
         timer = Time.time;
@@ -34,7 +35,11 @@ public class TextAnimation : MonoBehaviour
         }
         if (Time.time - timer > 0.05f && i < originalInput.Length && canTalk && !finished)
         {
-            //AudioSource.PlayClipAtPoint(typing, Camera.main.transform.position);
+            //Play SOund
+            if (typing != null)
+            {
+                AudioSource.PlayClipAtPoint(typing, Camera.main.transform.position - new Vector3(0,0,1));
+            }
             GetComponent<TMP_Text>().text = (GetComponent<TMP_Text>().text + originalInput[i]).ToString();
             timer = Time.time;
             i++;

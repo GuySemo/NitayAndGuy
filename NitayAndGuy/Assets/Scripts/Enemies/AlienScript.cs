@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AlienScript : MonoBehaviour
@@ -9,7 +7,7 @@ public class AlienScript : MonoBehaviour
     [SerializeField] int pointsGive = 6;
     [SerializeField] AudioClip[] AlienAudio;
     [SerializeField] bool isBoss = false;
-    [SerializeField] public static int limit=15;
+    [SerializeField] public static int limit = 15;
     public static int AliensInScene = 0;
     [SerializeField] GameObject DeathEffect;
     [SerializeField] AudioClip DeathSound;
@@ -23,15 +21,15 @@ public class AlienScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Laser")
         {
-            HitAlien(0.6f+Mathf.Pow(MilkGun.timeOfUse,2)/18);
+            HitAlien(0.6f + Mathf.Pow(MilkGun.timeOfUse, 2) / 18);
         }
-        if (other.tag=="LowEnergyLazer")
+        if (other.tag == "LowEnergyLazer")
         {
             HitAlien(0.4f);
         }
@@ -50,9 +48,16 @@ public class AlienScript : MonoBehaviour
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, life / startinglife, life / startinglife, 1);
-        }
-    }
+            if (!isBoss)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(1, life / startinglife, life / startinglife, 1);
+            }
+            else
+            {
+                FindObjectOfType<AlienBoss>().GetHit();
+            }
+        }    
+}
     public void AlienDie()
     {
         AudioSource.PlayClipAtPoint(DeathSound, new Vector3(0, 0, -7));
@@ -62,7 +67,7 @@ public class AlienScript : MonoBehaviour
         FindObjectOfType<ScoreCounter>().AddScore(Mathf.RoundToInt((Random.Range(pointsGive, pointsGive + 2)) / transform.localScale.x));
         if (isBoss)
         {
-            FindObjectOfType<ScoreCounter>().Win();
+            FindObjectOfType<FinalLevelScript>().Win();
         }
         Destroy(gameObject);
     }

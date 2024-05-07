@@ -633,7 +633,8 @@ MonoBehaviour:
   lowEnergyBeam: {fileID: 1947244503}
   startingPoint: {fileID: 392662709}
   LaserEffect: {fileID: 4537968681681998237, guid: c95c37fcd8b2cee47a0df355936c74b2, type: 3}
-  chargespeed: 0.7
+  chargespeed: 1.2
+  canShoot: 1
 --- !u!82 &400564851
 AudioSource:
   m_ObjectHideFlags: 0

@@ -22,10 +22,12 @@ public class MilkGun : MonoBehaviour
     public static float maxCharge=5;
     bool lowMode;
     AudioSource audioS;
+    public bool canShoot = true;
     // Start is called before the first frame update
     void Start()
     {
         audioS = GetComponent<AudioSource>();
+        audioS.mute = true;
         timeOfUse = maxCharge;
     }
 
@@ -39,50 +41,58 @@ public class MilkGun : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        audioS.mute = false;
+        if (canShoot)
+        {
+            audioS.mute = false;
+            charge = false;
+            MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            lazer = Instantiate(beam, (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0, 5 - transform.position.z + beam.transform.position.z), Quaternion.identity) as GameObject;
+        }
         //laserEffect = Instantiate(LaserEffect, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity) as GameObject;
-        charge = false;
-        MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        lazer = Instantiate(beam, (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0,5 -transform.position.z + beam.transform.position.z), Quaternion.identity) as GameObject;
     }
     private void OnMouseDrag()
     {
-        //laserEffect.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Time.time - effectTimer > 0.05f)
+        if (canShoot)
         {
-            Instantiate(LaserEffect, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
-            effectTimer = Time.time;
-        }
-
-        if (timeOfUse>0&& !lowMode)
-        {
-            MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 dist = Camera.main.ScreenToWorldPoint(Input.mousePosition) - startingPoint.transform.position;
-            lazer.transform.localScale = new Vector3((timeOfUse)/3, dist.magnitude / 2, 1);
-            lazer.transform.position = (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0, 5);
-            lazer.transform.eulerAngles = new Vector3(0, 0, 90 + (180 / Mathf.PI) * Mathf.Atan2((Camera.main.ScreenToWorldPoint(Input.mousePosition).y - startingPoint.transform.position.y), (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startingPoint.transform.position.x)));
-
-            timeOfUse = timeOfUse - Time.deltaTime;
-        }
-        else
-        {
-            if (!lowMode)
+            //laserEffect.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (Time.time - effectTimer > 0.05f)
             {
-                lowEnergyLazer = Instantiate(lowEnergyBeam, (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0, 5 - transform.position.z + beam.transform.position.z), Quaternion.identity) as GameObject;
-                lowMode = true;
+                Instantiate(LaserEffect, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+                effectTimer = Time.time;
             }
-            timeOfUse = 0;
-            if (lazer!=null)
-            {
-                Destroy(lazer);
-                timeOfUse = timeOfUse + Time.deltaTime * chargespeed/5;
-            }
-            MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 dist = Camera.main.ScreenToWorldPoint(Input.mousePosition) - startingPoint.transform.position;
-            lowEnergyLazer.transform.localScale = new Vector3(0.5f, dist.magnitude / 2, 1);
-            lowEnergyLazer.transform.position = (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0, 5);
-            lowEnergyLazer.transform.eulerAngles = new Vector3(0, 0, 90 + (180 / Mathf.PI) * Mathf.Atan2((Camera.main.ScreenToWorldPoint(Input.mousePosition).y - startingPoint.transform.position.y), (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startingPoint.transform.position.x)));
 
+            if (timeOfUse > 0 && !lowMode)
+            {
+                MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 dist = Camera.main.ScreenToWorldPoint(Input.mousePosition) - startingPoint.transform.position;
+                if (lazer != null)
+                {
+                    lazer.transform.localScale = new Vector3((timeOfUse) / 3, dist.magnitude / 2, 1);
+                    lazer.transform.position = (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0, 5);
+                    lazer.transform.eulerAngles = new Vector3(0, 0, 90 + (180 / Mathf.PI) * Mathf.Atan2((Camera.main.ScreenToWorldPoint(Input.mousePosition).y - startingPoint.transform.position.y), (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startingPoint.transform.position.x)));
+                }
+                timeOfUse = timeOfUse - Time.deltaTime;
+            }
+            else
+            {
+                if (!lowMode)
+                {
+                    lowEnergyLazer = Instantiate(lowEnergyBeam, (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0, 5 - transform.position.z + beam.transform.position.z), Quaternion.identity) as GameObject;
+                    lowMode = true;
+                }
+                timeOfUse = 0;
+                if (lazer != null)
+                {
+                    Destroy(lazer);
+                    timeOfUse = timeOfUse + Time.deltaTime * chargespeed / 5;
+                }
+                MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 dist = Camera.main.ScreenToWorldPoint(Input.mousePosition) - startingPoint.transform.position;
+                lowEnergyLazer.transform.localScale = new Vector3(0.5f, dist.magnitude / 2, 1);
+                lowEnergyLazer.transform.position = (Camera.main.ScreenToWorldPoint(Input.mousePosition) + startingPoint.transform.position) / 2 + new Vector3(0, 0, 5);
+                lowEnergyLazer.transform.eulerAngles = new Vector3(0, 0, 90 + (180 / Mathf.PI) * Mathf.Atan2((Camera.main.ScreenToWorldPoint(Input.mousePosition).y - startingPoint.transform.position.y), (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startingPoint.transform.position.x)));
+
+            }
         }
 
     }

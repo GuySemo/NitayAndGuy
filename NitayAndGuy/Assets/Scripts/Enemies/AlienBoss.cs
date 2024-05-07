@@ -27,6 +27,8 @@ public class AlienBoss : MonoBehaviour
     static public  bool maybeinvincible = false;
     GameObject slide;
     static public bool EndOfGame=false;
+    public float colorTimer = -1;
+    public bool hit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,14 @@ public class AlienBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hit)
+        {
+            if (Time.time - colorTimer > 0.1)
+            {
+                hit = false;
+                GetComponent<SpriteRenderer>().color = new Color(1, 1,1, 1);
+            }
+        }
         if (GetComponent<AlienScript>().life<lifegoal)
         {
 
@@ -123,5 +133,11 @@ public class AlienBoss : MonoBehaviour
     {
         GameObject slide= Instantiate(sliders[Random.Range(0, sliders.Length)],new Vector3(0.5f,-3.8f,0), Quaternion.identity) as GameObject;
     
+    }
+    public void GetHit()
+    {
+        hit = true;
+        colorTimer = Time.time;
+        GetComponent<SpriteRenderer>().color = new Color(1, 0.4f, 0.4f, 1);
     }
 }
