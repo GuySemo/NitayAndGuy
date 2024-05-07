@@ -1648,7 +1648,7 @@ PrefabInstance:
       objectReference: {fileID: 4537968681681998237, guid: c95c37fcd8b2cee47a0df355936c74b2, type: 3}
     - target: {fileID: 4489924070832753450, guid: 3e02490a51632d645ab93c62134ca712, type: 3}
       propertyPath: chargespeed
-      value: 1.3
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7181918589532496182, guid: 3e02490a51632d645ab93c62134ca712, type: 3}
       propertyPath: m_Name

@@ -67,4 +67,12 @@ public class levelLoader : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(ac, Camera.main.transform.position - new Vector3(0,0,7));
     }
+    //public static void SaveGame()
+    //{
+    //    PlayerPrefs.SetInt("coins", Coins.coins);
+    //}
+    //public static void LoadGame()
+    //{
+    //    Coins.coins = PlayerPrefs.GetInt("coins");
+    //}
 }

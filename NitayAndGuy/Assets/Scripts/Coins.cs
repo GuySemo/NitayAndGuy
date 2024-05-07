@@ -19,10 +19,12 @@ public class Coins : MonoBehaviour
     {
         coins = coins + amount;
         ShowCoins();
+        //levelLoader.SaveGame();
     }
     public void LoseCoins(int amount)
     {
         coins = coins - amount;
         ShowCoins();
+        //levelLoader.SaveGame();
     }
 }

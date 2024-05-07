@@ -33,7 +33,7 @@ public class buttonBanana : MonoBehaviour
             if (amountUpgrade <= 1)
             {
                 gameObject.GetComponent<Button>().interactable = Coins.coins >= BananaCost;
-                BananaCostText.text = "Cost: " + BananaCost;
+                BananaCostText.text = "Cost:" + BananaCost;
             }
             else
             {
@@ -47,7 +47,7 @@ public class buttonBanana : MonoBehaviour
             if (PointUpgrade <= 2)
             {
                 gameObject.GetComponent<Button>().interactable = Coins.coins >= BananaPointCost;
-                BananaPointText.text = "Cost: " + BananaPointCost;
+                BananaPointText.text = "Cost:" + BananaPointCost;
             }
             else
             {
