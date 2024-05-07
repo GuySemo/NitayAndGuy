@@ -20,6 +20,7 @@ public class levelLoader : MonoBehaviour
     public void GoToLevel(int goToLevel)
     {
         SceneManager.LoadScene(goToLevel + 1);
+
     }
     public void ActivateFreePlay()
     {
@@ -48,6 +49,10 @@ public class levelLoader : MonoBehaviour
     {
         Camera.main.GetComponent<AudioSource>().pitch = 1f;
         MapUpdater.levelsCleared[SceneManager.GetActiveScene().buildIndex-2] = true;
+        if (FindObjectOfType<SaveProgress>().level<= SceneManager.GetActiveScene().buildIndex - 1)
+        {
+            FindObjectOfType<SaveProgress>().UpdateData(SceneManager.GetActiveScene().buildIndex - 1);
+        }
 
     }
     public void ActiveDialog(int index)
